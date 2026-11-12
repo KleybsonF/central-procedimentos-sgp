@@ -1,0 +1,2532 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central de Procedimentos SGP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* High-contrast canvas and card backgrounds */
+      --bg-body: #eef2f6;
+      --bg-sidebar: #ffffff;
+      --bg-card: #ffffff;
+      --bg-subtle: #f1f5f9;
+      --bg-hover: #e2e8f0;
+      
+      /* Crisp, clear borders */
+      --border-color: #cbd5e1;
+      --border-subtle: #e2e8f0;
+      --white-hairline: #ffffff;
+
+      /* High readability slate text */
+      --text-main: #0f172a;
+      --text-muted: #334155;
+      --text-subtle: #64748b;
+      --text-placeholder: #94a3b8;
+
+      /* Rich Royal Blue Brand & Accents */
+      --brand-blue: #1d4ed8;
+      --brand-blue-light: #2563eb;
+      --brand-blue-hover: #1e40af;
+      --brand-blue-subtle: #eff6ff;
+      --brand-blue-border: #bfdbfe;
+      --brand-blue-badge-bg: #dbeafe;
+
+      /* Emerald Green for Copy */
+      --color-success: #16a34a;
+      --color-success-hover: #15803d;
+      --color-success-active: #059669;
+      --color-success-subtle: #f0fdf4;
+
+      /* Danger Red */
+      --color-danger: #dc2626;
+      --color-danger-hover: #b91c1c;
+      --color-danger-subtle: #fef2f2;
+
+      --radius-sm: 6px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --radius-pill: 9999px;
+
+      --sidebar-width: 295px;
+      --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1);
+      --shadow-elevated: 0 20px 25px -5px rgba(15, 23, 42, 0.15), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* App Layout */
+    .app-layout {
+      display: flex;
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    /* Fixed / Sticky Sidebar */
+    .sidebar {
+      width: var(--sidebar-width);
+      min-width: var(--sidebar-width);
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      box-shadow: 2px 0 8px rgba(15, 23, 42, 0.03);
+      z-index: 50;
+    }
+
+    /* Sidebar Brand Header */
+    .sidebar-brand {
+      padding: 20px 20px 16px 20px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: #ffffff;
+      position: relative;
+    }
+
+    .sidebar-brand::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #1d4ed8, #3b82f6);
+    }
+
+    .brand-top-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: -0.03em;
+      box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+      flex-shrink: 0;
+    }
+
+    .brand-text-block {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .brand-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .brand-subtitle-tag {
+      font-size: 0.72rem;
+      color: var(--brand-blue);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 2px;
+    }
+
+    .brand-stats-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 10px;
+      background: var(--brand-blue-subtle);
+      border: 1px solid var(--brand-blue-border);
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      color: var(--brand-blue);
+      font-weight: 600;
+    }
+
+    /* Live Search Box */
+    .sidebar-search-box {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-color);
+      background: #ffffff;
+    }
+
+    .search-input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 11px;
+      color: var(--brand-blue-light);
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .sidebar-search-input {
+      width: 100%;
+      height: 38px;
+      padding: 0 34px 0 34px;
+      font-size: 0.84rem;
+      font-family: inherit;
+      color: var(--text-main);
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.04);
+    }
+
+    .sidebar-search-input:focus {
+      outline: none;
+      border-color: var(--brand-blue-light);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    .search-clear-btn {
+      position: absolute;
+      right: 9px;
+      width: 20px;
+      height: 20px;
+      background: #cbd5e1;
+      border: none;
+      border-radius: 50%;
+      color: #ffffff;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .search-clear-btn:hover {
+      background: #94a3b8;
+    }
+
+    .search-hint-pill {
+      position: absolute;
+      right: 9px;
+      font-size: 0.65rem;
+      color: var(--text-placeholder);
+      background: #e2e8f0;
+      padding: 2px 6px;
+      border-radius: 4px;
+      pointer-events: none;
+      font-weight: 600;
+    }
+
+    /* Sidebar Navigation List */
+    .sidebar-nav-section {
+      padding: 16px 12px;
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .sidebar-section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 8px 8px 8px;
+    }
+
+    .sidebar-section-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-subtle);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .sidebar-add-group-btn {
+      background: #eff6ff;
+      border: 1px solid var(--brand-blue-border);
+      color: var(--brand-blue);
+      cursor: pointer;
+      font-size: 0.74rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      transition: all 0.15s ease;
+    }
+    .sidebar-add-group-btn:hover {
+      background: var(--brand-blue-light);
+      color: #ffffff;
+      border-color: var(--brand-blue);
+    }
+
+    .nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      list-style: none;
+      margin-top: 4px;
+    }
+
+    .nav-item-btn {
+      width: 100%;
+      background: transparent;
+      border: 1px solid transparent;
+      padding: 9px 12px;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      text-align: left;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: all 0.15s ease;
+      user-select: none;
+    }
+
+    .nav-item-btn:hover {
+      background: var(--bg-subtle);
+      color: var(--text-main);
+      border-color: var(--border-subtle);
+    }
+
+    .nav-item-btn.active {
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-weight: 600;
+      border-color: #bfdbfe;
+      border-left: 4px solid #2563eb;
+      box-shadow: 0 1px 3px rgba(37, 99, 235, 0.08);
+    }
+
+    .nav-item-name {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 1;
+    }
+
+    .nav-item-btn.active .nav-item-name svg {
+      stroke: #2563eb;
+    }
+
+    .nav-item-count {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: var(--radius-pill);
+      background: #e2e8f0;
+      color: var(--text-subtle);
+      line-height: 1.2;
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+
+    .nav-item-btn.active .nav-item-count {
+      background: #2563eb;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    /* Sidebar Footer */
+    .sidebar-footer {
+      padding: 14px 14px 18px 14px;
+      border-top: 1px solid var(--border-color);
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .sidebar-footer-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-subtle);
+      margin-bottom: 4px;
+      padding-left: 4px;
+    }
+
+    .sidebar-tool-btn {
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      padding: 8px 10px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: all 0.15s ease;
+    }
+
+    .sidebar-tool-btn:hover {
+      background: var(--bg-subtle);
+      color: var(--text-main);
+      border-color: #94a3b8;
+    }
+
+    .sidebar-tool-btn.primary {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+      color: var(--brand-blue);
+      font-weight: 600;
+    }
+    .sidebar-tool-btn.primary:hover {
+      background: #dbeafe;
+      border-color: #93c5fd;
+    }
+
+    .sidebar-tool-btn.danger {
+      color: var(--color-danger);
+    }
+    .sidebar-tool-btn.danger:hover {
+      background: var(--color-danger-subtle);
+      border-color: #fca5a5;
+    }
+
+    /* Main Content Area */
+    .main-content {
+      flex: 1;
+      min-width: 0;
+      padding: 24px 32px 80px 32px;
+      max-width: 1400px;
+    }
+
+    /* Group Banner with Royal Blue Accent Border */
+    .content-header {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-top: 3px solid var(--brand-blue-light);
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    .content-header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .content-title-wrap h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .content-title-wrap p {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .content-header-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .blue-hairline-divider {
+      height: 1px;
+      background: var(--border-color);
+      margin: 16px 0 14px 0;
+    }
+
+    .content-sub-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .quick-stats-badge {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .quick-stats-badge b {
+      color: var(--brand-blue);
+      background: var(--brand-blue-subtle);
+      padding: 2px 7px;
+      border-radius: 4px;
+      border: 1px solid var(--brand-blue-border);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 7px 13px;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-decoration: none;
+      white-space: nowrap;
+      user-select: none;
+      box-sizing: border-box;
+      line-height: 1;
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn-create {
+      background: var(--brand-blue-light);
+      color: #ffffff;
+      border: 1px solid var(--brand-blue);
+      box-shadow: 0 1px 3px rgba(37, 99, 235, 0.25);
+    }
+    .btn-create:hover {
+      background: var(--brand-blue-hover);
+      border-color: #1e3a8a;
+    }
+    .btn-create:disabled {
+      background: #94a3b8 !important;
+      border-color: #cbd5e1 !important;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    }
+    .btn-secondary:hover {
+      background: var(--bg-subtle);
+      color: var(--text-main);
+      border-color: #94a3b8;
+    }
+
+    .btn-outline-blue {
+      background: #ffffff;
+      border: 1px solid var(--brand-blue-border);
+      color: var(--brand-blue);
+      box-shadow: 0 1px 2px rgba(37, 99, 235, 0.05);
+    }
+    .btn-outline-blue:hover {
+      background: var(--brand-blue-subtle);
+      border-color: #93c5fd;
+    }
+
+    /* Action Buttons in Item Row: Play and Copy matching sizes */
+    .btn-sm {
+      height: 28px;
+      padding: 0 12px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+    }
+
+    .btn-play {
+      background: var(--brand-blue-light);
+      color: #ffffff;
+      border: 1px solid var(--brand-blue);
+      box-shadow: 0 1px 2px rgba(37, 99, 235, 0.25);
+    }
+    .btn-play:hover {
+      background: var(--brand-blue-hover);
+      border-color: #1e3a8a;
+      color: #ffffff;
+    }
+
+    /* Green Copy Button: EXACT size, font and height as btn-play */
+    .btn-copy {
+      background: var(--color-success);
+      color: #ffffff;
+      border: 1px solid var(--color-success-hover);
+      box-shadow: 0 1px 2px rgba(22, 163, 74, 0.2);
+    }
+    .btn-copy:hover {
+      background: var(--color-success-hover);
+      border-color: #166534;
+      color: #ffffff;
+    }
+    .btn-copy.copied {
+      background: var(--color-success-active) !important;
+      border-color: #047857 !important;
+      color: #ffffff !important;
+    }
+
+    .btn-icon-only {
+      padding: 0;
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+    }
+
+    .btn-edit {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+    }
+    .btn-edit:hover {
+      background: #eff6ff;
+      border-color: #93c5fd;
+      color: var(--brand-blue);
+    }
+
+    .btn-delete {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+    }
+    .btn-delete:hover {
+      background: var(--color-danger-subtle);
+      border-color: #fca5a5;
+      color: var(--color-danger);
+    }
+
+    /* Category Card */
+    .category-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .category-card:hover {
+      border-color: #94a3b8;
+    }
+
+    .category-header {
+      padding: 13px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      background: #ffffff;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.15s ease;
+    }
+
+    .category-header:hover {
+      background: #f8fafc;
+    }
+
+    .category-title-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .chevron-box {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand-blue-light);
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .category-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .category-group-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: #eff6ff;
+      color: var(--brand-blue);
+      border: 1px solid #bfdbfe;
+      margin-left: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .category-badge-count {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--brand-blue);
+      background: var(--brand-blue-subtle);
+      border: 1px solid var(--brand-blue-border);
+      padding: 2px 8px;
+      border-radius: var(--radius-pill);
+    }
+
+    .category-right-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .category-divider-line {
+      height: 1px;
+      background: var(--border-color);
+    }
+
+    /* List Items */
+    .category-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .item-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 18px;
+      border-bottom: 1px solid #f1f5f9;
+      gap: 16px;
+      transition: background-color 0.12s ease;
+      position: relative;
+    }
+
+    .item-row:last-child {
+      border-bottom: none;
+    }
+
+    /* Delicate blue hover row highlight */
+    .item-row:hover {
+      background: #f0f7ff;
+    }
+
+    .item-row:hover .item-title {
+      color: var(--brand-blue);
+    }
+
+    .item-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .platform-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+      line-height: 1.2;
+    }
+
+    .platform-tag.loom {
+      background: #6366f1;
+      color: #ffffff;
+    }
+
+    .platform-tag.youtube {
+      background: #dc2626;
+      color: #ffffff;
+    }
+
+    .platform-tag.doc {
+      background: #0284c7;
+      color: #ffffff;
+    }
+
+    .item-texts {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .item-title {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-main);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: color 0.12s ease;
+    }
+
+    .item-url {
+      font-size: 0.74rem;
+      color: var(--text-subtle);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 1px;
+    }
+
+    .item-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    /* Highlight matching search terms */
+    .highlight {
+      background-color: #fef08a;
+      color: #713f12;
+      font-weight: 700;
+      padding: 1px 3px;
+      border-radius: 3px;
+    }
+
+    /* Search Results Banner */
+    .search-results-banner {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-top: 3px solid var(--brand-blue-light);
+      border-radius: var(--radius-lg);
+      padding: 18px 22px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .search-results-scope {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .scope-toggle-btn {
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-color);
+      background: #ffffff;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .scope-toggle-btn:hover {
+      background: var(--bg-subtle);
+      color: var(--text-main);
+      border-color: #94a3b8;
+    }
+    .scope-toggle-btn.active {
+      background: var(--brand-blue-light);
+      border-color: var(--brand-blue);
+      color: #ffffff;
+      box-shadow: 0 1px 3px rgba(37, 99, 235, 0.25);
+    }
+
+    /* Empty Box */
+    .empty-box {
+      background: var(--bg-card);
+      border: 1px dashed var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 56px 28px;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .empty-icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 16px auto;
+      background: var(--brand-blue-subtle);
+      color: var(--brand-blue-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--brand-blue-border);
+    }
+
+    .empty-box h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .empty-box p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto 20px auto;
+      line-height: 1.6;
+    }
+
+    /* Modals */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 520px;
+      box-shadow: var(--shadow-elevated);
+      overflow: hidden;
+      animation: modalFadeIn 0.18s ease-out;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.97) translateY(8px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .modal-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ffffff;
+    }
+
+    .modal-header h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .modal-close-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-subtle);
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+      padding: 4px;
+      border-radius: var(--radius-sm);
+    }
+    .modal-close-btn:hover {
+      background: var(--bg-subtle);
+      color: var(--text-main);
+    }
+
+    .modal-body {
+      padding: 20px;
+    }
+
+    .modal-footer {
+      padding: 14px 20px;
+      background: var(--bg-subtle);
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 8px 12px;
+      font-size: 0.85rem;
+      font-family: inherit;
+      color: var(--text-main);
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      transition: border-color 0.15s ease;
+      box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.04);
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--brand-blue-light);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    .form-textarea {
+      min-height: 70px;
+      resize: vertical;
+    }
+
+    /* Video Player Modal */
+    .video-modal-card {
+      background: #000000;
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 940px;
+      box-shadow: var(--shadow-elevated);
+      overflow: hidden;
+      animation: modalFadeIn 0.2s ease-out;
+      border: 1px solid #334155;
+    }
+
+    .video-modal-header {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 12px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .video-modal-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #f8fafc;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-right: 16px;
+    }
+
+    .video-aspect-box {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 ratio */
+      background: #000;
+    }
+
+    .video-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-fallback {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      color: #94a3b8;
+      background: #0f172a;
+    }
+
+    /* Toast Notification */
+    .toast-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      pointer-events: none;
+    }
+
+    .toast {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 10px 16px;
+      border-radius: var(--radius-md);
+      font-size: 0.82rem;
+      font-weight: 500;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: toastIn 0.2s ease-out, toastOut 0.2s ease-in 2.6s forwards;
+      pointer-events: auto;
+      border: 1px solid #334155;
+    }
+
+    @keyframes toastIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes toastOut {
+      from { opacity: 1; transform: translateY(0); }
+      to { opacity: 0; transform: translateY(12px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-layout">
+
+    <!-- SIDEBAR (Barra Lateral com Alto Contraste e Destaques em Azul) -->
+    <aside class="sidebar">
+      
+      <!-- Brand & Stats -->
+      <div class="sidebar-brand">
+        <div class="brand-top-row">
+          <div class="brand-logo-icon">SGP</div>
+          <div class="brand-text-block">
+            <h1 class="brand-title">Procedimentos</h1>
+            <span class="brand-subtitle-tag">Base de Conhecimento</span>
+          </div>
+        </div>
+        <div class="brand-stats-row" id="sidebarStatsText">
+          <span>Base zerada</span>
+        </div>
+      </div>
+
+      <!-- Live Search Box: NEVER destroyed on typing to keep 100% focus -->
+      <div class="sidebar-search-box">
+        <div class="search-input-wrap">
+          <span class="search-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </span>
+          <input type="text" id="globalSearchInput" class="sidebar-search-input" placeholder="Buscar procedimentos..." autocomplete="off" spellcheck="false" oninput="onSearchInputChange(event)" onkeydown="onSearchInputKeyDown(event)">
+          <button class="search-clear-btn" id="searchClearBtn" onclick="clearSearchInput()" title="Limpar busca (Esc)">✕</button>
+          <span class="search-hint-pill" id="searchKbdHint">Ctrl+K</span>
+        </div>
+      </div>
+
+      <!-- Navigation Section: Groups -->
+      <div class="sidebar-nav-section">
+        <div class="sidebar-section-header">
+          <span class="sidebar-section-title">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            Grupos Operacionais
+          </span>
+          <button class="sidebar-add-group-btn" onclick="openNewGroupModal()" title="Criar novo grupo">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            Novo
+          </button>
+        </div>
+        <ul class="nav-list" id="sidebarGroupsList"></ul>
+      </div>
+
+      <!-- Sidebar Footer: Database & Backup Management -->
+      <div class="sidebar-footer">
+        <span class="sidebar-footer-title">Base de Dados & Backup</span>
+        <button class="sidebar-tool-btn primary" onclick="triggerImport()" title="Importar arquivo JSON com os procedimentos">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+          Importar JSON
+        </button>
+        <input type="file" id="importFileInput" accept=".json" style="display:none;" onchange="handleFileSelected(event)">
+        <button class="sidebar-tool-btn" onclick="exportJSON()" title="Exportar toda a base atual como arquivo JSON">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Exportar JSON
+        </button>
+        <button class="sidebar-tool-btn danger" onclick="confirmClearAll()" title="Zerar todos os dados salvos no navegador">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+          Limpar Base
+        </button>
+      </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="main-content" id="mainContainer"></main>
+
+  </div>
+
+  <!-- Video Preview Modal Player -->
+  <div class="modal-overlay" id="videoModalOverlay" onclick="handleVideoModalOverlayClick(event)">
+    <div class="video-modal-card">
+      <div class="video-modal-header">
+        <span class="video-modal-title" id="videoModalTitle">Visualização do Procedimento</span>
+        <button class="modal-close-btn" onclick="closeVideoModal()" style="color:#94a3b8;">✕</button>
+      </div>
+      <div class="video-aspect-box">
+        <iframe id="videoIframe" class="video-iframe" src="" allowfullscreen allow="autoplay; encrypted-media; picture-in-picture"></iframe>
+        <div id="videoFallbackBox" class="video-fallback" style="display:none;">
+          <p style="margin-bottom:12px; font-size:0.95rem;">Este link é um documento ou recurso externo sem player de vídeo embutido.</p>
+          <a id="videoFallbackBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-play btn-sm" style="height:34px; padding:0 18px; font-size:0.85rem;">
+            Abrir Link em Nova Aba ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Novo / Editar Grupo -->
+  <div class="modal-overlay" id="groupModalOverlay" onclick="handleFormModalOverlayClick(event, 'groupModalOverlay')">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="groupModalTitle">Novo Grupo</h3>
+        <button class="modal-close-btn" onclick="closeModal('groupModalOverlay')">✕</button>
+      </div>
+      <form onsubmit="handleGroupFormSubmit(event)">
+        <div class="modal-body">
+          <input type="hidden" id="groupFormId">
+          <div class="form-group">
+            <label class="form-label" for="groupFormName">Nome do Grupo *</label>
+            <input type="text" id="groupFormName" class="form-input" required placeholder="Ex: Fiscal, Suporte, Financeiro...">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="groupFormDesc">Descrição (Opcional)</label>
+            <textarea id="groupFormDesc" class="form-textarea" placeholder="Breve resumo dos procedimentos contidos neste grupo"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeModal('groupModalOverlay')">Cancelar</button>
+          <button type="submit" class="btn btn-create">Salvar Grupo</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Nova / Editar Categoria -->
+  <div class="modal-overlay" id="categoryModalOverlay" onclick="handleFormModalOverlayClick(event, 'categoryModalOverlay')">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="categoryModalTitle">Nova Categoria</h3>
+        <button class="modal-close-btn" onclick="closeModal('categoryModalOverlay')">✕</button>
+      </div>
+      <form onsubmit="handleCategoryFormSubmit(event)">
+        <div class="modal-body">
+          <input type="hidden" id="categoryFormIndex">
+          <div class="form-group">
+            <label class="form-label" for="categoryFormName">Nome da Categoria *</label>
+            <input type="text" id="categoryFormName" class="form-input" required placeholder="Ex: Notas Fiscais de Entrada, Relatórios...">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeModal('categoryModalOverlay')">Cancelar</button>
+          <button type="submit" class="btn btn-create">Salvar Categoria</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Novo / Editar Link -->
+  <div class="modal-overlay" id="linkModalOverlay" onclick="handleFormModalOverlayClick(event, 'linkModalOverlay')">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="linkModalTitle">Novo Procedimento</h3>
+        <button class="modal-close-btn" onclick="closeModal('linkModalOverlay')">✕</button>
+      </div>
+      <form onsubmit="handleLinkFormSubmit(event)">
+        <div class="modal-body">
+          <input type="hidden" id="linkFormCatIndex">
+          <input type="hidden" id="linkFormItemIndex">
+          <div class="form-group">
+            <label class="form-label" for="linkFormCategorySelect">Categoria de Destino *</label>
+            <select id="linkFormCategorySelect" class="form-select" required></select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="linkFormTitle">Título do Procedimento *</label>
+            <input type="text" id="linkFormTitle" class="form-input" required placeholder="Ex: Como emitir nota de devolução">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="linkFormUrl">URL / Link do Tutorial *</label>
+            <input type="url" id="linkFormUrl" class="form-input" required placeholder="https://www.loom.com/share/... ou youtube.com">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeModal('linkModalOverlay')">Cancelar</button>
+          <button type="submit" class="btn btn-create">Salvar Procedimento</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- POP-UP MODAL: Validação de Segurança & Dados Sensíveis (LGPD / Base de Testes) -->
+  <div class="modal-overlay" id="securityValidationOverlay" onclick="handleFormModalOverlayClick(event, 'securityValidationOverlay')">
+    <div class="modal-card" style="max-width: 500px; border-top: 3px solid var(--brand-blue-light);">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap:9px;">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:6px; background:#eff6ff; color:var(--brand-blue-light); border:1px solid #bfdbfe;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </span>
+          <h3 style="font-size:1.02rem; font-weight:700; color:var(--text-main);">Validação de Segurança</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('securityValidationOverlay')">✕</button>
+      </div>
+
+      <div class="modal-body" style="padding:22px 24px;">
+        <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:8px; padding:12px 14px; margin-bottom:18px; display:flex; gap:10px; align-items:flex-start;">
+          <span style="color:#d97706; font-size:1.15rem; line-height:1; flex-shrink:0;">⚠️</span>
+          <p style="font-size:0.83rem; color:#92400e; line-height:1.45;">
+            Para garantir a segurança institucional e conformidade com a <b>LGPD</b>, confirme os dois requisitos abaixo antes de cadastrar o procedimento:
+          </p>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <label style="display:flex; align-items:flex-start; gap:11px; cursor:pointer; font-size:0.86rem; color:var(--text-main); font-weight:500; line-height:1.45; user-select:none; background:#ffffff; padding:10px 12px; border:1px solid var(--border-color); border-radius:var(--radius-sm); transition:background 0.15s ease;">
+            <input type="checkbox" id="checkBaseSistema" style="margin-top:3px; width:17px; height:17px; accent-color:#2563eb; cursor:pointer;" onchange="validateSecurityChecks()">
+            <span>Confirmo que o vídeo foi gravado na <b>base de testes/homologação</b> do sistema.</span>
+          </label>
+
+          <label style="display:flex; align-items:flex-start; gap:11px; cursor:pointer; font-size:0.86rem; color:var(--text-main); font-weight:500; line-height:1.45; user-select:none; background:#ffffff; padding:10px 12px; border:1px solid var(--border-color); border-radius:var(--radius-sm); transition:background 0.15s ease;">
+            <input type="checkbox" id="checkDadosSensiveis" style="margin-top:3px; width:17px; height:17px; accent-color:#2563eb; cursor:pointer;" onchange="validateSecurityChecks()">
+            <span>Confirmo que o vídeo <b>não possui dados sensíveis</b> (senhas, CPFs, cartões ou dados de clientes reais).</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="modal-footer" style="padding:14px 24px;">
+        <button type="button" class="btn btn-secondary" onclick="closeModal('securityValidationOverlay')">Voltar</button>
+        <button type="button" class="btn btn-create" id="btnConfirmSecuritySave" disabled onclick="executeConfirmedLinkSave()">
+          Confirmar e Salvar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastBox"></div>
+
+  <script>
+    // CLEAN ENGINE: No hardcoded video links in HTML. All data is managed via JSON import and localStorage.
+    const STORAGE_KEY = 'sgp_knowledge_base_v3';
+    let GROUPS = [];
+    let activeGroupId = null;
+    let collapsedCategories = new Set();
+
+    // Pending link payload waiting for security validation
+    let pendingLinkPayload = null;
+
+    // Search state
+    let searchScope = 'all'; // 'all' or 'current'
+    let currentSearchQuery = '';
+
+    // Helpers
+    function normalizeStr(s) {
+      if (!s) return '';
+      return s
+        .toString()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .trim();
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function countGroupLinks(group) {
+      if (!group || !group.categories) return 0;
+      return group.categories.reduce((acc, cat) => acc + (cat.items ? cat.items.length : (cat.links ? cat.links.length : 0)), 0);
+    }
+
+    function countTotalLinks() {
+      return GROUPS.reduce((acc, g) => acc + countGroupLinks(g), 0);
+    }
+
+    // Storage Management: loads saved data or starts clean
+    function loadFromStorage() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            GROUPS = parsed;
+            return;
+          }
+        }
+      } catch (err) {
+        console.warn('Erro ao ler localStorage:', err);
+      }
+      GROUPS = [];
+    }
+
+    function saveToStorage() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(GROUPS));
+      } catch (err) {
+        console.warn('Erro ao salvar no localStorage:', err);
+      }
+      updateSidebarStats();
+    }
+
+    function updateSidebarStats() {
+      const statsEl = document.getElementById('sidebarStatsText');
+      const total = countTotalLinks();
+      const groupsCount = GROUPS.length;
+      if (statsEl) {
+        if (total === 0) {
+          statsEl.innerHTML = `<span>Base vazia (0 tutoriais)</span>`;
+        } else {
+          statsEl.innerHTML = `<span><b>${total}</b> tutoriais em <b>${groupsCount}</b> grupos</span>`;
+        }
+      }
+    }
+
+    // Init App
+    function init() {
+      loadFromStorage();
+      if (GROUPS.length > 0) {
+        activeGroupId = GROUPS[0].id;
+      }
+      updateSidebarStats();
+      renderSidebarGroups();
+      renderContent();
+      setupKeyboardShortcuts();
+    }
+
+    function setupKeyboardShortcuts() {
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey && e.key.toLowerCase() === 'k') || (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA')) {
+          e.preventDefault();
+          const searchInput = document.getElementById('globalSearchInput');
+          if (searchInput) {
+            searchInput.focus();
+            searchInput.select();
+          }
+        }
+      });
+    }
+
+    // Render Sidebar Navigation
+    function renderSidebarGroups() {
+      const listContainer = document.getElementById('sidebarGroupsList');
+      if (!listContainer) return;
+
+      if (GROUPS.length === 0) {
+        listContainer.innerHTML = `
+          <li style="padding:16px 8px; font-size:0.78rem; color:var(--text-placeholder); text-align:center; line-height:1.4;">
+            Nenhum grupo cadastrado.<br>
+            Importe um JSON abaixo.
+          </li>
+        `;
+        return;
+      }
+
+      listContainer.innerHTML = GROUPS.map(g => {
+        const isActive = g.id === activeGroupId && !currentSearchQuery;
+        const count = countGroupLinks(g);
+        return `
+          <li>
+            <button class="nav-item-btn ${isActive ? 'active' : ''}" onclick="selectGroup('${g.id}')">
+              <span class="nav-item-name" title="${escapeHtml(g.name)}">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                <span>${escapeHtml(g.name)}</span>
+              </span>
+              <span class="nav-item-count">${count}</span>
+            </button>
+          </li>
+        `;
+      }).join('');
+    }
+
+    function selectGroup(id) {
+      activeGroupId = id;
+      if (currentSearchQuery) {
+        clearSearchInput();
+      } else {
+        renderSidebarGroups();
+        renderNormalGroupView();
+      }
+    }
+
+    // Search Input Logic - Keeps 100% focus and fast typing
+    function onSearchInputChange(e) {
+      currentSearchQuery = e.target.value;
+      const clearBtn = document.getElementById('searchClearBtn');
+      const hint = document.getElementById('searchKbdHint');
+      if (clearBtn) {
+        clearBtn.style.display = currentSearchQuery ? 'inline-flex' : 'none';
+      }
+      if (hint) {
+        hint.style.display = currentSearchQuery ? 'none' : 'inline-block';
+      }
+      renderSidebarGroups();
+      renderContent();
+    }
+
+    function onSearchInputKeyDown(e) {
+      if (e.key === 'Escape') {
+        clearSearchInput();
+        e.target.blur();
+      }
+    }
+
+    function clearSearchInput() {
+      const searchInput = document.getElementById('globalSearchInput');
+      if (searchInput) {
+        searchInput.value = '';
+      }
+      currentSearchQuery = '';
+      const clearBtn = document.getElementById('searchClearBtn');
+      const hint = document.getElementById('searchKbdHint');
+      if (clearBtn) clearBtn.style.display = 'none';
+      if (hint) hint.style.display = 'inline-block';
+      renderSidebarGroups();
+      renderContent();
+    }
+
+    function setSearchScope(scope) {
+      searchScope = scope;
+      renderSearchResults();
+    }
+
+    // Content Router
+    function renderContent() {
+      if (GROUPS.length === 0) {
+        renderEmptyState();
+        return;
+      }
+
+      const q = currentSearchQuery.trim();
+      if (q) {
+        renderSearchResults();
+      } else {
+        renderNormalGroupView();
+      }
+    }
+
+    function renderEmptyState() {
+      const main = document.getElementById('mainContainer');
+      main.innerHTML = `
+        <div class="empty-box">
+          <div class="empty-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+          </div>
+          <h3>Sua base de procedimentos está vazia</h3>
+          <p>Esta página é 100% limpa e sem dados embutidos no código. Para carregar seus tutoriais, importe seu arquivo JSON ou crie os grupos manualmente.</p>
+          <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+            <button class="btn btn-create" onclick="triggerImport()" style="padding:10px 20px; font-size:0.9rem;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+              Importar Arquivo JSON
+            </button>
+            <button class="btn btn-secondary" onclick="openNewGroupModal()" style="padding:10px 18px; font-size:0.9rem;">
+              + Criar Grupo Manualmente
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    // Render Normal Group View with High Contrast and Blue Accents
+    function renderNormalGroupView() {
+      const main = document.getElementById('mainContainer');
+      const group = GROUPS.find(g => g.id === activeGroupId) || GROUPS[0];
+      if (!group) {
+        renderEmptyState();
+        return;
+      }
+      activeGroupId = group.id;
+
+      const totalLinks = countGroupLinks(group);
+      const categories = group.categories || [];
+
+      let html = `
+        <div class="content-header">
+          <div class="content-header-top">
+            <div class="content-title-wrap">
+              <h2>
+                <span>${escapeHtml(group.name)}</span>
+                <span class="category-badge-count">${totalLinks} tutoriais</span>
+              </h2>
+              <p>${escapeHtml(group.description || 'Procedimentos operacionais, configurações e tutoriais deste setor.')}</p>
+            </div>
+            <div class="content-header-actions">
+              <!-- Botão Novo Link com apenas um sinal de mais -->
+              <button class="btn btn-create btn-sm" onclick="openNewLinkModal()" title="Adicionar novo procedimento">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <span>Novo Link</span>
+              </button>
+              <button class="btn btn-outline-blue btn-sm" onclick="openNewCategoryModal()" title="Criar nova categoria">
+                + Nova Categoria
+              </button>
+              <button class="btn btn-secondary btn-sm" onclick="openEditGroupModal('${group.id}')" title="Editar nome/descrição do grupo">
+                Editar Grupo
+              </button>
+              <button class="btn btn-delete btn-sm" onclick="confirmDeleteGroup('${group.id}')" title="Excluir grupo">
+                Excluir
+              </button>
+            </div>
+          </div>
+
+          <div class="blue-hairline-divider"></div>
+
+          <div class="content-sub-actions">
+            <span class="quick-stats-badge">
+              Organizado em <b>${categories.length} categorias</b>
+            </span>
+            <div style="display:flex; gap:6px;">
+              <button class="btn btn-secondary btn-sm" onclick="toggleAllCategories(false)" title="Expandir todas as categorias">
+                Expandir Tudo
+              </button>
+              <button class="btn btn-secondary btn-sm" onclick="toggleAllCategories(true)" title="Recolher todas as categorias">
+                Recolher Tudo
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+
+      if (categories.length === 0) {
+        html += `
+          <div class="empty-box">
+            <h3>Nenhuma categoria neste grupo</h3>
+            <p>Crie sua primeira categoria para organizar os procedimentos e links.</p>
+            <button class="btn btn-create btn-sm" onclick="openNewCategoryModal()">+ Criar Categoria</button>
+          </div>
+        `;
+        main.innerHTML = html;
+        return;
+      }
+
+      categories.forEach((cat, catIdx) => {
+        const items = cat.items || cat.links || [];
+        const catKey = `${group.id}_cat_${catIdx}`;
+        const isCollapsed = collapsedCategories.has(catKey);
+
+        html += `
+          <div class="category-card">
+            <div class="category-header" onclick="toggleCategoryCollapse('${group.id}', ${catIdx})">
+              <div class="category-title-left">
+                <span class="chevron-box" id="chevron_${group.id}_${catIdx}" style="transform: ${isCollapsed ? 'rotate(-90deg)' : 'rotate(0deg)'}">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </span>
+                <span class="category-name">${escapeHtml(cat.name)}</span>
+                <span class="category-badge-count">${items.length}</span>
+              </div>
+              <div class="category-right-actions" onclick="event.stopPropagation()">
+                <button class="btn btn-outline-blue btn-sm" onclick="openNewLinkModal(${catIdx})" title="Adicionar link nesta categoria">
+                  + Link
+                </button>
+                <button class="btn btn-edit btn-icon-only" onclick="openEditCategoryModal(${catIdx})" title="Editar categoria">
+                  ✏️
+                </button>
+                <button class="btn btn-delete btn-icon-only" onclick="confirmDeleteCategory(${catIdx})" title="Excluir categoria">
+                  🗑️
+                </button>
+              </div>
+            </div>
+
+            <div class="category-divider-line"></div>
+
+            <div class="category-list" id="catlist_${group.id}_${catIdx}" style="display: ${isCollapsed ? 'none' : 'flex'}">
+              ${items.length === 0 ? `
+                <div style="padding:16px; text-align:center; color:var(--text-placeholder); font-size:0.82rem;">
+                  Nenhum link adicionado ainda nesta categoria.
+                </div>
+              ` : items.map((item, itemIdx) => renderItemRow(item, group.id, catIdx, itemIdx)).join('')}
+            </div>
+          </div>
+        `;
+      });
+
+      main.innerHTML = html;
+    }
+
+    // Render Search Results View with Token Matching and Accent Insensitivity
+    function renderSearchResults() {
+      const main = document.getElementById('mainContainer');
+      const rawQuery = currentSearchQuery.trim();
+      const normQuery = normalizeStr(rawQuery);
+      const tokens = normQuery.split(/\s+/).filter(Boolean);
+
+      const activeGroup = GROUPS.find(g => g.id === activeGroupId);
+      let groupsToSearch = [];
+      if (searchScope === 'current' && activeGroup) {
+        groupsToSearch = [activeGroup];
+      } else {
+        groupsToSearch = GROUPS;
+      }
+
+      let totalMatches = 0;
+      const matchedGroups = [];
+
+      groupsToSearch.forEach(g => {
+        const groupMatches = [];
+        (g.categories || []).forEach((cat, catIdx) => {
+          const rawItems = cat.items || cat.links || [];
+          const catNorm = normalizeStr(cat.name);
+          const groupNorm = normalizeStr(g.name);
+
+          const matchedItems = [];
+          rawItems.forEach((item, itemIdx) => {
+            const titleNorm = normalizeStr(item.title);
+            const urlNorm = normalizeStr(item.url);
+            const haystack = `${titleNorm} ${urlNorm} ${catNorm} ${groupNorm}`;
+
+            const allMatched = tokens.every(token => haystack.includes(token));
+            if (allMatched) {
+              matchedItems.push({ item, itemIdx, catIdx });
+            }
+          });
+
+          if (matchedItems.length > 0) {
+            groupMatches.push({
+              cat,
+              catIdx,
+              matchedItems
+            });
+            totalMatches += matchedItems.length;
+          }
+        });
+
+        if (groupMatches.length > 0) {
+          matchedGroups.push({
+            group: g,
+            categories: groupMatches
+          });
+        }
+      });
+
+      let html = `
+        <div class="search-results-banner">
+          <div>
+            <h2 style="font-size:1.15rem; font-weight:700; color:var(--text-main);">
+              Resultados para: "<span style="color:var(--brand-blue);">${escapeHtml(rawQuery)}</span>"
+            </h2>
+            <p style="font-size:0.82rem; color:var(--text-muted); margin-top:2px;">
+              Encontrados <b>${totalMatches}</b> procedimentos compatíveis
+            </p>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div class="search-results-scope">
+              <button class="scope-toggle-btn ${searchScope === 'all' ? 'active' : ''}" onclick="setSearchScope('all')">
+                Todo o Acervo (${countTotalLinks()})
+              </button>
+              ${activeGroup ? `
+                <button class="scope-toggle-btn ${searchScope === 'current' ? 'active' : ''}" onclick="setSearchScope('current')">
+                  ${escapeHtml(activeGroup.name)} (${countGroupLinks(activeGroup)})
+                </button>
+              ` : ''}
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="clearSearchInput()">
+              ✕ Limpar Busca
+            </button>
+          </div>
+        </div>
+      `;
+
+      if (totalMatches === 0) {
+        html += `
+          <div class="empty-box">
+            <h3>Nenhum procedimento encontrado</h3>
+            <p>Nenhum procedimento corresponde aos termos pesquisados no escopo selecionado.</p>
+            <div style="display:flex; gap:10px; justify-content:center;">
+              ${searchScope === 'current' ? `
+                <button class="btn btn-outline-blue btn-sm" onclick="setSearchScope('all')">
+                  Buscar em Todo o Acervo
+                </button>
+              ` : ''}
+              <button class="btn btn-secondary btn-sm" onclick="clearSearchInput()">
+                Limpar Busca
+              </button>
+            </div>
+          </div>
+        `;
+        main.innerHTML = html;
+        return;
+      }
+
+      matchedGroups.forEach(({ group, categories }) => {
+        categories.forEach(({ cat, catIdx, matchedItems }) => {
+          html += `
+            <div class="category-card">
+              <div class="category-header" style="cursor:default;">
+                <div class="category-title-left">
+                  <span class="category-name">${escapeHtml(cat.name)}</span>
+                  <span class="category-group-tag">${escapeHtml(group.name)}</span>
+                  <span class="category-badge-count">${matchedItems.length}</span>
+                </div>
+              </div>
+
+              <div class="category-divider-line"></div>
+
+              <div class="category-list">
+                ${matchedItems.map(({ item, itemIdx }) => renderItemRow(item, group.id, catIdx, itemIdx, tokens)).join('')}
+              </div>
+            </div>
+          `;
+        });
+      });
+
+      main.innerHTML = html;
+    }
+
+    // Render Single Item Row with Green Copy Button (identical to Play button)
+    function renderItemRow(item, groupId, catIdx, itemIdx, highlightTokens = []) {
+      const url = item.url || '';
+      const isLoom = url.includes('loom.com');
+      const isYouTube = url.includes('youtube.com') || url.includes('youtu.be');
+
+      let badgeClass = 'doc';
+      let badgeText = 'Doc';
+      if (isLoom) {
+        badgeClass = 'loom';
+        badgeText = 'Loom';
+      } else if (isYouTube) {
+        badgeClass = 'youtube';
+        badgeText = 'YouTube';
+      }
+
+      const displayTitle = highlightTokens.length > 0 
+        ? highlightTextMulti(item.title, highlightTokens) 
+        : escapeHtml(item.title);
+
+      return `
+        <div class="item-row">
+          <div class="item-left">
+            <span class="platform-tag ${badgeClass}">${badgeText}</span>
+            <div class="item-texts">
+              <span class="item-title" title="${escapeHtml(item.title)}">${displayTitle}</span>
+              <span class="item-url" title="${escapeHtml(url)}">${escapeHtml(url)}</span>
+            </div>
+          </div>
+
+          <div class="item-actions">
+            <!-- Blue Play Button -->
+            <button class="btn btn-play btn-sm" data-title="${escapeHtml(item.title)}" data-url="${escapeHtml(url)}" onclick="openVideoModalFromBtn(this)">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              <span>Assistir</span>
+            </button>
+
+            <!-- Green Copy Button: Exact same size and padding as btn-play -->
+            <button class="btn btn-copy btn-sm" data-url="${escapeHtml(url)}" onclick="copyUrl(this)" title="Copiar link do procedimento">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copiar</span>
+            </button>
+
+            <!-- Open Original Link -->
+            <a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-icon-only" title="Abrir link original em nova aba">
+              ↗
+            </a>
+
+            <!-- Edit Link -->
+            <button class="btn btn-edit btn-icon-only" onclick="openEditLinkModalForGroup('${groupId}', ${catIdx}, ${itemIdx})" title="Editar procedimento">
+              ✏️
+            </button>
+
+            <!-- Delete Link -->
+            <button class="btn btn-delete btn-icon-only" onclick="confirmDeleteLinkForGroup('${groupId}', ${catIdx}, ${itemIdx})" title="Excluir procedimento">
+              🗑️
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    // Highlight text matching tokens
+    function highlightTextMulti(text, tokens) {
+      if (!text || !tokens || tokens.length === 0) return escapeHtml(text);
+      const normText = normalizeStr(text);
+      
+      const ranges = [];
+      tokens.forEach(tok => {
+        if (!tok) return;
+        let startPos = 0;
+        while ((startPos = normText.indexOf(tok, startPos)) !== -1) {
+          ranges.push([startPos, startPos + tok.length]);
+          startPos += tok.length;
+        }
+      });
+
+      if (ranges.length === 0) return escapeHtml(text);
+
+      ranges.sort((a, b) => a[0] - b[0]);
+      const merged = [ranges[0]];
+      for (let i = 1; i < ranges.length; i++) {
+        const prev = merged[merged.length - 1];
+        const cur = ranges[i];
+        if (cur[0] <= prev[1]) {
+          prev[1] = Math.max(prev[1], cur[1]);
+        } else {
+          merged.push(cur);
+        }
+      }
+
+      let result = '';
+      let lastIndex = 0;
+      merged.forEach(([start, end]) => {
+        result += escapeHtml(text.slice(lastIndex, start));
+        result += `<span class="highlight">${escapeHtml(text.slice(start, end))}</span>`;
+        lastIndex = end;
+      });
+      result += escapeHtml(text.slice(lastIndex));
+
+      return result;
+    }
+
+    // Accordion Toggle
+    function toggleCategoryCollapse(groupId, catIdx) {
+      const catKey = `${groupId}_cat_${catIdx}`;
+      const listEl = document.getElementById(`catlist_${groupId}_${catIdx}`);
+      const chevronEl = document.getElementById(`chevron_${groupId}_${catIdx}`);
+
+      if (collapsedCategories.has(catKey)) {
+        collapsedCategories.delete(catKey);
+        if (listEl) listEl.style.display = 'flex';
+        if (chevronEl) chevronEl.style.transform = 'rotate(0deg)';
+      } else {
+        collapsedCategories.add(catKey);
+        if (listEl) listEl.style.display = 'none';
+        if (chevronEl) chevronEl.style.transform = 'rotate(-90deg)';
+      }
+    }
+
+    function toggleAllCategories(shouldCollapse) {
+      const group = GROUPS.find(g => g.id === activeGroupId);
+      if (!group || !group.categories) return;
+
+      group.categories.forEach((cat, idx) => {
+        const catKey = `${group.id}_cat_${idx}`;
+        const listEl = document.getElementById(`catlist_${group.id}_${idx}`);
+        const chevronEl = document.getElementById(`chevron_${group.id}_${idx}`);
+
+        if (shouldCollapse) {
+          collapsedCategories.add(catKey);
+          if (listEl) listEl.style.display = 'none';
+          if (chevronEl) chevronEl.style.transform = 'rotate(-90deg)';
+        } else {
+          collapsedCategories.delete(catKey);
+          if (listEl) listEl.style.display = 'flex';
+          if (chevronEl) chevronEl.style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+
+    // Copy URL with instant visual feedback on the button
+    function copyUrl(btn) {
+      const url = btn.getAttribute('data-url');
+      if (!url) return;
+
+      const originalHtml = btn.innerHTML;
+      btn.classList.add('copied');
+      btn.innerHTML = `
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Copiado!</span>
+      `;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(() => {
+          showToast('Link copiado com sucesso!');
+        }).catch(() => fallbackCopy(url));
+      } else {
+        fallbackCopy(url);
+      }
+
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = originalHtml;
+      }, 1500);
+    }
+
+    function fallbackCopy(url) {
+      const ta = document.createElement('textarea');
+      ta.value = url;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast('Link copiado com sucesso!');
+    }
+
+    // Video Player Modal Logic
+    function getEmbedUrl(rawUrl) {
+      if (!rawUrl) return null;
+      try {
+        const loom = rawUrl.match(new RegExp('loom\\.com/(?:share|embed)/([a-zA-Z0-9]+)'));
+        if (loom && loom[1]) {
+          return 'https://www.loom.com/embed/' + loom[1] + '?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true';
+        }
+
+        const ytMatch = rawUrl.match(new RegExp('(?:youtube\\.com/(?:watch\\?v=|embed/)|youtu\\.be/)([a-zA-Z0-9_-]+)'));
+        if (ytMatch && ytMatch[1]) {
+          return 'https://www.youtube.com/embed/' + ytMatch[1] + '?autoplay=1';
+        }
+
+        const drive = rawUrl.match(new RegExp('drive\\.google\\.com/file/d/([a-zA-Z0-9_-]+)'));
+        if (drive && drive[1]) {
+          return 'https://drive.google.com/file/d/' + drive[1] + '/preview';
+        }
+      } catch (err) {
+        console.warn('Erro ao processar URL para embed:', err);
+      }
+      return null;
+    }
+
+    function openVideoModalFromBtn(btn) {
+      const title = btn.getAttribute('data-title') || 'Visualização do Procedimento';
+      const url = btn.getAttribute('data-url') || '';
+      openVideoModal(title, url);
+    }
+
+    function openVideoModal(title, rawUrl) {
+      const modal = document.getElementById('videoModalOverlay');
+      const titleEl = document.getElementById('videoModalTitle');
+      const iframe = document.getElementById('videoIframe');
+      const fallbackBox = document.getElementById('videoFallbackBox');
+      const fallbackBtn = document.getElementById('videoFallbackBtn');
+
+      titleEl.textContent = title;
+      const embedUrl = getEmbedUrl(rawUrl);
+
+      if (embedUrl) {
+        iframe.style.display = 'block';
+        iframe.src = embedUrl;
+        fallbackBox.style.display = 'none';
+      } else {
+        iframe.style.display = 'none';
+        iframe.src = '';
+        fallbackBox.style.display = 'flex';
+        fallbackBtn.href = rawUrl;
+      }
+
+      modal.style.display = 'flex';
+    }
+
+    function closeVideoModal() {
+      const modal = document.getElementById('videoModalOverlay');
+      const iframe = document.getElementById('videoIframe');
+      modal.style.display = 'none';
+      iframe.src = '';
+    }
+
+    function handleVideoModalOverlayClick(e) {
+      if (e.target.id === 'videoModalOverlay') {
+        closeVideoModal();
+      }
+    }
+
+    // Modal Helpers
+    function openModal(id) {
+      const m = document.getElementById(id);
+      if (m) m.style.display = 'flex';
+    }
+
+    function closeModal(id) {
+      const m = document.getElementById(id);
+      if (m) m.style.display = 'none';
+    }
+
+    function handleFormModalOverlayClick(e, id) {
+      if (e.target.id === id) {
+        closeModal(id);
+      }
+    }
+
+    // GROUP CRUD
+    function openNewGroupModal() {
+      document.getElementById('groupModalTitle').textContent = 'Novo Grupo';
+      document.getElementById('groupFormId').value = '';
+      document.getElementById('groupFormName').value = '';
+      document.getElementById('groupFormDesc').value = '';
+      openModal('groupModalOverlay');
+      setTimeout(() => document.getElementById('groupFormName').focus(), 50);
+    }
+
+    function openEditGroupModal(groupId) {
+      const g = GROUPS.find(item => item.id === groupId);
+      if (!g) return;
+      document.getElementById('groupModalTitle').textContent = 'Editar Grupo';
+      document.getElementById('groupFormId').value = g.id;
+      document.getElementById('groupFormName').value = g.name;
+      document.getElementById('groupFormDesc').value = g.description || '';
+      openModal('groupModalOverlay');
+      setTimeout(() => document.getElementById('groupFormName').focus(), 50);
+    }
+
+    function handleGroupFormSubmit(e) {
+      e.preventDefault();
+      const id = document.getElementById('groupFormId').value;
+      const name = document.getElementById('groupFormName').value.trim();
+      const desc = document.getElementById('groupFormDesc').value.trim();
+
+      if (!name) return;
+
+      if (id) {
+        const g = GROUPS.find(item => item.id === id);
+        if (g) {
+          g.name = name;
+          g.description = desc;
+          showToast(`Grupo "${name}" atualizado!`);
+        }
+      } else {
+        const newId = 'grp_' + Date.now();
+        GROUPS.push({
+          id: newId,
+          name: name,
+          description: desc,
+          categories: []
+        });
+        activeGroupId = newId;
+        showToast(`Grupo "${name}" criado!`);
+      }
+
+      saveToStorage();
+      closeModal('groupModalOverlay');
+      renderSidebarGroups();
+      renderContent();
+    }
+
+    function confirmDeleteGroup(groupId) {
+      const g = GROUPS.find(item => item.id === groupId);
+      if (!g) return;
+      const count = countGroupLinks(g);
+      if (confirm(`Tem certeza que deseja excluir o grupo "${g.name}" com ${count} procedimentos? Esta ação não pode ser desfeita.`)) {
+        GROUPS = GROUPS.filter(item => item.id !== groupId);
+        if (activeGroupId === groupId) {
+          activeGroupId = GROUPS.length > 0 ? GROUPS[0].id : null;
+        }
+        saveToStorage();
+        renderSidebarGroups();
+        renderContent();
+        showToast(`Grupo "${g.name}" excluído.`);
+      }
+    }
+
+    // CATEGORY CRUD
+    function openNewCategoryModal() {
+      const group = GROUPS.find(g => g.id === activeGroupId);
+      if (!group) {
+        showToast('Crie um grupo primeiro!');
+        return;
+      }
+      document.getElementById('categoryModalTitle').textContent = `Nova Categoria em "${group.name}"`;
+      document.getElementById('categoryFormIndex').value = '';
+      document.getElementById('categoryFormName').value = '';
+      openModal('categoryModalOverlay');
+      setTimeout(() => document.getElementById('categoryFormName').focus(), 50);
+    }
+
+    function openEditCategoryModal(catIdx) {
+      const group = GROUPS.find(g => g.id === activeGroupId);
+      if (!group || !group.categories || !group.categories[catIdx]) return;
+      const cat = group.categories[catIdx];
+      document.getElementById('categoryModalTitle').textContent = 'Editar Categoria';
+      document.getElementById('categoryFormIndex').value = catIdx;
+      document.getElementById('categoryFormName').value = cat.name;
+      openModal('categoryModalOverlay');
+      setTimeout(() => document.getElementById('categoryFormName').focus(), 50);
+    }
+
+    function handleCategoryFormSubmit(e) {
+      e.preventDefault();
+      const group = GROUPS.find(g => g.id === activeGroupId);
+      if (!group) return;
+
+      const idxStr = document.getElementById('categoryFormIndex').value;
+      const name = document.getElementById('categoryFormName').value.trim();
+      if (!name) return;
+
+      if (!group.categories) group.categories = [];
+
+      if (idxStr !== '') {
+        const idx = parseInt(idxStr, 10);
+        if (group.categories[idx]) {
+          group.categories[idx].name = name;
+          showToast(`Categoria atualizada para "${name}"!`);
+        }
+      } else {
+        group.categories.push({
+          name: name,
+          items: []
+        });
+        showToast(`Categoria "${name}" criada!`);
+      }
+
+      saveToStorage();
+      closeModal('categoryModalOverlay');
+      renderSidebarGroups();
+      renderContent();
+    }
+
+    function confirmDeleteCategory(catIdx) {
+      const group = GROUPS.find(g => g.id === activeGroupId);
+      if (!group || !group.categories || !group.categories[catIdx]) return;
+      const cat = group.categories[catIdx];
+      const count = (cat.items || cat.links || []).length;
+      if (confirm(`Excluir a categoria "${cat.name}" e seus ${count} links?`)) {
+        group.categories.splice(catIdx, 1);
+        saveToStorage();
+        renderSidebarGroups();
+        renderContent();
+        showToast(`Categoria "${cat.name}" excluída.`);
+      }
+    }
+
+    // LINK CRUD WITH SECURITY VALIDATION POPUP
+    function openNewLinkModal(preselectedCatIdx) {
+      const group = GROUPS.find(g => g.id === activeGroupId);
+      if (!group) return;
+      if (!group.categories || group.categories.length === 0) {
+        showToast('Crie ao menos uma categoria antes de adicionar links!');
+        openNewCategoryModal();
+        return;
+      }
+
+      document.getElementById('linkModalTitle').textContent = 'Novo Procedimento';
+      document.getElementById('linkFormCatIndex').value = '';
+      document.getElementById('linkFormItemIndex').value = '';
+      document.getElementById('linkFormTitle').value = '';
+      document.getElementById('linkFormUrl').value = '';
+
+      populateCategorySelect(group, preselectedCatIdx);
+      openModal('linkModalOverlay');
+      setTimeout(() => document.getElementById('linkFormTitle').focus(), 50);
+    }
+
+    function openEditLinkModalForGroup(groupId, catIdx, itemIdx) {
+      const group = GROUPS.find(g => g.id === groupId);
+      if (!group || !group.categories || !group.categories[catIdx]) return;
+      const cat = group.categories[catIdx];
+      const items = cat.items || cat.links || [];
+      const item = items[itemIdx];
+      if (!item) return;
+
+      document.getElementById('linkModalTitle').textContent = 'Editar Procedimento';
+      document.getElementById('linkFormCatIndex').value = catIdx;
+      document.getElementById('linkFormItemIndex').value = itemIdx;
+      document.getElementById('linkFormTitle').value = item.title;
+      document.getElementById('linkFormUrl').value = item.url;
+
+      populateCategorySelect(group, catIdx);
+      openModal('linkModalOverlay');
+      setTimeout(() => document.getElementById('linkFormTitle').focus(), 50);
+    }
+
+    function populateCategorySelect(group, selectedIdx) {
+      const sel = document.getElementById('linkFormCategorySelect');
+      sel.innerHTML = (group.categories || []).map((cat, idx) => {
+        const isSel = idx === selectedIdx ? 'selected' : '';
+        return `<option value="${idx}" ${isSel}>${escapeHtml(cat.name)}</option>`;
+      }).join('');
+    }
+
+    function handleLinkFormSubmit(e) {
+      e.preventDefault();
+      const group = GROUPS.find(g => g.id === activeGroupId);
+      if (!group) return;
+
+      const targetCatIdx = parseInt(document.getElementById('linkFormCategorySelect').value, 10);
+      const origCatIdxStr = document.getElementById('linkFormCatIndex').value;
+      const origItemIdxStr = document.getElementById('linkFormItemIndex').value;
+      const title = document.getElementById('linkFormTitle').value.trim();
+      const url = document.getElementById('linkFormUrl').value.trim();
+
+      if (!title || !url) return;
+
+      const isNew = (origCatIdxStr === '' || origItemIdxStr === '');
+
+      // Store payload
+      pendingLinkPayload = {
+        targetCatIdx,
+        origCatIdxStr,
+        origItemIdxStr,
+        title,
+        url,
+        isNew
+      };
+
+      // Open Security Validation Pop-up Modal
+      openSecurityValidationPopup();
+    }
+
+    // Security Validation Popup Logic
+    function openSecurityValidationPopup() {
+      // Reset checkboxes and button state
+      const c1 = document.getElementById('checkBaseSistema');
+      const c2 = document.getElementById('checkDadosSensiveis');
+      const btn = document.getElementById('btnConfirmSecuritySave');
+      if (c1) c1.checked = false;
+      if (c2) c2.checked = false;
+      if (btn) btn.disabled = true;
+
+      openModal('securityValidationOverlay');
+    }
+
+    function validateSecurityChecks() {
+      const c1 = document.getElementById('checkBaseSistema');
+      const c2 = document.getElementById('checkDadosSensiveis');
+      const btn = document.getElementById('btnConfirmSecuritySave');
+      const isValid = (c1 && c1.checked) && (c2 && c2.checked);
+      if (btn) {
+        btn.disabled = !isValid;
+      }
+    }
+
+    function executeConfirmedLinkSave() {
+      if (!pendingLinkPayload) return;
+
+      const { targetCatIdx, origCatIdxStr, origItemIdxStr, title, url } = pendingLinkPayload;
+      const group = GROUPS.find(g => g.id === activeGroupId);
+      if (!group) return;
+
+      const targetCat = group.categories[targetCatIdx];
+      if (!targetCat) return;
+      if (!targetCat.items) targetCat.items = targetCat.links || [];
+
+      if (origCatIdxStr !== '' && origItemIdxStr !== '') {
+        const origCatIdx = parseInt(origCatIdxStr, 10);
+        const origItemIdx = parseInt(origItemIdxStr, 10);
+        const origCat = group.categories[origCatIdx];
+
+        if (origCatIdx === targetCatIdx) {
+          origCat.items[origItemIdx] = { title, url };
+        } else {
+          origCat.items.splice(origItemIdx, 1);
+          targetCat.items.push({ title, url });
+        }
+        showToast('Procedimento atualizado e validado!');
+      } else {
+        targetCat.items.push({ title, url });
+        showToast('Procedimento validado e salvo com sucesso!');
+      }
+
+      saveToStorage();
+      pendingLinkPayload = null;
+      closeModal('securityValidationOverlay');
+      closeModal('linkModalOverlay');
+      renderSidebarGroups();
+      renderContent();
+    }
+
+    function confirmDeleteLinkForGroup(groupId, catIdx, itemIdx) {
+      const group = GROUPS.find(g => g.id === groupId);
+      if (!group || !group.categories || !group.categories[catIdx]) return;
+      const cat = group.categories[catIdx];
+      const items = cat.items || cat.links || [];
+      const item = items[itemIdx];
+      if (!item) return;
+
+      if (confirm(`Excluir o procedimento "${item.title}"?`)) {
+        items.splice(itemIdx, 1);
+        saveToStorage();
+        renderSidebarGroups();
+        renderContent();
+        showToast('Procedimento excluído.');
+      }
+    }
+
+    // SMART MERGE JSON IMPORT: Deduplicates by normalized URL
+    function triggerImport() {
+      document.getElementById('importFileInput').click();
+    }
+
+    function handleFileSelected(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        try {
+          const imported = JSON.parse(evt.target.result);
+          if (!Array.isArray(imported)) {
+            alert('Formato inválido: o JSON deve ser uma lista de grupos.');
+            return;
+          }
+          mergeImportData(imported);
+        } catch (err) {
+          alert('Erro ao interpretar arquivo JSON: ' + err.message);
+        }
+        e.target.value = '';
+      };
+      reader.readAsText(file);
+    }
+
+    function normalizeUrl(url) {
+      if (!url) return '';
+      return url.trim().toLowerCase().replace(/\/+$/, '');
+    }
+
+    function mergeImportData(importedGroups) {
+      const existingUrls = new Set();
+      GROUPS.forEach(g => {
+        (g.categories || []).forEach(c => {
+          (c.items || c.links || []).forEach(it => {
+            if (it.url) existingUrls.add(normalizeUrl(it.url));
+          });
+        });
+      });
+
+      let addedLinks = 0;
+      let skippedDuplicates = 0;
+      let newGroupsCount = 0;
+
+      importedGroups.forEach(impG => {
+        let existingG = GROUPS.find(g => normalizeStr(g.name) === normalizeStr(impG.name));
+        if (!existingG) {
+          existingG = {
+            id: impG.id || 'grp_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4),
+            name: impG.name || 'Novo Grupo',
+            description: impG.description || '',
+            categories: []
+          };
+          GROUPS.push(existingG);
+          newGroupsCount++;
+        }
+
+        (impG.categories || []).forEach(impC => {
+          let existingC = existingG.categories.find(c => normalizeStr(c.name) === normalizeStr(impC.name));
+          if (!existingC) {
+            existingC = {
+              name: impC.name || 'Nova Categoria',
+              items: []
+            };
+            existingG.categories.push(existingC);
+          }
+          if (!existingC.items) existingC.items = existingC.links || [];
+
+          (impC.items || impC.links || []).forEach(it => {
+            const norm = normalizeUrl(it.url);
+            if (norm && existingUrls.has(norm)) {
+              skippedDuplicates++;
+            } else {
+              existingC.items.push({
+                title: it.title || 'Sem título',
+                url: it.url || ''
+              });
+              if (norm) existingUrls.add(norm);
+              addedLinks++;
+            }
+          });
+        });
+      });
+
+      saveToStorage();
+      if (!activeGroupId && GROUPS.length > 0) {
+        activeGroupId = GROUPS[0].id;
+      }
+      renderSidebarGroups();
+      renderContent();
+
+      showToast(`Importação concluída! +${addedLinks} links adicionados (${skippedDuplicates} duplicatas ignoradas).`);
+    }
+
+    // EXPORT JSON
+    function exportJSON() {
+      if (GROUPS.length === 0) {
+        showToast('Não há dados cadastrados para exportar.');
+        return;
+      }
+      const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(GROUPS, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute('href', dataStr);
+      downloadAnchor.setAttribute('download', `sgp_procedimentos_${new Date().toISOString().slice(0, 10)}.json`);
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+      showToast('Arquivo JSON exportado com sucesso!');
+    }
+
+    // CLEAR ALL: resets base and clears localStorage
+    function confirmClearAll() {
+      if (confirm('Atenção: Deseja realmente zerar toda a base? A página ficará totalmente em branco. Se precisar dos procedimentos novamente, importe o arquivo JSON.')) {
+        GROUPS = [];
+        activeGroupId = null;
+        localStorage.removeItem(STORAGE_KEY);
+        saveToStorage();
+        renderSidebarGroups();
+        renderContent();
+        showToast('Base zerada com sucesso.');
+      }
+    }
+
+    // TOAST
+    function showToast(msg) {
+      const box = document.getElementById('toastBox');
+      if (!box) return;
+      const t = document.createElement('div');
+      t.className = 'toast';
+      t.innerHTML = `<span>✓</span> <span>${escapeHtml(msg)}</span>`;
+      box.appendChild(t);
+      setTimeout(() => {
+        if (t.parentNode === box) box.removeChild(t);
+      }, 3000);
+    }
+
+    // Run Init
+    init();
+  </script>
+</body>
+</html>

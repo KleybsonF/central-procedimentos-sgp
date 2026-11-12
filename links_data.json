@@ -1,0 +1,2504 @@
+[
+  {
+    "id": "fiscal",
+    "name": "Fiscal",
+    "icon": "⚖️",
+    "badgeClass": "origin-fiscal",
+    "tagLabel": "Grupo: Fiscal",
+    "description": "Base completa de procedimentos fiscais: NFCom, modelo 55, NFS-e, notas 21/22, tributação, faturamento e suporte operacional",
+    "categories": [
+      {
+        "name": "🧾 NFCom (Emissão, Lote, Homologação & Edição)",
+        "icon": "🧾",
+        "items": [
+          {
+            "title": "Como cadastrar certificado A1 - NFCOM",
+            "url": "https://www.loom.com/share/5c5f0d04420c4c98bafc36fd4a20c6f0"
+          },
+          {
+            "title": "1 - Certificado digital A1, como cadastrar na empresa",
+            "url": "https://www.loom.com/share/5c5f0d04420c4c98bafc36fd4a20c6f0"
+          },
+          {
+            "title": "Atualizar certificado A1 - Nota Fiscal",
+            "url": "https://www.loom.com/share/5c5f0d04420c4c98bafc36fd4a20c6f0"
+          },
+          {
+            "title": "Como configurar e emitir",
+            "url": "https://www.loom.com/share/5adb857e005c472da2dd8bc1ddde7d2f"
+          },
+          {
+            "title": "NFCOM - Como configurar e emitir",
+            "url": "https://www.loom.com/share/5adb857e005c472da2dd8bc1ddde7d2f"
+          },
+          {
+            "title": "2 - NFCom como configurar e realizar primeiras emissões",
+            "url": "https://www.loom.com/share/5adb857e005c472da2dd8bc1ddde7d2f"
+          },
+          {
+            "title": "Virar para produção",
+            "url": "https://www.loom.com/share/aa0d4114327d43049fd25f8ce24fefaa"
+          },
+          {
+            "title": "NFCOM - Virar para produção",
+            "url": "https://www.loom.com/share/aa0d4114327d43049fd25f8ce24fefaa"
+          },
+          {
+            "title": "3 - Como alterar ambiente para produção",
+            "url": "https://www.loom.com/share/aa0d4114327d43049fd25f8ce24fefaa"
+          },
+          {
+            "title": "Alterar o ambiente da NFCOM produção para homologação e vice versa",
+            "url": "https://www.loom.com/share/3959a69dc9e940c9a29a32781a144e7a"
+          },
+          {
+            "title": "Gerar NFCom em Lote",
+            "url": "https://www.loom.com/share/6bbfc0217ded41d7aa63f89f15a95566"
+          },
+          {
+            "title": "5 - Como gerar NFCom em lote",
+            "url": "https://www.loom.com/share/6bbfc0217ded41d7aa63f89f15a95566"
+          },
+          {
+            "title": "Emissão individual de NFCOM ou para um cliente em específico - SGP SUPORTE",
+            "url": "https://www.loom.com/share/3d38881c4b97421cbf66750f9432c1c4"
+          },
+          {
+            "title": "4 - Como gerar individualmente no cadastro do cliente",
+            "url": "https://www.loom.com/share/3d38881c4b97421cbf66750f9432c1c4"
+          },
+          {
+            "title": "Como gerar nota NFCOM de maneira individual, no cadastro do cliente (informações complementares)",
+            "url": "https://www.loom.com/share/c3baa36ef086497380a19f30258d5e4e"
+          },
+          {
+            "title": "Como Permitir Edição NFCOM",
+            "url": "https://www.loom.com/share/136178518045444c84599421c70e9f6e"
+          },
+          {
+            "title": "Permitir edição NFCOM e adicionar informação / informações complementares",
+            "url": "https://www.loom.com/share/6bb7d6eeaa20450c9dd8f280a4a085a9"
+          },
+          {
+            "title": "Permitir edição da NFCom e editar: Vídeo geral mostrando todos os campos",
+            "url": "https://www.loom.com/share/5bc9530ca15c4f1d92cf26e258d19dc9"
+          },
+          {
+            "title": "Gerar nota em digitação e editar informações de período e competência na NFCom",
+            "url": "https://www.loom.com/share/f50a07bef8ac4ce69811c77247982ae9"
+          },
+          {
+            "title": "Como autorizar notas em lote aguardando envio",
+            "url": "https://www.loom.com/share/272153163e364fe4ad9ffba2d642052a"
+          },
+          {
+            "title": "Como autorizar notas NFCom em digitação em lote",
+            "url": "https://www.loom.com/share/272153163e364fe4ad9ffba2d642052a"
+          },
+          {
+            "title": "Como autorizar notas NFCOM rejeitadas no SGP",
+            "url": "https://www.loom.com/share/50575c37f9f0409d8b2b8571ce749b24"
+          },
+          {
+            "title": "Passo a passo simples de como cancelar uma NFCOM no cadastro do cliente",
+            "url": "https://www.loom.com/share/41b8c0c663b34945bcd67df0260b06ab"
+          },
+          {
+            "title": "Como consultar relatório de NFCOM e NFCOM Consultar",
+            "url": "https://www.loom.com/share/fd626545b92c4576a800e0bec2a42fe5"
+          },
+          {
+            "title": "Como consultar relatório de NFCOM, filtrando por status",
+            "url": "https://www.loom.com/share/d38755ecfb09418183671b37d62c9986"
+          },
+          {
+            "title": "Orientação geral de como consultar notas NFCOM emitidas (Filtros explicados em mais detalhe)",
+            "url": "https://www.loom.com/share/3c882c13cdb04895894c7f0049e83414"
+          },
+          {
+            "title": "Como configurar NFCom Referência Modo no SGP: Ajustar referência na NFCOM",
+            "url": "https://www.loom.com/share/5512067dcd7f444c8ec470b8917f11a5"
+          },
+          {
+            "title": "Ajuste na sequência de emissão da nota NFCom (quando estiver com informação da última numeração)",
+            "url": "https://www.loom.com/share/b966de6f17ca4e3a826c75de5da9b572"
+          },
+          {
+            "title": "Baixar XML e PDF NFCom",
+            "url": "https://www.loom.com/share/8d7e532ff6be4732b85acc137ed5f09b"
+          },
+          {
+            "title": "Orientação de como baixar NFCOM após emissão",
+            "url": "https://www.loom.com/share/8d7e532ff6be4732b85acc137ed5f09b"
+          },
+          {
+            "title": "6 - Como baixar XML e PDF das notas geradas",
+            "url": "https://www.loom.com/share/e6da6fa9ba44424d975754a760bb6f50"
+          },
+          {
+            "title": "BAIXAR XML NFCOM E RELATÓRIO PDF COM TODOS OS STATUS",
+            "url": "https://www.loom.com/share/e6da6fa9ba44424d975754a760bb6f50"
+          },
+          {
+            "title": "Parametrização de emitente - NFCom",
+            "url": "https://www.loom.com/share/05c9e961105b476fb64098e23913f46a"
+          },
+          {
+            "title": "Como configurar Serviço no SGP - NFCom",
+            "url": "https://www.loom.com/share/d4e0a490658548929e5795328f143bbd"
+          },
+          {
+            "title": "Orientação de como configurar um plano combo no SGP - Descrição NFCOM",
+            "url": "https://www.loom.com/share/0986a25c543e4448b44355b7d03d1cbb"
+          }
+        ]
+      },
+      {
+        "name": "📑 Modelos de Nota (55, 21/22, NFS-e, Débito & Sintegra)",
+        "icon": "📑",
+        "items": [
+          {
+            "title": "NFE Nota 55 - Vídeo completo",
+            "url": "https://www.loom.com/share/55714f96dfdb4fa3927ddf06ebb6c6f0"
+          },
+          {
+            "title": "Como Gerar Nota 55",
+            "url": "https://www.loom.com/share/55714f96dfdb4fa3927ddf06ebb6c6f0"
+          },
+          {
+            "title": "Como alterar o ambiente da nota 55: produção ou homologação",
+            "url": "https://www.loom.com/share/8ec75ac5f6a14786adef2381c4174bb5"
+          },
+          {
+            "title": "Consultar nota 55: filtros",
+            "url": "https://www.loom.com/share/ba23ccc09d674a48bf984951a495bacb"
+          },
+          {
+            "title": "Nota 55 de devolução",
+            "url": "https://www.loom.com/share/e9645a133797462b81b65341574dc693"
+          },
+          {
+            "title": "Passo a passo para realizar a emissão da NF-e, modelo 55 (Drive)",
+            "url": "https://drive.google.com/file/d/1U_lNhlxtr54PIo_UkYyT1nezqx-1WTe0/view?usp=drive_link"
+          },
+          {
+            "title": "Como gerar nota 55: Orientação geral (Drive)",
+            "url": "https://drive.google.com/file/d/1U_lNhlxtr54PIo_UkYyT1nezqx-1WTe0/view?usp=drive_link"
+          },
+          {
+            "title": "Como consultar notas 21/22 emitidas no SGP",
+            "url": "https://www.loom.com/share/43dd057b7bea44e9a665e686dde85f09"
+          },
+          {
+            "title": "Como gerar arquivo fiscais Sintegra",
+            "url": "https://www.loom.com/share/6be92e3a32c94ca288047b349b648cee"
+          },
+          {
+            "title": "Orientação geral de como emitir notas NFS-e no SGP",
+            "url": "https://www.loom.com/share/e5815e97521646cb93ce19a6a4274fbc"
+          },
+          {
+            "title": "ORIENTAÇÃO MAIS COMPLETA DE COMO GERAR NFS-E EM LOTE OU INDIVIDUAL",
+            "url": "https://www.loom.com/share/a0e901381de54b589af1e48fc9456712"
+          },
+          {
+            "title": "Como gerar nota NFS-e individualmente no cadastro do cliente",
+            "url": "https://www.loom.com/share/a03c86f770f94eb7a39da99ab153e0dd"
+          },
+          {
+            "title": "Orientação geral de como consultar notas de Prefeitura NFS-e",
+            "url": "https://www.loom.com/share/501d9775a0864691b7dbfdd08771a690"
+          },
+          {
+            "title": "Como consultar notas de débito no SGP",
+            "url": "https://www.loom.com/share/c552e8ad4e644d83b0652261c6c2d8b3"
+          },
+          {
+            "title": "Vídeo de como emitir o XML em lote para enviar para contabilidade",
+            "url": "https://www.loom.com/share/4f98f5c950c944f39b6df3b4a71f8a4d"
+          },
+          {
+            "title": "Vídeo de como baixar o PDF das notas em lotes",
+            "url": "https://www.loom.com/share/64718a6207624f3ea69add76ce635cd9"
+          },
+          {
+            "title": "Orientação geral de como ajustar numeração sequência da nota fiscal: 62 e nota 55",
+            "url": "https://www.loom.com/share/b966de6f17ca4e3a826c75de5da9b572"
+          },
+          {
+            "title": "Como desativar box NF Nota fiscal no contrato de serviço do cliente",
+            "url": "https://www.loom.com/share/dac5a5d522754e80b1b2fd9bc4584274"
+          },
+          {
+            "title": "COMO CONSULTAR CLIENTES COM CAMPO NF NÃO MARCADO PARA GERAR LISTAGEM EM EXCEL",
+            "url": "https://www.loom.com/share/73fc852804fd4f32948fc29ce2019c2f"
+          }
+        ]
+      },
+      {
+        "name": "⚡ Automação de Emissão & Pontos de Recebimento",
+        "icon": "⚡",
+        "items": [
+          {
+            "title": "Como configurar geração emissão automática de NF através do ponto de recebimento",
+            "url": "https://www.loom.com/share/7cde851c23134fdfb1e52e99d1c35421"
+          },
+          {
+            "title": "Como gerar nota fiscal após cliente realizar o pagamento do boleto",
+            "url": "https://www.loom.com/share/015e636467e84672ad767b57ed79b7de"
+          },
+          {
+            "title": "Emissão automática de NF após o pagamento dos títulos",
+            "url": "https://www.loom.com/share/00cb202c245a4b02bdb0d37d5a622bea"
+          },
+          {
+            "title": "Emissão automática de NF no momento da geração do título",
+            "url": "https://www.loom.com/share/c512742607204057a60c0e61e449c4e4"
+          },
+          {
+            "title": "Como definir um ponto de recebimento na gateway de pagamento - SGP SUPORTE",
+            "url": "https://www.loom.com/share/e852a01ee58e4bffa783d12731e6f56c"
+          },
+          {
+            "title": "COMO CONFIGURAR VARIÁVEL NF_VALOR PAGO",
+            "url": "https://www.loom.com/share/d871f37e223e44fd826b6a0baef23179"
+          },
+          {
+            "title": "Como definir CFOP no contrato de serviço e breve explicação de como configurar",
+            "url": "https://www.loom.com/share/a0490748f1ff444ba8583123cae75f16"
+          }
+        ]
+      },
+      {
+        "name": "📊 Grupo Fiscal, Detalhamento & Tributos",
+        "icon": "📊",
+        "items": [
+          {
+            "title": "Como realizar a configuração de detalhamento + Grupo Fiscal",
+            "url": "https://www.loom.com/share/SGP-13-September-2023-919e385b909a4959a33d2f2b5cc15064"
+          },
+          {
+            "title": "Como parametrizar Grupo Fiscal",
+            "url": "https://www.loom.com/share/808ff8c55484430d85623d2838236428"
+          },
+          {
+            "title": "Configurar grupo Fiscal",
+            "url": "https://www.loom.com/share/808ff8c55484430d85623d2838236428"
+          },
+          {
+            "title": "Configurar plano detalhe - NFCom",
+            "url": "https://www.loom.com/share/dd951ef7095047018c5d2b0356c15df5"
+          },
+          {
+            "title": "Configurar plano detalhe detalhamento de planos - NFCom",
+            "url": "https://www.loom.com/share/dd951ef7095047018c5d2b0356c15df5"
+          },
+          {
+            "title": "Configuração de Plano Detalhe para Emissão de Notas Fiscais de Serviço + NFCOM",
+            "url": "https://www.loom.com/share/4a947db307dc4f91b4aed83561f28247"
+          },
+          {
+            "title": "Configuração de faturamento - Book público",
+            "url": "https://www.loom.com/share/492ac2aedaec4343952f216a22d646f9"
+          },
+          {
+            "title": "Observações na NFCOM: Faturamento e informação / informações complementares",
+            "url": "https://www.loom.com/share/2d2b365493934c0e8db3697496c82708"
+          },
+          {
+            "title": "Como configurar descrição fixa no cliente",
+            "url": "https://www.loom.com/share/7029720614db44f087f3210eb697a63d"
+          },
+          {
+            "title": "Como localizar informações de CST e Codigo Benefício CBENF ou Benefício Fiscal",
+            "url": "https://www.loom.com/share/e66b53806bb84e04bf19778f4873c668"
+          },
+          {
+            "title": "Como verificar o CNAE informado no cadastro da empresa no SGP",
+            "url": "https://www.loom.com/share/9eb5e093b06e44a59eeda56b3e9aec7a"
+          },
+          {
+            "title": "Como adicionar informação / informações complementares no cadastro da Empresa",
+            "url": "https://www.loom.com/share/d2994949f8444a9eaa9601387da00226"
+          }
+        ]
+      },
+      {
+        "name": "💰 Financeiro, Boletos, Caixa & Cobrança",
+        "icon": "💰",
+        "items": [
+          {
+            "title": "Como gerar boletos no SGP - BASE SUPORTE",
+            "url": "https://www.loom.com/share/220a6b07d7bb4c8d81b84847972308ac"
+          },
+          {
+            "title": "Como consultar boletos emitidos automaticamente no SGP",
+            "url": "https://www.loom.com/share/ed9681084a294926a8d3ed0aab740a09"
+          },
+          {
+            "title": "Como consultar clientes sem boletos emitidos",
+            "url": "https://www.loom.com/share/62e797f347cd4d18b8101a08a9282625"
+          },
+          {
+            "title": "Consultar títulos por quantidade e status: Clientes sem fatura no SGP",
+            "url": "https://www.loom.com/share/b9bbb8f126974a6baf620cab4cf0de61"
+          },
+          {
+            "title": "Como cadastrar desconto até o vencimento",
+            "url": "https://www.loom.com/share/5835952f637f4c938007329b8a40a939"
+          },
+          {
+            "title": "Opções de como conceder desconto: Acréscimo e desconto e geração de título avulso",
+            "url": "https://www.loom.com/share/be2e0449963f4000910c72d940045dc3"
+          },
+          {
+            "title": "COMPROVANTE DE PAGAMENTO",
+            "url": "https://www.loom.com/share/c2b98e1d330043629e94ac0a868eaf3f"
+          },
+          {
+            "title": "Orientação geral de como consultar o histórico de caixa",
+            "url": "https://www.loom.com/share/c3d0ba1bde254738b73df4e540b4c691"
+          },
+          {
+            "title": "Orientação geral do funcionamento do caixa no SGP",
+            "url": "https://www.loom.com/share/f1827710f4ff43edb3a21b15acb83693"
+          },
+          {
+            "title": "Como configurar as taxas de boleto para lançarem no caixa",
+            "url": "https://www.loom.com/share/216d2936180e428390929450994b6b68"
+          },
+          {
+            "title": "Orientação geral: cadastro de portador no SGP",
+            "url": "https://www.loom.com/share/f84efc6640bc4c4e8ca37e1ef7fc6dcf"
+          },
+          {
+            "title": "Orientação de como criar o POP e o Portador no SGP",
+            "url": "https://www.loom.com/share/75c32b4d612e4a8a90dfad8da70fabfb"
+          },
+          {
+            "title": "Orientação de como migrar clientes de um portador para outro",
+            "url": "https://www.loom.com/share/5c92590fd2314385ac27b6e28dafc4d5"
+          },
+          {
+            "title": "Como desativar por completo a geração de boletos através do Portador",
+            "url": "https://www.loom.com/share/4e0ce37346834583beaa51990e97b6b5"
+          },
+          {
+            "title": "Como alterar o CNPJ e informações de empresa no Portador",
+            "url": "https://www.loom.com/share/c917f74bcbf3484da658d0871c804058"
+          },
+          {
+            "title": "Como acrescentar descrições ou informações nos campos de instrução do boleto: Portador",
+            "url": "https://www.loom.com/share/1b771abcb9b1407a9339a4563856b819"
+          },
+          {
+            "title": "como configurar juros e multa",
+            "url": "https://www.loom.com/share/c3ed066c0de2452da5e885ae320dff24"
+          },
+          {
+            "title": "Orientação geral de como consultar títulos recebidos no SGP",
+            "url": "https://www.loom.com/share/07421c2114bb403282f0b4d507a4c100"
+          },
+          {
+            "title": "Como consultar um boleto pago filtrando por uma região especifica",
+            "url": "https://www.loom.com/share/682ac6872ce2406c92315abd41e4143b"
+          },
+          {
+            "title": "Como consultar os clientes que pagam em dia/até vencimento - Base Suporte SGP",
+            "url": "https://www.loom.com/share/a0d1bb233d164133a98b24f9e4f8ad8b"
+          },
+          {
+            "title": "Como consultar títulos em atraso e títulos em aberto ou a receber - sgp suporte",
+            "url": "https://www.loom.com/share/9d69551a54d74388a1d89caf6ea9f87e"
+          },
+          {
+            "title": "Consultar títulos emitidos: Orientação mais completa dos filtros",
+            "url": "https://www.loom.com/share/a43d55c8f9af4d77ad1e3167d5117741"
+          },
+          {
+            "title": "Como consultar relatório de títulos emitidos no SGP: Explicação geral dos filtros",
+            "url": "https://www.loom.com/share/5bab7f954bd74b85a142f812a45df6fc"
+          },
+          {
+            "title": "Como consultar títulos/ boletos por valor: Títulos Emitidos e Títulos a Receber",
+            "url": "https://www.loom.com/share/d0df67f8e06243108e9565b513a4af86"
+          },
+          {
+            "title": "Como importar arquivo OFX",
+            "url": "https://www.loom.com/share/c336f06757734ca6b9ce577dcf7d08f2"
+          },
+          {
+            "title": "Orientação geral de como configurar um plano de contas no SGP",
+            "url": "https://www.loom.com/share/fb3873debd2142898583d779240eddc0"
+          },
+          {
+            "title": "Como deixar visível ou não visível o Plano de contas no SGP",
+            "url": "https://www.loom.com/share/c10a368da2a14003a28778d801d2d32a"
+          },
+          {
+            "title": "Opções de gerenciamento financeiro do SGP: Plano de contas, histórico de caixa, contas a pagar e dash",
+            "url": "https://www.loom.com/share/ad5e546572d341929c38c978732435ec"
+          },
+          {
+            "title": "Orientação geral sobre mensalidade avulsa e título avulso: Como e quando gerar título avulso",
+            "url": "https://www.loom.com/share/b12cc585f03a41408d2640eba5a49dc8"
+          },
+          {
+            "title": "Como cadastrar promessa de pagamento no SGP",
+            "url": "https://www.loom.com/share/c8b9cdd9770046c198dcec7c622d31bd"
+          },
+          {
+            "title": "Como configurar variáveis de PROMESSA DE PAGAMENTO no SGP",
+            "url": "https://www.loom.com/share/1e23c81501ea4bdbbe82820ae1c23610"
+          },
+          {
+            "title": "Como configurar variável CENTRAL_PROMESSA_DESATIVADA no SGP",
+            "url": "https://www.loom.com/share/724f52280cc44c169086e1f41ed78198"
+          },
+          {
+            "title": "Opções de como cadastrar isenção em um cliente no SGP: Isento ou agendamento de isenção",
+            "url": "https://www.loom.com/share/23b9abf9f34b41f1bc4704856d1cda1e"
+          },
+          {
+            "title": "Orientação de como configurar a variável {link_cobranca} para envio de links de pagamento",
+            "url": "https://www.loom.com/share/1f228f72629643519bd407baaa522550"
+          },
+          {
+            "title": "Orientação geral: Geração automática de boletos/ carnê/ títulos pelo Portador",
+            "url": "https://www.loom.com/share/4f636429509d4eb7b921eb76f4ce57cd"
+          },
+          {
+            "title": "Como alterar a forma de cobrança em lote no SGP e como configurar a geração automática de boletos: 12 parcelas",
+            "url": "https://www.loom.com/share/9ec83f8e84064e34a25ce866c4d2928d"
+          },
+          {
+            "title": "Como alterar forma de cobrança em lote no SGP",
+            "url": "https://www.loom.com/share/df7b12e658e94de4b4cb76f3022ae7f4"
+          },
+          {
+            "title": "Consultar boletos a receber gerados pelo SGP (autocobrança) e como consultar clientes com autocobrança",
+            "url": "https://www.loom.com/share/74e0ec2aecd5489ca88e068daab1e50d"
+          },
+          {
+            "title": "Como definir em lote Autocobrança ou forma de entrega",
+            "url": "https://www.loom.com/share/5915551de4f049488dc4f6357efc4ad8"
+          },
+          {
+            "title": "Como desativar autocobrança no contrato e avisos SMS",
+            "url": "https://www.loom.com/share/a64df963a1d0423faac95e23b6276454"
+          },
+          {
+            "title": "Como configurar a geração de cobrança proporcional: Instalação separada da mensalidade",
+            "url": "https://www.loom.com/share/2a247d34d5e14464be04f5ac63c59e36"
+          },
+          {
+            "title": "Como negativar clientes no SGP e consultar clientes por CPF",
+            "url": "https://www.loom.com/share/99942a3ef2ad475a8ce18ed62a402ed0"
+          }
+        ]
+      },
+      {
+        "name": "📜 Clientes, Contratos & Assinatura Digital",
+        "icon": "📜",
+        "items": [
+          {
+            "title": "Como cadastrar um cliente no SGP",
+            "url": "https://www.loom.com/share/c0e03d0ce7b84a22b5ba8ff7670ccfaf"
+          },
+          {
+            "title": "Consultar clientes ativos no SGP: ConsultaV2 ou Relatório Contratos Ativos",
+            "url": "https://www.loom.com/share/4d3dc3fc1eb447de973f746b0ab7933b"
+          },
+          {
+            "title": "Como consultar clientes V2 e exportar informações",
+            "url": "https://www.loom.com/share/f7c8876fa8694142b5ef5e6432abb88a"
+          },
+          {
+            "title": "Como cadastrar mais de um contrato de serviço no mesmo cadastro do cliente",
+            "url": "https://www.loom.com/share/3b4383a746d24d7fa23e86262d11d327"
+          },
+          {
+            "title": "Como ajustar o endereço de cobrança no contrato de serviço",
+            "url": "https://www.loom.com/share/8a3a4d6c95fa46629b9139ae26a8e0f0"
+          },
+          {
+            "title": "Como verificar código IBGE e ajustar no endereço de cobrança",
+            "url": "https://www.loom.com/share/0bf8f1203df34e5497cc190e9433dcee"
+          },
+          {
+            "title": "Unificação de contrato/cobrança",
+            "url": "https://www.loom.com/share/ca365a23be1240c29247a99ce6401775"
+          },
+          {
+            "title": "COMO UNIFICAR CONTRATO",
+            "url": "https://www.loom.com/share/1f41dc3bff2144d7838b5f785dd70cd7"
+          },
+          {
+            "title": "Como unificar contratos de serviço e como separá-los",
+            "url": "https://www.loom.com/share/ed07b6c278374090a9ac2b91761df39a"
+          },
+          {
+            "title": "Como migrar um serviço de um contrato para um contrato individual no SGP",
+            "url": "https://www.loom.com/share/6e5b4ee9aff549ef89f8c10c6412e49f"
+          },
+          {
+            "title": "Como separar serviços em contratos de serviços: Migrando um serviço para um novo contrato",
+            "url": "https://www.loom.com/share/211b24cd510a43769cf00a0d9a9dbf5f"
+          },
+          {
+            "title": "Como consultar clientes com mais de um contrato no SGP: Cobrança unificada ou não",
+            "url": "https://www.loom.com/share/7282de2dc5984323a7b3b89ea01b7e78"
+          },
+          {
+            "title": "COMO ALTERAR PESSOA FISICA PARA PESSOA JURIDICA",
+            "url": "https://www.loom.com/share/c34585170036485584d5b9bc70be6dc1"
+          },
+          {
+            "title": "Como funciona a mudança de titularidade no SGP",
+            "url": "https://www.loom.com/share/b241632c91c64cc9aaae320ddbeee9ed"
+          },
+          {
+            "title": "Como criar TAG e atribuir a um cliente",
+            "url": "https://www.loom.com/share/4c2b839693ee42768884c7531869e92f"
+          },
+          {
+            "title": "Como consultar contratos no SGP por TAGS: Consulta e alteração em lote",
+            "url": "https://www.loom.com/share/4c1caba24213420f963dbc7b1ce83b7a"
+          },
+          {
+            "title": "Cadastrar e editar contrato de impressão e como enviar pelo SGP Sign",
+            "url": "https://www.loom.com/share/225199e301694ac8b76d9498c0697a5d"
+          },
+          {
+            "title": "SGPsign | Assinatura com Múltiplos Assinantes",
+            "url": "https://www.loom.com/share/605cc9e6be2a4241a9864a91c1eb70e6"
+          },
+          {
+            "title": "Como permitir mais de uma assinatura eletrônica no mesmo documento",
+            "url": "https://www.loom.com/share/3044f3363a1a47cfa3ef319592302e2c"
+          },
+          {
+            "title": "CONTRATO SER ATIVADO APENAS APÓS ASSINATURA",
+            "url": "https://www.loom.com/share/fbb027e11f4f44f79b379e32d6c7a3c5"
+          },
+          {
+            "title": "Como configurar um usuário para assinatura eletrônica: Criar novo ou editar existente",
+            "url": "https://www.loom.com/share/ab6cb69bf25c4dfb9d1d63a8062114af"
+          },
+          {
+            "title": "Como alterar telefone e email no cadastro empresa: Assinatura eletrônica",
+            "url": "https://www.loom.com/share/8613200346904010964d6860bb7e82fd"
+          },
+          {
+            "title": "Fluxo de como adicionar um novo serviço: Contrato, Plano e adicionar no contrato de serviço",
+            "url": "https://www.loom.com/share/c5b863f1353b4b7cb332477dbb2128e1"
+          },
+          {
+            "title": "Como adicionar serviço no contrato de serviço",
+            "url": "https://www.loom.com/share/c7565a8b8bbe4c43a73aa9d2274e7d2c"
+          },
+          {
+            "title": "Cadastrando contrato de serviço no SGP",
+            "url": "https://www.loom.com/share/fbd7999af148488f9d0d1783445e7d3c"
+          },
+          {
+            "title": "Como criar contrato de serviço no SGP",
+            "url": "https://www.loom.com/share/fbd7999af148488f9d0d1783445e7d3c"
+          },
+          {
+            "title": "Como criar um plano de internet",
+            "url": "https://www.loom.com/share/a92db242ca9f4eb3a47d636d45af74bf"
+          },
+          {
+            "title": "como alterar a velocidade do plano",
+            "url": "https://www.loom.com/share/f12639b3a6c64ecf8a518bcebb6480b2"
+          },
+          {
+            "title": "Como cadastrar um novo plano no SGP, passo a passo completo em base de suporte",
+            "url": "https://www.loom.com/share/0dc41c0941e2415295d666217c2d032b"
+          },
+          {
+            "title": "Como editar informações de plano no SGP: Orientação geral",
+            "url": "https://www.loom.com/share/5084b8b6793640faae60d98e46f595c4"
+          },
+          {
+            "title": "Serviço internet - Alterar em lote: Migrar clientes de planos de internet",
+            "url": "https://www.loom.com/share/6bda06b91fda48b6b7b68b5c4fd10c31"
+          },
+          {
+            "title": "Passo a passo completo de como cadastrar um novo Plano/Serviço de TV no SGP",
+            "url": "https://www.loom.com/share/a7e1d9f9c5954d168f243ce3882012ba"
+          },
+          {
+            "title": "Consultar clientes pelo usuário do serviço de TV: Consulta V2",
+            "url": "https://www.loom.com/share/3c92f3238ec840fd91bcadcc66dc6490"
+          },
+          {
+            "title": "Orientação de como configurar a fidelidade no SGP",
+            "url": "https://www.loom.com/share/8f73169a85b04bccae7efc8f9c71b03f"
+          },
+          {
+            "title": "Como suspender clientes em lote ou alterar o status dos contratos em lote informando motivos",
+            "url": "https://www.loom.com/share/ab1b3318eb7943ab82c0d609484b10af"
+          },
+          {
+            "title": "Opções no SGP para acompanhar a suspensão/ bloqueio de clientes",
+            "url": "https://www.loom.com/share/bd8313d763d04c1789a36f606dd242b2"
+          },
+          {
+            "title": "Como consultar clientes com o status de contrato suspenso",
+            "url": "https://www.loom.com/share/1c56701e3ce34361bc8da8117064bfc5"
+          },
+          {
+            "title": "Como consultar Relatório de Contratos por Status no SGP",
+            "url": "https://www.loom.com/share/a2b4d465f103401c8fd6680b2a3c71ca"
+          },
+          {
+            "title": "Consultar clientes filtrando por status de contrato e de conexão",
+            "url": "https://www.loom.com/share/064bb898340a4a3b86379a5d05987de6"
+          },
+          {
+            "title": "como consultar clientes offline",
+            "url": "https://www.loom.com/share/171130a7bdc548a89422f16684772389"
+          },
+          {
+            "title": "Como consultar clientes por vencimento: Consultar V2 e Contrato por status",
+            "url": "https://www.loom.com/share/ca578d84a512463ab4b3a4e4ed2ad194"
+          },
+          {
+            "title": "Como consultar clientes por endereço ou POP (região): ConsultarV2 ou Contrato por status",
+            "url": "https://www.loom.com/share/ae43ff20ce434ff0814d24c64570f5e1"
+          },
+          {
+            "title": "Como consultar clientes pela data e mês de nascimento: Identificar aniversariantes",
+            "url": "https://www.loom.com/share/128c9e4d816f437f88f71d2be112a8c3"
+          },
+          {
+            "title": "Como transformar um cliente em pré-cadastro para cadastro",
+            "url": "https://www.loom.com/share/00786939f47d41f58f7d95a6cab5f038"
+          },
+          {
+            "title": "Orientação geral do campo: Como conheceu a empresa / Como soube da empresa",
+            "url": "https://www.loom.com/share/1a3a9b04f3c240e5b0b2b9388fb79647"
+          },
+          {
+            "title": "como localizar/cadastrar o pré cadastro mídia (como soube da empresa)",
+            "url": "https://www.loom.com/share/5f1cf1c1fd6447adbe4dde578dd2b794"
+          },
+          {
+            "title": "Como cadastrar condomínio e bairros no SGP: Orientação geral",
+            "url": "https://www.loom.com/share/e6209cae904b4baf96b50b1df3ae166e"
+          },
+          {
+            "title": "Explicação geral de agendamento status contrato de serviço e motivo de status",
+            "url": "https://www.loom.com/share/63346e3f43324bc1bc7d4438d01ba646"
+          },
+          {
+            "title": "Como remover variável CLIENTE_UNIQUE_CPFCNPJ",
+            "url": "https://www.loom.com/share/4066a0336c4947e1b062d6126e4f52f7"
+          }
+        ]
+      },
+      {
+        "name": "🛠️ Técnico, O.S., Ocorrências, Estoque & Frota",
+        "icon": "🛠️",
+        "items": [
+          {
+            "title": "Como consultar histórico de instalações no SGP",
+            "url": "https://www.loom.com/share/d9e319dedde3417b8e2a6583f0b37089"
+          },
+          {
+            "title": "Como configurar OS do responsável na tela inicial",
+            "url": "https://www.loom.com/share/28a25ff333234dc4b1c4688ae3e44774"
+          },
+          {
+            "title": "Aplicativo do Técnico",
+            "url": "https://www.youtube.com/watch?v=bYCryglRnqc"
+          },
+          {
+            "title": "Como configurar app do técnico",
+            "url": "https://www.loom.com/share/c0887eb4afc84bfdbc4a4771b4fba048"
+          },
+          {
+            "title": "Orientação de como abrir uma ocorrência e como abrir uma OS",
+            "url": "https://www.loom.com/share/1076e4f2317a434cab4d4d8f3ab01ed8"
+          },
+          {
+            "title": "Orientação geral de como abrir uma ocorrência e ordem de serviço - SGP SUPORTE",
+            "url": "https://www.loom.com/share/dd7acdb294fe4ae5b9f3cad184acf7ee"
+          },
+          {
+            "title": "Como gerar relatório de O.s",
+            "url": "https://www.loom.com/share/9c1d82214794468c8ba5b192e5ff1408"
+          },
+          {
+            "title": "Como consultar o relatório de Ocorrências no SGP",
+            "url": "https://www.loom.com/share/85116d47cf3a40d783b1c5870d4ee80f"
+          },
+          {
+            "title": "Como consultar ocorrências abertas no SGP",
+            "url": "https://www.loom.com/share/fee5cd5161b44efc81580e763382571e"
+          },
+          {
+            "title": "Como encerrar ocorrências e ordens de serviço em lote SGP",
+            "url": "https://www.loom.com/share/22a04594e95a4de8bc7e11ebb62e242c"
+          },
+          {
+            "title": "Como criar um favorito de visualização rápida de ordens de serviço",
+            "url": "https://www.loom.com/share/ace3413630cf467a9fbe3ded566af4a8"
+          },
+          {
+            "title": "Orientação geral de como configurar tipos de ocorrência no SGP",
+            "url": "https://www.loom.com/share/419b3d39c80d4f1a838e876a99e1f015"
+          },
+          {
+            "title": "Como desativar/ ativar ou exibir/ ocultar motivos e tipos de ocorrência",
+            "url": "https://www.loom.com/share/3d414a484562484789f63638b8319294"
+          },
+          {
+            "title": "Como definir tipo de ocorrência por setor",
+            "url": "https://www.loom.com/share/e7cdfa7c279943288374320dde100ac8"
+          },
+          {
+            "title": "Orientação geral de como configurar Motivos de OS - SGP Suporte",
+            "url": "https://www.loom.com/share/7fa0ae093a38406eaa9d7d68ea7c2e5d"
+          },
+          {
+            "title": "Como configurar checklist em um tipo de ocorrência",
+            "url": "https://www.loom.com/share/c2d039a5982f46718634e9a32d823255"
+          },
+          {
+            "title": "Como configurar variável: MOBILE_OCORRENCIA_ANEXO para exigir foto encerramento OS",
+            "url": "https://www.loom.com/share/bec6a052de8343d28de94f49df9bbd4f"
+          },
+          {
+            "title": "Vídeos do book para módulo de estoque (Bookstack)",
+            "url": "https://bookstack.tsmx.net.br/books/scripts-suporte-sistema-4C7/page/instrucoes-para-modulo-estoque"
+          },
+          {
+            "title": "Como cadastrar um produto no estoque - Resumo",
+            "url": "https://www.loom.com/share/3149eacb88ce48879251632b1807f115"
+          },
+          {
+            "title": "Como lançar uma correção de estoque no SGP",
+            "url": "https://www.loom.com/share/b118d3e167d74799b06532e136ba4875"
+          },
+          {
+            "title": "Vídeo resumido: Localizar NCM e código de barras em um produto no SGP",
+            "url": "https://www.loom.com/share/f6fbb052cc514456bbae7fe39a3a1ea4"
+          },
+          {
+            "title": "Como configurar variável: ESTOQUE_COMODATO_PRODUTO_CUSTO",
+            "url": "https://www.loom.com/share/93a84e1fdde749f9b7d3d05b74909eaf"
+          },
+          {
+            "title": "Como verificar relatórios de veículos (km, litros, valor) e como cadastrar quilometragem",
+            "url": "https://www.loom.com/share/4586841d60da4eecabf41bd7164d3be2"
+          }
+        ]
+      },
+      {
+        "name": "🔐 Usuários, Permissões, Empresa & Variáveis",
+        "icon": "🔐",
+        "items": [
+          {
+            "title": "Como autorizar contato no SGP",
+            "url": "https://www.loom.com/share/a40904ae3d0744fe9ebdc2fe3a5533f8"
+          },
+          {
+            "title": "Como criar usuário geral",
+            "url": "https://www.loom.com/share/54698d4637e849e2925fb5ad0d32d43e"
+          },
+          {
+            "title": "Orientação geral de como criar um usuário e configurar permissões - SGP BASE SISTEMA",
+            "url": "https://www.loom.com/share/6b7efee07a624f0a95e70b41ae372317"
+          },
+          {
+            "title": "Orientação de como copiar um usuário do SGP",
+            "url": "https://www.loom.com/share/c9104584b5f24011affc04c80a83ea6f"
+          },
+          {
+            "title": "Como remover usuários do SGP",
+            "url": "https://www.loom.com/share/ff9d5f6a5dfc4dde83a5585fffd51113"
+          },
+          {
+            "title": "Como conceder permissão de acesso a empresa: Permissão Usuário do SGP",
+            "url": "https://www.loom.com/share/8cc0febd14ff4792a7d15ff9563d50e8"
+          },
+          {
+            "title": "Como configurar permissões de acesso a dashboard",
+            "url": "https://www.loom.com/share/31ee53018fe049b7beb94608a2faf529"
+          },
+          {
+            "title": "remover e adicionar permissão dashboard",
+            "url": "https://www.loom.com/share/c9f8450e6ab7411fb46bfc062e20cdfc"
+          },
+          {
+            "title": "Orientação de como configurar dashboards no SGP",
+            "url": "https://www.loom.com/share/56dc516e666243b0a709df0a0e9cdf03"
+          },
+          {
+            "title": "Como cadastrar dashboards pela aba de template",
+            "url": "https://www.loom.com/share/df951e72cb784ff08404692edca13b50"
+          },
+          {
+            "title": "Como cadastrar uma empresa no SGP - BASE Suporte",
+            "url": "https://www.loom.com/share/16f5ca8dfda84159bacd19c42c71184b"
+          },
+          {
+            "title": "Como alterar logo no cadastro da empresa",
+            "url": "https://www.loom.com/share/9141c64afd7b43b4883835d6f14b6926"
+          },
+          {
+            "title": "Como alterar logo da empresa para boletos/NF e central do assinante",
+            "url": "https://www.loom.com/share/da875e404cae40948748e5df58923ba8"
+          },
+          {
+            "title": "como atualizar certificado digital da gateway de pagamento e da empresa",
+            "url": "https://www.loom.com/share/091af49fa3a74170beba57bfc76a4c7b"
+          },
+          {
+            "title": "Como alterar certificado digital A1 na gateway de pagamento",
+            "url": "https://www.loom.com/share/9a24ec42735c47ebb66c4e5e543e9528"
+          },
+          {
+            "title": "Como funciona o campo de CRM- SGP",
+            "url": "https://www.loom.com/share/3d24d06902b849dea25768d6615ce699"
+          },
+          {
+            "title": "Orientação geral sobre o funcionamento da blacklist no SGP",
+            "url": "https://www.loom.com/share/d184543a8e654cca9ccde1090a544c0b"
+          },
+          {
+            "title": "Orientação geral de como configurar variáveis no SGP - Enviar link da tabela ao cliente",
+            "url": "https://www.loom.com/share/094712ec844042008d79b031c861e824"
+          },
+          {
+            "title": "Como configurar variáveis no SGP com exemplo da UF padrão",
+            "url": "https://www.loom.com/share/8db2b24cbb8a4b448604abc97bb106b7"
+          },
+          {
+            "title": "Criação de Variáveis",
+            "url": "https://www.loom.com/share/9a802a367d5a4a78975733f140ee2ffa"
+          }
+        ]
+      },
+      {
+        "name": "📱 Central do Assinante, Automação & Mensageria",
+        "icon": "📱",
+        "items": [
+          {
+            "title": "Configurações iniciais - Aplicativo do Cliente",
+            "url": "https://www.loom.com/share/8cce186a966249c88e11afc62168eb89"
+          },
+          {
+            "title": "Como configurar central do assinante para APLICATIVO",
+            "url": "https://www.loom.com/share/b0db0618d2f34bc79cf50bc2163e6bfb"
+          },
+          {
+            "title": "Como configurar os dias de autobloqueio, redução velocidade e aviso - PLANOS SGP SUPORTE",
+            "url": "https://www.loom.com/share/abd5a43bd5da4a5897c5ea51dbc36553"
+          },
+          {
+            "title": "Como configurar o autobloqueio, redução da velocidade ou aviso - SGP Suporte",
+            "url": "https://www.loom.com/share/9f14e38a271349f79662fbb25e54bec2"
+          },
+          {
+            "title": "Como configurar quais tipos de ocorrência podem ser abertos pela central do assinante",
+            "url": "https://www.loom.com/share/20f88e2a3b6540f3abe25d68266720b3"
+          },
+          {
+            "title": "Como ativar ou desativar login por CPF central do assinante: CENTRAL_AUTH_CPFF",
+            "url": "https://www.loom.com/share/885257a04d8d46ea93fb62f895818e2f"
+          },
+          {
+            "title": "Limitar mudança de senha Central do Assinante: CENTRAL_MUDARSENHA_DESATIVA e CENTRAL_LOGINSENHA_DESATIVA",
+            "url": "https://www.loom.com/share/ca466c0bfad741609f95b606ddc4e15f"
+          },
+          {
+            "title": "Como desabilitar/ habilitar pagamento por cartão: APP Central do Assinante",
+            "url": "https://www.loom.com/share/7572b5c0fe074c64bab5ef07036d289c"
+          },
+          {
+            "title": "Como configurar variável: CENTRAL_DESABILITAR_SENHA_PRIMEIRO_ACESSO",
+            "url": "https://www.loom.com/share/e5e8eeb4513943bbb44512163885a13e"
+          },
+          {
+            "title": "Orientação geral: Adicionar Automação de Atendimento - SGP Suporte",
+            "url": "https://www.loom.com/share/e55cf82c4caf4450bb32ca4d3f8b92b4"
+          },
+          {
+            "title": "Como disparar SMS em lote no SGP",
+            "url": "https://www.loom.com/share/86d12c903fcf431292c05cc004d35b86"
+          },
+          {
+            "title": "Passo a passo de como enviar email em lote no SGP",
+            "url": "https://www.loom.com/share/626055f7da5d4d2881be9d21e6999bcd"
+          },
+          {
+            "title": "Orientação geral de como editar os Email e SMS avisos - SGP SUPORTE",
+            "url": "https://www.loom.com/share/3d93a5f4789846b49b18cf8a0e2149c7"
+          },
+          {
+            "title": "Como configurar variável: SMSLOTE_DESATIVAR_VERIFICACAO_TITULO_EM_ATRASO",
+            "url": "https://www.loom.com/share/9a8bdd81d71e4f008799b649890e5da2"
+          },
+          {
+            "title": "Orientação geral de como consultar o histórico de e-mails",
+            "url": "https://www.loom.com/share/9ec831856e4747df9f8019ce174646f9"
+          }
+        ]
+      },
+      {
+        "name": "📊 Relatórios de Gestão & Regulatório Anatel",
+        "icon": "📊",
+        "items": [
+          {
+            "title": "Relatório PPP SCM",
+            "url": "https://www.loom.com/share/3fe756d377ee452383f46d192c8db25c"
+          },
+          {
+            "title": "Relatório ANATEL DICI - SGP SUPORTE",
+            "url": "https://www.loom.com/share/e46025abaad74bb096e1a5edfe8944a6"
+          },
+          {
+            "title": "Como consultar Relatório Contratos Ativações - SGP Suporte",
+            "url": "https://www.loom.com/share/c5af479fe86341039511a142fb96653d"
+          },
+          {
+            "title": "Como consultar o relatório de contratos ativados por vendedores no SGP",
+            "url": "https://www.loom.com/share/2dd3d9067af7420c94224ae9d5a76001"
+          },
+          {
+            "title": "Como consultar o relatório de comissão filtrando por vendedores no SGP",
+            "url": "https://www.loom.com/share/dc5f1c1f6f3841ddb9d8c4e0e7e64423"
+          },
+          {
+            "title": "Como consultar o relatório de ativações e cancelamento de contratos",
+            "url": "https://www.loom.com/share/8d2cfe8b742c42ca958798849235854d"
+          },
+          {
+            "title": "Orientação geral de como consultar relatório de crescimento",
+            "url": "https://www.loom.com/share/310f01fa88d3496597a0f827334005ba"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "videos-joao",
+    "name": "Videos - João",
+    "icon": "🎥",
+    "badgeClass": "origin-joao",
+    "tagLabel": "Grupo: Videos - João",
+    "description": "Treinamentos completos de João: Operação SGP, App Técnico, Estoque, Fiscal, Contratos e Integrações de TV/MVNO",
+    "categories": [
+      {
+        "name": "🔌 Integrações (TV, Telefonia, MVNO & Câmeras)",
+        "icon": "🔌",
+        "items": [
+          {
+            "title": "WatchTV",
+            "url": "https://www.loom.com/share/e3f9e81bb328496dab64ecdd79d6c6be"
+          },
+          {
+            "title": "Campsoft",
+            "url": "https://www.loom.com/share/ae04878bcbf44fc98384ae0534948519"
+          },
+          {
+            "title": "PlayHub",
+            "url": "https://www.loom.com/share/8be12b0eea8d4ff0910f710759ab2897"
+          },
+          {
+            "title": "Como alterar planos de TV na PlayHub",
+            "url": "https://www.loom.com/share/42eddeb88e8b4cd297a21053cbe771d9"
+          },
+          {
+            "title": "NXPLAY",
+            "url": "https://www.loom.com/share/dd8fa6d573284763aa9621e36a67da88"
+          },
+          {
+            "title": "OléTV",
+            "url": "https://www.loom.com/share/990ecb1414a5419dae76499021eb1de8"
+          },
+          {
+            "title": "Emby",
+            "url": "https://www.loom.com/share/6b024ed353a04e199aa1267ba00ae7c7"
+          },
+          {
+            "title": "ITTV",
+            "url": "https://www.loom.com/share/f45a0569dfb64efd953dd8d3b2320cf2"
+          },
+          {
+            "title": "YouCast",
+            "url": "https://www.loom.com/share/207fbef68d7b4ee4b4b12c62d0fa1b8a"
+          },
+          {
+            "title": "CDN TV",
+            "url": "https://www.loom.com/share/1ac8f648de0c4fd899eceb4ffcefc390"
+          },
+          {
+            "title": "SATTV GO",
+            "url": "https://www.loom.com/share/258389021fb346df9397e18dde6138c0"
+          },
+          {
+            "title": "MultTV (Ativação de clientes apenas)",
+            "url": "https://www.loom.com/share/eff28e964c9c41b99018d2546ea87f73"
+          },
+          {
+            "title": "Magnus",
+            "url": "https://www.loom.com/share/f61de0a70a4b479db3ef2978c15c479a"
+          },
+          {
+            "title": "SipPulse",
+            "url": "https://www.loom.com/share/76f1ec52f2a8443eb637bdb650409e0a"
+          },
+          {
+            "title": "TIP Zeus",
+            "url": "https://www.loom.com/share/275d5a3174da44ed9e993a565b889d62"
+          },
+          {
+            "title": "TIP MVNO (5G)",
+            "url": "https://www.loom.com/share/a9fe2417ba60419ea738b703f199196f"
+          },
+          {
+            "title": "PLAY MOVEL",
+            "url": "https://www.loom.com/share/61cc035eedf540779605b1c2cf09d2c7"
+          },
+          {
+            "title": "Bora MVNO",
+            "url": "https://www.loom.com/share/53169e898d234a3e83edd8dea8952848"
+          },
+          {
+            "title": "Contel",
+            "url": "https://www.loom.com/share/d1e425fe59e64817941c80664674576f"
+          },
+          {
+            "title": "Braz Móvel",
+            "url": "https://www.loom.com/share/945015a8e6fd454bab520a98fefa4fa5"
+          },
+          {
+            "title": "Ta Telecom",
+            "url": "https://www.loom.com/share/b2272acbb7cf4134a661bc51daa9a7eb"
+          },
+          {
+            "title": "D-Guard",
+            "url": "https://www.loom.com/share/97b690d9da514d38a20ce6825d4b3506"
+          },
+          {
+            "title": "Fullcam",
+            "url": "https://www.loom.com/share/38077bbce41b47d8bf3af8238dde14af"
+          }
+        ]
+      },
+      {
+        "name": "📦 Estoque & Comodato",
+        "icon": "📦",
+        "items": [
+          {
+            "title": "Estoque Treinamento Geral",
+            "url": "https://www.loom.com/share/631fe8e2117f4009955a2648323dc3c9"
+          },
+          {
+            "title": "Treinamento geral de uso estoque",
+            "url": "https://www.loom.com/share/928d3c593f9146b0b69e5af950ed98dd"
+          },
+          {
+            "title": "Cadastro de locais de estoque",
+            "url": "https://www.loom.com/share/6f0f13f322b34708a9074e2b995696da"
+          },
+          {
+            "title": "Cadastro de produto",
+            "url": "https://www.loom.com/share/ed1b7e389b824c598ffefd7ae1b59a7c"
+          },
+          {
+            "title": "Kit de instalação e Comodato",
+            "url": "https://youtu.be/_2gRy3xPWI0"
+          },
+          {
+            "title": "Lançamento por compra",
+            "url": "https://www.loom.com/share/351c3f38a83143279a701c170bb9c476"
+          },
+          {
+            "title": "Lançamento através de XML de nota de Compra",
+            "url": "https://www.loom.com/share/5900d4cc5fa94dda9ad10d144fa13dd0"
+          },
+          {
+            "title": "Transferência",
+            "url": "https://www.loom.com/share/3ceb88b5cc56474b8fd4f9605df13411"
+          },
+          {
+            "title": "Estoque Mínimo",
+            "url": "https://www.loom.com/share/693c5211309b4941a85be357c99f4e2b"
+          }
+        ]
+      },
+      {
+        "name": "🛠️ Aplicativo do Técnico & Operação Campo",
+        "icon": "🛠️",
+        "items": [
+          {
+            "title": "Como configurar o técnico, cadastrar OS e utilizar o aplicativo",
+            "url": "https://www.loom.com/share/d1cdb035a04a486f88c40899a22c1dda?sid=b7023827-6569-4993-839e-503b94847468"
+          },
+          {
+            "title": "Como acessar o aplicativo do técnico (SGP Suporte)",
+            "url": "https://www.loom.com/share/8c44d38c15e34c11ab8329ee697c40f3?sid=813a4180-a06e-4670-aa31-294ebf9f59ba"
+          },
+          {
+            "title": "Provisionando no APP do Técnico",
+            "url": "https://www.loom.com/share/e50bce6c96724a56b48c7be163adb8ba?sid=0f1f486c-802b-4d24-889f-25e146f987c9"
+          },
+          {
+            "title": "Lançamento de Produtos APP Técnico",
+            "url": "https://www.loom.com/share/2281072444094bb9977f0a65fb3d38d2"
+          },
+          {
+            "title": "Configurar Aplicativo do Técnico",
+            "url": "https://www.youtube.com/watch?v=bYCryglRnqc"
+          },
+          {
+            "title": "Como cadastrar Ordem de Serviço",
+            "url": "https://www.youtube.com/watch?v=9jZfOagi_M0"
+          },
+          {
+            "title": "Como cadastrar Ocorrência",
+            "url": "https://www.youtube.com/watch?v=iP8eTDUpgg0"
+          },
+          {
+            "title": "Configuração de Checklist OC/OS",
+            "url": "https://www.loom.com/share/f263a2e408874989814b0936eba94666?sid=f7eae95a-3eab-4501-a41d-c99faaca2a65"
+          },
+          {
+            "title": "Cadastro de Manutenção",
+            "url": "https://www.loom.com/share/36f3977e0ca84ec09b24e0faa8a9df02"
+          },
+          {
+            "title": "Treinamento Base SGP Geral",
+            "url": "https://www.loom.com/share/2adaca6234eb40b58a2df8b5e48f75e4"
+          },
+          {
+            "title": "Configuração de Rede Neutra",
+            "url": "https://www.loom.com/share/6a87113941f24bab95995a62be83a75e"
+          }
+        ]
+      },
+      {
+        "name": "🧾 Fiscal, Notas & NFCom (21, 55, Débito, SPED)",
+        "icon": "🧾",
+        "items": [
+          {
+            "title": "Emissão NFCOM",
+            "url": "https://www.loom.com/share/5adb857e005c472da2dd8bc1ddde7d2f"
+          },
+          {
+            "title": "Configuração NFCom (Simples Nacional)",
+            "url": "https://www.loom.com/share/5adb857e005c472da2dd8bc1ddde7d2f"
+          },
+          {
+            "title": "Emissão Produção NFCom",
+            "url": "https://www.loom.com/share/aa0d4114327d43049fd25f8ce24fefaa"
+          },
+          {
+            "title": "Alterar para Produção NFCom",
+            "url": "https://www.loom.com/share/aa0d4114327d43049fd25f8ce24fefaa"
+          },
+          {
+            "title": "Alterar Descrição NFCom",
+            "url": "https://www.loom.com/share/afb216872cbe4ac3b72b8e587ec96c51"
+          },
+          {
+            "title": "Como Anexar Certificado A1",
+            "url": "https://www.loom.com/share/8655302037b0479098c58222e952a656"
+          },
+          {
+            "title": "Emissão de NF21 em Lote",
+            "url": "https://www.loom.com/share/95e6b8e528bc406d9607a48741eb97d6?sid=98dc9880-4b37-4d42-9ab6-b896b9657f16"
+          },
+          {
+            "title": "Como gerar nota 55",
+            "url": "https://www.loom.com/share/55714f96dfdb4fa3927ddf06ebb6c6f0"
+          },
+          {
+            "title": "Nota 55 Devolução",
+            "url": "https://www.loom.com/share/24a281bb31834e248aedab07a8fcfd16?sid=5ae026af-24c5-47e8-a7b2-a602e0094cdc"
+          },
+          {
+            "title": "Emissão Nota de Débito",
+            "url": "https://www.loom.com/share/8301efba6f1f4628b9122a6ee3ab63ff"
+          },
+          {
+            "title": "Configurar emissão Automatica Nota Fiscal",
+            "url": "https://www.loom.com/share/539725f288694ab9b2dc9e8d71b60644"
+          },
+          {
+            "title": "Configuração de Faturamento",
+            "url": "https://www.loom.com/share/492ac2aedaec4343952f216a22d646f9"
+          },
+          {
+            "title": "Detalhamento de Plano",
+            "url": "https://www.loom.com/share/Datalhamento-de-plano-Grupo-fiscal-919e385b909a4959a33d2f2b5cc15064"
+          },
+          {
+            "title": "Emissão Relatório SPED",
+            "url": "https://www.loom.com/share/181dfff642e14449aefa4569c87d2665?sid=2d2d2d4c-5b1b-43a4-a5f8-c00c3754aa4f"
+          }
+        ]
+      },
+      {
+        "name": "💰 Financeiro, Boletos, Baixas & Portadores",
+        "icon": "💰",
+        "items": [
+          {
+            "title": "Promessa de pagamento",
+            "url": "https://www.loom.com/share/ff014fb3aacb4c5ab56800789b5aa00c"
+          },
+          {
+            "title": "Como gerar acordo de pagamento",
+            "url": "https://www.loom.com/share/148e155b5eeb4cd4b4dafaa56a8620fa"
+          },
+          {
+            "title": "Gerar Boleto Avulso e em Lote",
+            "url": "https://www.youtube.com/watch?v=P40ymYMdp68"
+          },
+          {
+            "title": "Gerar Carnê Avulso e em Lote",
+            "url": "https://www.youtube.com/watch?v=ZuS4eneiYs8"
+          },
+          {
+            "title": "Configuração Auto Cobrança",
+            "url": "https://www.loom.com/share/58e7c7ab100b443a8461269d8a5c1cd7?sid=a4aa918b-b83a-4d02-8428-595b9abec721"
+          },
+          {
+            "title": "Configurar variável {link_cobranca}",
+            "url": "https://www.loom.com/share/1f228f72629643519bd407baaa522550"
+          },
+          {
+            "title": "Acrescimos / Descontos",
+            "url": "https://www.youtube.com/watch?v=t146KUP6Enw&t"
+          },
+          {
+            "title": "Configurações Desconto - Plano / Cliente",
+            "url": "https://www.loom.com/share/03bb141898724a23a965102752bd9fc5?sid=daed1f84-5576-4054-a3a0-9f32f1d73d40"
+          },
+          {
+            "title": "Cadastro de Isenção",
+            "url": "https://www.loom.com/share/26ecee0b8b6f42258fd1187d4b69c5a7"
+          },
+          {
+            "title": "Agendamento de Isenção",
+            "url": "https://www.loom.com/share/620bd7e53c064b7b9a87e780971486cb?sid=c0691d2e-9956-4789-b714-f31ae43a8ed3"
+          },
+          {
+            "title": "Cadastro de Serviço e Unificação de Cobrança",
+            "url": "https://www.loom.com/share/644b232c613c48799ebba69d975a0943?sid=b8f1f654-912d-4725-8624-543f564ed81d"
+          },
+          {
+            "title": "Migração de Portador",
+            "url": "https://www.loom.com/share/9571488cc5f745519a4da89f8b793625"
+          },
+          {
+            "title": "Cadastro de Portador Local",
+            "url": "https://www.loom.com/share/31b93b2e185a4b48a8502440536111c1"
+          },
+          {
+            "title": "Definir juros e multa no portador",
+            "url": "https://www.loom.com/share/13f5bfceafe84be7a41cf7bfc409044d"
+          },
+          {
+            "title": "Forma de Entrega",
+            "url": "https://www.loom.com/share/a7c4b358ba164813a23623b86821de7a"
+          },
+          {
+            "title": "Alterar Forma de Cobrança",
+            "url": "https://www.loom.com/share/c1ba3b2b5a4c4aecb92ea50156f4e791?sid=cce6ac3e-3dd6-4517-9714-18745adfa853"
+          },
+          {
+            "title": "Configuração de Tarifas Bancarias",
+            "url": "https://www.loom.com/share/097be1622cbe4f0d8f5d4de285809f46"
+          },
+          {
+            "title": "Configurar Demonstrativo do boleto e linhas de instruções",
+            "url": "https://www.loom.com/share/6a5d8fc080984a90964a2da658f016ed"
+          },
+          {
+            "title": "Cadastrar contas a receber",
+            "url": "https://www.loom.com/share/88e2481ef25d4d5e8e39d758faa3f57c"
+          },
+          {
+            "title": "Cadastro Plano de Contas",
+            "url": "https://www.loom.com/share/a9ae99e15d45459bafa0e5de0ce9c6c0"
+          },
+          {
+            "title": "Cadastrar Ponto de Recebimento/ Caixa",
+            "url": "https://www.loom.com/share/869aba70dbbb42978a8b1d8c05093b1d?sid=4f7f7ea1-1c6b-4e23-b1a8-32f9e75fe531"
+          },
+          {
+            "title": "Lançamentos via OFX",
+            "url": "https://www.loom.com/share/2a9383a189544f04a88905ce45847ac3"
+          },
+          {
+            "title": "Sincronizar títulos via remessa API",
+            "url": "https://www.loom.com/share/4ce229899a294c458fbcc7afaaa39580"
+          },
+          {
+            "title": "Clientes Sem Fatura",
+            "url": "https://www.loom.com/share/3fadb0b560e8461c9a1c3cae6e4b37c7"
+          },
+          {
+            "title": "Consultar títulos sem registro",
+            "url": "https://www.loom.com/share/8c0e9c09e7814880b7d914ec664a19db"
+          }
+        ]
+      },
+      {
+        "name": "📜 Contratos, Clientes & Fidelidade",
+        "icon": "📜",
+        "items": [
+          {
+            "title": "Cadastrar tag e como incluir no contrato",
+            "url": "https://www.loom.com/share/fe4958cc50fd400f93bf97f4862e170f"
+          },
+          {
+            "title": "Contrato de Impressão",
+            "url": "https://www.loom.com/share/d039d8ed28cc49d8a908eb0cf0e7d7ff?sid=6bae20cd-84f9-4367-9e5e-92ccb472cbd0"
+          },
+          {
+            "title": "Remoção de Contrato",
+            "url": "https://www.loom.com/share/e428c46beceb49f8892a153ebfccae47"
+          },
+          {
+            "title": "Cadastro sem Contratos",
+            "url": "https://www.loom.com/share/a8fa3545978c4041994ee05ebe419cfb"
+          },
+          {
+            "title": "Alterar plano cliente - Contrato ou Aditivo",
+            "url": "https://www.loom.com/share/93cb131be1d94975aa7b1541987cb66e"
+          },
+          {
+            "title": "Aditivo Mudança de Vencimento",
+            "url": "https://www.loom.com/share/bf1b2cf955a5478c9789d8d0a9cfef70"
+          },
+          {
+            "title": "Mudança de Titularidade",
+            "url": "https://www.loom.com/share/648f88ba11ca4b78b1297631be911a6a"
+          },
+          {
+            "title": "Agendamento de Status",
+            "url": "https://www.loom.com/share/5bb00dab72964c49ac43a3fe8dbaf7e2?sid=e2293273-8d15-4df9-85b2-87d04afa489b"
+          },
+          {
+            "title": "Agendamento de Plano",
+            "url": "https://www.loom.com/share/ab736fc23f4143f28efc92008a1ab148?sid=84a5d6bc-ef9e-4af9-a12e-9e427fc1038d"
+          },
+          {
+            "title": "Configurar Plano",
+            "url": "https://www.loom.com/share/ee9d0c355bcc4b3e8257b0ffaaec79a2?sid=adcaa2a8-3342-4e63-93e0-83e9178e1f29"
+          },
+          {
+            "title": "Migrar Plano",
+            "url": "https://www.loom.com/share/67fb06f7e4ec4d1eb892450eab77082d"
+          },
+          {
+            "title": "Assinatura Eletrônica",
+            "url": "https://www.youtube.com/watch?v=oUXEfY7kMOI"
+          },
+          {
+            "title": "Fidelidade - Multa Taxa de Instalação",
+            "url": "https://www.loom.com/share/d980024a101346538879031fcfd4e98f"
+          },
+          {
+            "title": "Fidelidade - Multa Anatel 632",
+            "url": "https://www.loom.com/share/bd945d76c31945af80146b69b339c399?sid=017f4e43-830e-4d82-9d96-942e851edd80"
+          },
+          {
+            "title": "Fidelidade - Títulos em Aberto",
+            "url": "https://www.loom.com/share/333627d439f24640b3e69b8130f8d74d"
+          }
+        ]
+      },
+      {
+        "name": "✉️ Comunicação (SMS, E-mail & Mensagens)",
+        "icon": "✉️",
+        "items": [
+          {
+            "title": "Configurações SMS",
+            "url": "https://www.loom.com/share/9212366515ec4a77915bd67a5200d035?sid=195a7d81-1fb1-426e-b764-29d17bc85535"
+          },
+          {
+            "title": "SMS em Lote",
+            "url": "https://www.loom.com/share/47249c6e06794ace9cac4138727cd37c?sid=b0616bfc-e797-49d0-b936-39323f8bb012"
+          },
+          {
+            "title": "Configurar Whatsapp / SMS em Lote",
+            "url": "https://www.loom.com/share/47249c6e06794ace9cac4138727cd37c?sid=b0616bfc-e797-49d0-b936-39323f8bb012"
+          },
+          {
+            "title": "SMS Aviso",
+            "url": "https://www.loom.com/share/3803bec7a5ef4945b27604d81ec2768b"
+          },
+          {
+            "title": "Configuração de Email Aviso",
+            "url": "https://www.loom.com/share/e77915279b8244e9831f1a0c3439c80b?sid=b82df3f4-984f-4c6d-a42b-29c2fc41761f3"
+          },
+          {
+            "title": "Enviar e-mail em lote",
+            "url": "https://www.loom.com/share/bcce8b525b774e65ba282d35a6384c34?sid=7e8a4ba6-b902-4223-8f36-a1bc71873ad5"
+          },
+          {
+            "title": "Disparo de email de cobrança",
+            "url": "https://www.loom.com/share/7f73e1e9193d419da49216bb699217e2"
+          },
+          {
+            "title": "Configurar Automação de Atendimento",
+            "url": "https://www.loom.com/share/22af0939417d4cdda5cb71a77e6097ac"
+          },
+          {
+            "title": "Configurar Mensagem em Tela",
+            "url": "https://www.loom.com/share/dcee7a47c184412c8aa0c670cf5afd2f"
+          }
+        ]
+      },
+      {
+        "name": "🔐 Usuários, Permissões & Dashboards",
+        "icon": "🔐",
+        "items": [
+          {
+            "title": "Copiar Usuário",
+            "url": "https://www.loom.com/share/805fd0ad29944453abed373c7be234bf"
+          },
+          {
+            "title": "Autenticação de dois fatores",
+            "url": "https://www.loom.com/share/28c787f196a146f58f83b259afc50a35"
+          },
+          {
+            "title": "Configurando ACL usuário",
+            "url": "https://www.loom.com/share/30c2e81adce94debbdaaa9b395f346aa?sid=615e19e4-fb1e-47b4-a4b6-57eefecd57fe"
+          },
+          {
+            "title": "Alterar visualização Dashboard",
+            "url": "https://www.loom.com/share/f0cd72e414154507873a6e5c1b35f4f1"
+          },
+          {
+            "title": "Dashboard Dinâmica",
+            "url": "https://www.loom.com/share/4ac12f00565648a48fc6f681dddf112a"
+          },
+          {
+            "title": "Habilitando Central App (MeuAppProvedor)",
+            "url": "https://www.loom.com/share/ca19da1e564849e3b95ca5d4afdbff32"
+          }
+        ]
+      },
+      {
+        "name": "📊 Relatórios & Regulatório Anatel",
+        "icon": "📊",
+        "items": [
+          {
+            "title": "Emissão Relatório DICI",
+            "url": "https://www.loom.com/share/181dfff642e14449aefa4569c87d2665?sid=2d2d2d4c-5b1b-43a4-a5f8-c00c3754aa4f"
+          },
+          {
+            "title": "ANATEL INFRA",
+            "url": "https://www.loom.com/share/f04c1e54dec547c18468ce173fbb4ed4"
+          },
+          {
+            "title": "Emissão Relatório PPP SCM",
+            "url": "https://www.loom.com/share/7cad2182a68443189c246bcddc3579dd"
+          },
+          {
+            "title": "Como obter o PPP SCM e Relatório de Tráfego - SGP",
+            "url": "https://www.loom.com/share/dcbbc4ab86924ce4aee1b844d285fbe0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "edson-links",
+    "name": "Edson Links",
+    "icon": "🎓",
+    "badgeClass": "origin-edson",
+    "tagLabel": "Grupo: Edson Links",
+    "description": "Guias operacionais, cadastros, usuários, contratos, O.S., planos e dashboards gravados por Edson",
+    "categories": [
+      {
+        "name": "Usuários, Setores & Acessos",
+        "icon": "👥",
+        "items": [
+          {
+            "title": "COMO CADASTRAR UM USUÁRIO NO SGP",
+            "url": "https://www.loom.com/share/71a6fa074cc44a75b1b698f9da0c9b58"
+          },
+          {
+            "title": "COMO COPIAR/CLONAR UM USUÁRIO",
+            "url": "https://www.loom.com/share/e71bbe6e1c644a69a69b031e76057622?sid=f5b6534f-8937-44af-9d2d-9f847c8a294c"
+          },
+          {
+            "title": "COMO CADASTRAR UM FUNCIONÁRIO",
+            "url": "https://www.loom.com/share/560405bee4e2452fbe104bb8ac7cdcc1"
+          },
+          {
+            "title": "COMO CADASTRAR SETORES E GRUPOS",
+            "url": "https://www.loom.com/share/acc9a19bef764e419c1975b0aaf9b03c"
+          },
+          {
+            "title": "Como configurar a visualização de widgets para usuários",
+            "url": "https://www.loom.com/share/b9f57f4f245642dea56d5ed0f708b378"
+          },
+          {
+            "title": "COMO CRIAR DASHBOARDS",
+            "url": "https://www.loom.com/share/422ab5effeb84d0e996198d958680d33"
+          }
+        ]
+      },
+      {
+        "name": "Financeiro, Boletos & Cobrança",
+        "icon": "💰",
+        "items": [
+          {
+            "title": "GERAR BOLETO AVULSO E EM LOTE",
+            "url": "https://www.youtube.com/watch?v=P40ymYMdp68"
+          },
+          {
+            "title": "GERAR CARNÊ AVULSO E EM LOTE",
+            "url": "https://www.youtube.com/watch?v=ZuS4eneiYs8"
+          },
+          {
+            "title": "Como realizar baixa manual em títulos",
+            "url": "https://www.loom.com/share/9ca6991ce12b4dd9b249e4c54add0008?sid=4abfd099-f619-4b38-9b8b-c58cedb84898"
+          },
+          {
+            "title": "Como gerar acordo de pagamento",
+            "url": "https://www.loom.com/share/148e155b5eeb4cd4b4dafaa56a8620fa"
+          },
+          {
+            "title": "Configuração Auto Cobrança",
+            "url": "https://www.loom.com/share/58e7c7ab100b443a8461269d8a5c1cd7?sid=a4aa918b-b83a-4d02-8428-595b9abec721"
+          },
+          {
+            "title": "Como realizar a configuração para gerar cobranças de forma automática",
+            "url": "https://www.loom.com/share/58e7c7ab100b443a8461269d8a5c1cd7?sid=a4aa918b-b83a-4d02-8428-595b9abec721"
+          },
+          {
+            "title": "Cálculo do proporcional",
+            "url": "https://www.loom.com/share/5a12920d65ec4e99a7eeaad3e5864efa"
+          },
+          {
+            "title": "Como cadastrar um negativo",
+            "url": "https://www.loom.com/share/0f65cf78c8cc4bd3afc86143ac183f41"
+          }
+        ]
+      },
+      {
+        "name": "Contratos, Planos & CRM",
+        "icon": "📜",
+        "items": [
+          {
+            "title": "Como cadastrar cliente pelo CRM",
+            "url": "https://www.loom.com/share/b76eb7e5a0c74c058cf3b83aa73ee7f0"
+          },
+          {
+            "title": "COMO CRIAR TAGS NO SGP",
+            "url": "https://www.loom.com/share/823b835102f947bfa09351e63bb290b5"
+          },
+          {
+            "title": "COMO CRIAR CONTRATO NO SGP",
+            "url": "https://www.loom.com/share/4cc7530538ff4f76965b26adc20e8d4d"
+          },
+          {
+            "title": "COMO ANEXAR MODELO DE CONTRATO",
+            "url": "https://www.loom.com/share/b5cde1852ae042ed9dd11a255f6ec81b"
+          },
+          {
+            "title": "COMO ANEXAR MODELO DE CONTRATO (COM EXPLICAÇÃO DAS VARIÁVEIS)",
+            "url": "https://www.loom.com/share/4cc7530538ff4f76965b26adc20e8d4d"
+          },
+          {
+            "title": "COMO CADASTRAR UM PLANO INTERNET",
+            "url": "https://www.loom.com/share/06c8bbe1bc61481b89cbd387d8d52118"
+          },
+          {
+            "title": "COMO CADASTRAR UM PLANO COMBO",
+            "url": "https://www.loom.com/share/e2d16c90caf94924bdaff0adf254008e"
+          }
+        ]
+      },
+      {
+        "name": "Operacional, O.S., POP & Avisos",
+        "icon": "🛠️",
+        "items": [
+          {
+            "title": "Como cadastrar uma O.S",
+            "url": "https://www.loom.com/share/ce76acd3fff1454988d85a3785ed23cd"
+          },
+          {
+            "title": "COMO CADASTRAR UM POP",
+            "url": "https://www.loom.com/share/e98f6e26af7e4cffaabd7011c036c4f8?sid=72e7866f-046e-4e2c-b4d9-389404be304f"
+          },
+          {
+            "title": "COMO CONFIGURAR UM E-MAIL AVISO",
+            "url": "https://www.loom.com/share/abc2aeff7e404768942b191f86ee5c94"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "setor-financeiro",
+    "name": "Setor Financeiro",
+    "icon": "💳",
+    "badgeClass": "origin-financeiro",
+    "tagLabel": "Grupo: Setor Financeiro",
+    "description": "Processos financeiros, emissão de boletos/carnês, baixas, acordos, plano de contas e tarifas",
+    "categories": [
+      {
+        "name": "Boletos, Carnês & Baixas Manuais",
+        "icon": "🧾",
+        "items": [
+          {
+            "title": "Como gerar boleto/carnê para o cliente",
+            "url": "https://www.loom.com/share/9c00642f8abc4f5abaafb707ad94a93c?sid=a6b52f0d-c913-448e-977b-22c0db90d892"
+          },
+          {
+            "title": "Como realizar baixa manual em títulos",
+            "url": "https://www.loom.com/share/9ca6991ce12b4dd9b249e4c54add0008?sid=4abfd099-f619-4b38-9b8b-c58cedb84898"
+          },
+          {
+            "title": "Alterar Forma de Cobrança",
+            "url": "https://www.loom.com/share/c1ba3b2b5a4c4aecb92ea50156f4e791?sid=cce6ac3e-3dd6-4517-9714-18745adfa853"
+          },
+          {
+            "title": "Forma de Entrega",
+            "url": "https://www.loom.com/share/a7c4b358ba164813a23623b86821de7a"
+          },
+          {
+            "title": "Configurar Demonstrativo do boleto e linhas de instruções",
+            "url": "https://www.loom.com/share/6a5d8fc080984a90964a2da658f016ed"
+          }
+        ]
+      },
+      {
+        "name": "Acordos, Ajustes & Descontos",
+        "icon": "⚖️",
+        "items": [
+          {
+            "title": "Como gerar acordo de pagamento",
+            "url": "https://www.loom.com/share/148e155b5eeb4cd4b4dafaa56a8620fa"
+          },
+          {
+            "title": "Gerar Desconto ou Acréscimo em Lote",
+            "url": "https://www.loom.com/share/5ff1127162a74594861b9ba6c3c82583"
+          },
+          {
+            "title": "Cálculo do proporcional",
+            "url": "https://www.loom.com/share/5a12920d65ec4e99a7eeaad3e5864efa"
+          },
+          {
+            "title": "Como cadastrar um negativo",
+            "url": "https://www.loom.com/share/0f65cf78c8cc4bd3afc86143ac183f41"
+          }
+        ]
+      },
+      {
+        "name": "Cobrança, Portador & Tarifas",
+        "icon": "⚙️",
+        "items": [
+          {
+            "title": "Configuração Auto Cobrança",
+            "url": "https://www.loom.com/share/58e7c7ab100b443a8461269d8a5c1cd7?sid=a4aa918b-b83a-4d02-8428-595b9abec721"
+          },
+          {
+            "title": "Migração de Portador",
+            "url": "https://www.loom.com/share/9571488cc5f745519a4da89f8b793625"
+          },
+          {
+            "title": "Sincronizar títulos via remessa API",
+            "url": "https://www.loom.com/share/4ce229899a294c458fbcc7afaaa39580"
+          },
+          {
+            "title": "Configuração de Tarifas Bancárias",
+            "url": "https://www.loom.com/share/097be1622cbe4f0d8f5d4de285809f46"
+          }
+        ]
+      },
+      {
+        "name": "Contas a Receber & Caixa",
+        "icon": "🏦",
+        "items": [
+          {
+            "title": "Cadastrar contas a receber",
+            "url": "https://www.loom.com/share/88e2481ef25d4d5e8e39d758faa3f57c"
+          },
+          {
+            "title": "Cadastro do Plano de Contas",
+            "url": "https://www.loom.com/share/a9ae99e15d45459bafa0e5de0ce9c6c0"
+          },
+          {
+            "title": "Cadastrar Ponto de Recebimento/ Caixa",
+            "url": "https://www.loom.com/share/869aba70dbbb42978a8b1d8c05093b1d?sid=4f7f7ea1-1c6b-4e23-b1a8-32f9e75fe531"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "material-interno",
+    "name": "Material interno",
+    "icon": "📁",
+    "badgeClass": "origin-interno",
+    "tagLabel": "Grupo: Material interno",
+    "description": "Rotinas internas, configurações de sistema, emissões, suporte e infraestrutura",
+    "categories": [
+      {
+        "name": "Fiscal, Notas & Sefaz (21/22, 55, NFCom)",
+        "icon": "🧾",
+        "items": [
+          {
+            "title": "SCM / SVA NOTA 21 E NOTA DE DÉBITO",
+            "url": "https://www.loom.com/share/b80a9b589bfa49b282b9060c0600e04d?sid=420b2856-ad51-411f-85b6-44039e50fb29"
+          },
+          {
+            "title": "Emissão de notas 21 em lote",
+            "url": "https://www.loom.com/share/aa44d598b0924ff9ab22c5586ac1bf12?sid=78a157cd-5e23-41aa-85dc-2214a815440a"
+          },
+          {
+            "title": "Vídeo sobre emissão de notas modelo 21/22",
+            "url": "https://www.loom.com/share/aa44d598b0924ff9ab22c5586ac1bf12?sid=275674c4-8ab4-420a-a4c8-9b1e57b81351"
+          },
+          {
+            "title": "Vídeo sobre gerar arquivo fiscal para envio de nota para Sefaz",
+            "url": "https://www.loom.com/share/558756c265f94ac9b64479724ac2d2dc?sid=cc033f92-17c1-49b5-b7b5-fbe7bb790f70"
+          },
+          {
+            "title": "Vídeo sobre envio de notas modelo 21/22 para Sefaz",
+            "url": "https://www.youtube.com/watch?v=qdB_RWaKnPo"
+          },
+          {
+            "title": "Emissão NFcom",
+            "url": "https://www.loom.com/share/5adb857e005c472da2dd8bc1ddde7d2f?sid=6f5d29ba-658c-42a7-bfda-c52a368c35b0"
+          },
+          {
+            "title": "Validações / ajustes para emissão NFcom - SGP",
+            "url": "https://www.loom.com/share/0a37020cf5e642659f571722d4b9b3d5"
+          },
+          {
+            "title": "Criando Faturamento Fiscal - no cliente",
+            "url": "https://www.loom.com/share/e94362756232439783b179876cb8d7e5?sid=1feead5e-73a4-499a-ba3d-9c1ce403d605"
+          },
+          {
+            "title": "Nota fiscal 55",
+            "url": "https://www.loom.com/share/55714f96dfdb4fa3927ddf06ebb6c6f0?sid=905e4b9c-5953-4d19-a31c-d891132042c9"
+          },
+          {
+            "title": "Emissão de nota de devolução - Base sistema",
+            "url": "https://www.loom.com/share/e9645a133797462b81b65341574dc693?sid=157c5a96-20c9-4b84-9e66-c97c38c44d18"
+          },
+          {
+            "title": "Emissão e notas fiscais de forma automática na emissão/baixa do título",
+            "url": "https://www.loom.com/share/05b4ea4c581a485ca1cc9b82e567d960"
+          }
+        ]
+      },
+      {
+        "name": "Financeiro, Carnês, Boletos & Baixas",
+        "icon": "💰",
+        "items": [
+          {
+            "title": "Imprimindo carnê em lote",
+            "url": "https://www.loom.com/share/caecb55436f04f458e24a1b17946acfb?sid=57dc7bbe-aefa-4b54-af90-1640200ea9a9"
+          },
+          {
+            "title": "Imprimir carnê em lote (Opção 2)",
+            "url": "https://www.loom.com/share/56986e9dc8134fe6b713a40f025c9562"
+          },
+          {
+            "title": "Gerando carnê em lote",
+            "url": "https://www.loom.com/share/60a902abb4ac47e3969cb3be45410282?sid=5c376a2c-b10a-4685-9142-ba079dd82f64"
+          },
+          {
+            "title": "Emitindo fatura / carnê",
+            "url": "https://www.loom.com/share/f66f376c73744a7d81cecfbc8f94aac1?sid=68aa999c-84f7-4933-8621-dea0aab90979"
+          },
+          {
+            "title": "Como cancelar titulo/carnê",
+            "url": "https://www.loom.com/share/e54933d132604134a67601bf82a8c236"
+          },
+          {
+            "title": "Baixa manual",
+            "url": "https://www.loom.com/share/341ea55e28614e34b0ca7e236a93fe0c?sid=a8a5bec4-eb3b-47ff-97e1-c2212844227a"
+          },
+          {
+            "title": "Baixa manual aplicando desconto",
+            "url": "https://www.loom.com/share/da782b284b894d9bac54c0071f4cb59f?sid=fa6cd20f-eeaa-4dde-b06f-b2cae125b937"
+          },
+          {
+            "title": "Baixa Parcial",
+            "url": "https://www.loom.com/share/f34230b7976142c79febb5fd21c55917"
+          },
+          {
+            "title": "Como gerar financeiro da venda",
+            "url": "https://www.loom.com/share/275418b7f8184920848f55070b7de164?sid=88182eb0-a91a-429e-b271-709430e36298"
+          },
+          {
+            "title": "Unificação de Cobranças entre Contratos (novo layout)",
+            "url": "https://www.loom.com/share/0bd0b9f54d8d4d7493ee256d26e52088"
+          },
+          {
+            "title": "Como gerar acordo de pagamento",
+            "url": "https://www.loom.com/share/148e155b5eeb4cd4b4dafaa56a8620fa"
+          },
+          {
+            "title": "Como definir a auto cobrança em lote, seja ativando ou desativando",
+            "url": "https://www.loom.com/share/f3a35618e88543a4a06498a90b06419e"
+          },
+          {
+            "title": "Como configurar tarifas de boletos",
+            "url": "https://www.loom.com/share/cafe2bec01ff4f179d06a6e2deb157b5"
+          },
+          {
+            "title": "Configurar tarifa para baixa via cartão",
+            "url": "https://www.loom.com/share/8eaf1c3cd5cb4a539bb1f11c17cb5130"
+          },
+          {
+            "title": "Criação de remessa de títulos via API",
+            "url": "https://www.loom.com/share/a0c6144d2767418ebd45b3657b2dcdac"
+          },
+          {
+            "title": "Como verificar layouts de fatura no SGP",
+            "url": "https://www.loom.com/share/0b2b8cfbe38e49f7a49ac19ff7c80d24"
+          },
+          {
+            "title": "OFX Filtros",
+            "url": "https://www.loom.com/share/c336f06757734ca6b9ce577dcf7d08f2?sid=d429d0c2-164c-4793-940a-d00b047f2678"
+          },
+          {
+            "title": "Registro de saídas e entradas de caixa",
+            "url": "https://www.loom.com/share/1d253976a08343ca822d578b29604f61"
+          },
+          {
+            "title": "Como cadastrar um ponto de recebimento/caixa no sistema",
+            "url": "https://www.loom.com/share/869aba70dbbb42978a8b1d8c05093b1d?sid=4f7f7ea1-1c6b-4e23-b1a8-32f9e75fe531"
+          },
+          {
+            "title": "Agendamento de isenção",
+            "url": "https://www.loom.com/share/d1f1c139f2e14599af44cdd75423167c?sid=f36e6486-b5d1-42de-8eca-6d2b0575fb23"
+          },
+          {
+            "title": "Cadastro de isenção",
+            "url": "https://www.loom.com/share/3cd4e59d471844179e5338eb33c85603"
+          },
+          {
+            "title": "SGP: Isenção / agendamento de isenção",
+            "url": "https://www.loom.com/share/23b9abf9f34b41f1bc4704856d1cda1e"
+          },
+          {
+            "title": "Como cadastrar indicações e descontos",
+            "url": "https://www.loom.com/share/c2e8f5bdd97d4754ba9e549b7f3c66af"
+          }
+        ]
+      },
+      {
+        "name": "Contratos, Planos & Fidelidade",
+        "icon": "📜",
+        "items": [
+          {
+            "title": "Criando Contrato de Serviço - [BASE SISTEMA]",
+            "url": "https://www.loom.com/share/8ec53deb873246eeb7c434c1beff932d?sid=2da058ed-9b13-4df2-a58a-7280a94d843a"
+          },
+          {
+            "title": "Adicionando contrato ao cliente",
+            "url": "https://www.loom.com/share/be33641eddab4a9582eb0f97cd0c1a20?sid=a2a426ad-272e-4b05-83fc-065240d2c523"
+          },
+          {
+            "title": "Cadastro de contrato de impressão - Base Sistema",
+            "url": "https://www.loom.com/share/c25498b95e73411a907b273c38adbcf2"
+          },
+          {
+            "title": "Editando contrato de impressão",
+            "url": "https://www.loom.com/share/7d2ebddaa34c4582b48113c81e3e262f?sid=ffd4cd02-b8c8-4e55-9d0d-a62fefc80b59"
+          },
+          {
+            "title": "Estrutura de contrato com variáveis automáticas",
+            "url": "https://www.loom.com/share/ad1ac9dd459c4ddc863db4f0c2eddd2e"
+          },
+          {
+            "title": "Como criar e usar variáveis em contratos",
+            "url": "https://www.loom.com/share/7621db0acadc480aae27f3611ed44f3c"
+          },
+          {
+            "title": "Criação de variáveis personalizadas para contrato de impressão",
+            "url": "https://www.loom.com/share/c5067c5d56e543c781fc08cb4f0c5764"
+          },
+          {
+            "title": "Adicionar imagem ao contrato",
+            "url": "https://www.loom.com/share/8c018ae2e58e466da4c90f9c94198682"
+          },
+          {
+            "title": "Salvando termo assinado / gerando nova assinatura",
+            "url": "https://www.loom.com/share/c9a7201788164b049ed215c9107e24a9"
+          },
+          {
+            "title": "Como criar um plano de internet",
+            "url": "https://www.loom.com/share/a92db242ca9f4eb3a47d636d45af74bf"
+          },
+          {
+            "title": "Como alterar a velocidade do plano",
+            "url": "https://www.loom.com/share/f12639b3a6c64ecf8a518bcebb6480b2"
+          },
+          {
+            "title": "Configurar velocidade reduzida - plano internet",
+            "url": "https://www.loom.com/share/6b6f357188614e5ba59f6bdb2e376007"
+          },
+          {
+            "title": "Plano Genérico",
+            "url": "https://www.loom.com/share/557da61224fe4c34bb1dc48f9b31e4a1?sid=ec6c5a26-5fa6-4133-9b3f-ace73cd59981"
+          },
+          {
+            "title": "Cadastro plano/contrato adicional",
+            "url": "https://www.loom.com/share/0d0098f08c8e40819d04e602eeccc318"
+          },
+          {
+            "title": "Cadastro plano TV / vinculo com contrato",
+            "url": "https://www.loom.com/share/1a2f31f580f9411f85f356de7abb63b4"
+          },
+          {
+            "title": "Criando serviço genérico - e adicionar ao cliente - (BASE SISTEMA)",
+            "url": "https://www.loom.com/share/d9081a937da145f989933999abedb275?sid=a118c743-904c-4d8a-be8a-b8418094ce4e"
+          },
+          {
+            "title": "Criando serviço leveduca",
+            "url": "https://www.loom.com/share/ceca7d2df38c4f54b7e250fae79d3248"
+          },
+          {
+            "title": "Migrar clientes para novo plano",
+            "url": "https://www.loom.com/share/1526e2aa06f44a2b8a1c59bc8859a36f"
+          },
+          {
+            "title": "Migrar serviço para outro contrato",
+            "url": "https://www.loom.com/share/fa3b00833784445a9dcbc4b853df1f3c"
+          },
+          {
+            "title": "Fidelidade - Multa Anatel 632",
+            "url": "https://www.loom.com/share/bd945d76c31945af80146b69b339c399?sid=017f4e43-830e-4d82-9d96-942e851edd80"
+          },
+          {
+            "title": "Fidelidade - Multa Taxa de Instalação",
+            "url": "https://www.loom.com/share/d980024a101346538879031fcfd4e98f"
+          }
+        ]
+      },
+      {
+        "name": "Clientes, Cadastro & Movimentações",
+        "icon": "👥",
+        "items": [
+          {
+            "title": "Mudança de Titularidade",
+            "url": "https://www.loom.com/share/109deff314334d10887d50b57352e842"
+          },
+          {
+            "title": "Consultar clientes sem fatura",
+            "url": "https://www.loom.com/share/216a46fc04ea4a51a76ce3f92d4ccfee"
+          },
+          {
+            "title": "Clientes sem fatura (Opção 2)",
+            "url": "https://www.loom.com/share/cc9ba07104564326bd66ed305de2d7c2?sid=15d4ad47-054c-484b-b49d-f97b37febd41"
+          },
+          {
+            "title": "Consulta de clientes conectados / online",
+            "url": "https://www.loom.com/share/1074cbef43ec4c43bac9e62342743c85"
+          },
+          {
+            "title": "Consultar clientes suspenso",
+            "url": "https://www.loom.com/share/56bd1bb806124c7f9783da5bbb0db445"
+          },
+          {
+            "title": "Cadastrando cliente/endereço/contato em blacklist",
+            "url": "https://www.loom.com/share/68857b7f964e4b359d20c75384346350"
+          },
+          {
+            "title": "Blacklist",
+            "url": "https://www.loom.com/share/84faa1f222eb4963b4776f8c063b96fe"
+          },
+          {
+            "title": "Como localizar/cadastrar o pré cadastro mídia (como soube da empresa)",
+            "url": "https://www.loom.com/share/5f1cf1c1fd6447adbe4dde578dd2b794"
+          },
+          {
+            "title": "Como migrar clientes entre portadores",
+            "url": "https://www.loom.com/share/70a3707e4ca54f6fbefeea06f65d3152"
+          },
+          {
+            "title": "Migrando clientes entre POPs com filtros",
+            "url": "https://www.loom.com/share/aaedfa1d5c9e4e1fa4a9788193af194b"
+          },
+          {
+            "title": "Como gerenciar tags em relatórios de clientes",
+            "url": "https://www.loom.com/share/9a637e545ac545958fe77db0b6abdcaa"
+          },
+          {
+            "title": "Autorizando contato",
+            "url": "https://www.loom.com/share/d7b3735a1b1742028454f792ca9f5661?sid=6d22a8b9-0488-43db-a3fe-48cdf6ec9b30"
+          },
+          {
+            "title": "Agendamento de status",
+            "url": "https://www.loom.com/share/423d793937724f439c439c18d9177f81"
+          },
+          {
+            "title": "Adição de motivo de status",
+            "url": "https://www.loom.com/share/67d045e3543c4be6b913c8081a419136"
+          }
+        ]
+      },
+      {
+        "name": "Técnico, O.S., Estoque & Infraestrutura",
+        "icon": "🛠️",
+        "items": [
+          {
+            "title": "Orientações sobre OC e OS - Edilson",
+            "url": "https://www.loom.com/share/714e85eae3354fe8b15a998a51919de1?sid=4df2e3f7-12b6-4254-b61e-7ef62c9c1c44"
+          },
+          {
+            "title": "Como encerrar OS em lote",
+            "url": "https://www.loom.com/share/28fb20008c374410ba587fe79780f488"
+          },
+          {
+            "title": "Criar Motivo de OS",
+            "url": "https://www.loom.com/share/7fa0ae093a38406eaa9d7d68ea7c2e5d"
+          },
+          {
+            "title": "Criando tipos de ocorrencia",
+            "url": "https://www.loom.com/share/b0bb97697e45452b864aa693632d21dc"
+          },
+          {
+            "title": "Como definir tipo de ocorrência por setor",
+            "url": "https://www.loom.com/share/e7cdfa7c279943288374320dde100ac8"
+          },
+          {
+            "title": "Configurando IA nos tipos de Ocorrência - (BASE SISTEMA)",
+            "url": "https://www.loom.com/share/bf6a39ced7a44b0eae49f716145d9ba0?sid=8af23cce-9a0d-4e83-9175-e49281bd8f10"
+          },
+          {
+            "title": "CRIANDO CHECK-LIST NO SGP",
+            "url": "https://www.loom.com/share/250459cabc3f42a79f7d6e4e83d7b6bf?sid=69e84729-1abf-4372-99cf-605652115e5d"
+          },
+          {
+            "title": "Criando usuário para o técnico [BASE SISTEMA]",
+            "url": "https://www.loom.com/share/20d3495d466648b6a659e98a13356180?sid=18caf518-7cbd-43ca-a856-b5cb42514349"
+          },
+          {
+            "title": "Comodato App do técnico",
+            "url": "https://www.loom.com/share/936163bf09c64512a901dbc0047924fe"
+          },
+          {
+            "title": "Como criar comodato avulso",
+            "url": "https://www.loom.com/share/8c946a23608241fbbc4b2f759b5ad0c8"
+          },
+          {
+            "title": "Como devolver comodato e corrigir estoque",
+            "url": "https://www.loom.com/share/c463668dedb545c2b13afa8ba38f9dd5"
+          },
+          {
+            "title": "Estorno pelo app do técnico",
+            "url": "https://www.loom.com/share/f723294e3aa04d16b2359fe7ef0bc68b?sid=51dbc060-2c6a-4bd3-9897-fe65a1fd6251"
+          },
+          {
+            "title": "Movimentação de correção - estoque",
+            "url": "https://www.loom.com/share/4d47e072eb634e89aec4f4c9708dad53?sid=696c10b2-9bad-476a-8f64-457292b76ba6"
+          },
+          {
+            "title": "Correção de estoque",
+            "url": "https://www.loom.com/share/0352ec4521cc40aa971c797a13ad16dd?sid=3d287865-cdf9-4c7a-b076-70563a068d35"
+          },
+          {
+            "title": "Lançamento / controle cabos - fibra",
+            "url": "https://www.loom.com/share/c428102655f34b168aa45a0d6c640a21"
+          },
+          {
+            "title": "Modulo de Frota",
+            "url": "https://www.loom.com/share/6db292e7812748a597b7e8216e159837"
+          }
+        ]
+      },
+      {
+        "name": "Acessos, Usuários & Configurações",
+        "icon": "🔐",
+        "items": [
+          {
+            "title": "Criação de Usuários e Permissões no SGP",
+            "url": "https://www.loom.com/share/c89e90db78144bf0b61dfadeb30d2f32"
+          },
+          {
+            "title": "Solicitar permissões no sistema",
+            "url": "https://www.loom.com/share/c0c747d70c874379aecb0cdf08d477aa"
+          },
+          {
+            "title": "Copia de permissões - Base sistema",
+            "url": "https://www.loom.com/share/8a87e8bdd0b146ebac1ac606e4e0f595?sid=d393dd90-23b0-4d33-ae7e-a11ce5bcca05"
+          },
+          {
+            "title": "Criando ACL",
+            "url": "https://www.loom.com/share/30c2e81adce94debbdaaa9b395f346aa"
+          },
+          {
+            "title": "Como desativar / remover usuário",
+            "url": "https://www.loom.com/share/48d8bf8902664d5c827226bbc8ce44cf"
+          },
+          {
+            "title": "Altera senha de acesso ao SGP",
+            "url": "https://www.loom.com/share/1b081f74fca7454898abcd90ffcff953"
+          },
+          {
+            "title": "Autenticação de dois fatores",
+            "url": "https://www.loom.com/share/28c787f196a146f58f83b259afc50a35"
+          },
+          {
+            "title": "Gerando token",
+            "url": "https://www.loom.com/share/6bba009f4bf54a2eab2db31a0614fdb0?sid=98207bf7-4d35-4813-82a1-791ff6004574"
+          },
+          {
+            "title": "Cadastro de funcionário",
+            "url": "https://www.loom.com/share/91d7f0fe15bd4cfba42877a829d0df16"
+          },
+          {
+            "title": "Cadastro de vendedores",
+            "url": "https://www.loom.com/share/b643581ee686416096c46aae68577c7a"
+          },
+          {
+            "title": "Definir acessos a Dashboards",
+            "url": "https://www.loom.com/share/a5a32ce443624995ada4697d0694952b"
+          },
+          {
+            "title": "Dashboard de favoritos",
+            "url": "https://www.loom.com/share/69e32cf0ed524be39dae086e89890e67?sid=b96f58df-bd97-4462-890d-6fea51dc205a"
+          },
+          {
+            "title": "Configuração de bloqueio e redução",
+            "url": "https://www.loom.com/share/68d3baa218d247618fbdcb5a3c0b11ed"
+          },
+          {
+            "title": "Configurar feriado e variável DIAS_NAO_BLOQUEAR",
+            "url": "https://www.loom.com/share/911cb4e58dc342159977e0c68b50e94f"
+          },
+          {
+            "title": "Adição de variável - configurações",
+            "url": "https://www.loom.com/share/5bcc61074cb940b28ce644105d98a68f"
+          },
+          {
+            "title": "Verificar e documentar",
+            "url": "https://www.loom.com/share/3c993234aee8417a81b64561303a31b9?sid=32cc5888-dd8d-4c9f-8f6a-9b717474480f"
+          }
+        ]
+      },
+      {
+        "name": "Empresa, POPs & Filiais",
+        "icon": "🏢",
+        "items": [
+          {
+            "title": "Cadastro de empresa",
+            "url": "https://www.loom.com/share/b3760e0d6db043c8958b2f4150d26ce4"
+          },
+          {
+            "title": "Cadastro de filial, e parâmetrização de pop e usuário",
+            "url": "https://www.loom.com/share/917f6c867628485bb65814b92aa842f6"
+          },
+          {
+            "title": "Cadastro de POP",
+            "url": "https://www.loom.com/share/e98f6e26af7e4cffaabd7011c036c4f8?sid=72e7866f-046e-4e2c-b4d9-389404be304f"
+          },
+          {
+            "title": "Criar usuário para pop, portador espécifico - Base Sistema",
+            "url": "https://www.loom.com/share/901c2c385e01454ea9e9471ad68f3b57"
+          }
+        ]
+      },
+      {
+        "name": "Central do Assinante & Atendimento",
+        "icon": "📱",
+        "items": [
+          {
+            "title": "Configuração da nova central do assinante",
+            "url": "https://www.loom.com/share/19daa00634d347cdb995a0a5fd23e466"
+          },
+          {
+            "title": "Como configurar central web e AppMeuProvedor",
+            "url": "https://www.loom.com/share/3fd708b9e3fa4aa48af6626c3b6f6cfe"
+          },
+          {
+            "title": "Habilitando Central App (MeuAppProvedor)",
+            "url": "https://www.loom.com/share/ca19da1e564849e3b95ca5d4afdbff32"
+          },
+          {
+            "title": "Orientação geral de como funciona o processo de automação do atendimento",
+            "url": "https://www.loom.com/share/bac33cea78b7488fa6688683104b8eeb"
+          }
+        ]
+      },
+      {
+        "name": "Relatórios & Anatel",
+        "icon": "📊",
+        "items": [
+          {
+            "title": "Relatório DICI",
+            "url": "https://www.loom.com/share/8795b53873624b21b6df85ecbbee0114?sid=4ae36bfb-81d8-4eee-b0de-6d3e8f2a5b91"
+          },
+          {
+            "title": "PPP SCM - Atualizado",
+            "url": "https://www.loom.com/share/0445aaaf16574df497390d88b2be52e4"
+          },
+          {
+            "title": "Como obter o PPP SCM e Relatório de Tráfego - SGP",
+            "url": "https://www.loom.com/share/dcbbc4ab86924ce4aee1b844d285fbe0"
+          },
+          {
+            "title": "Relatório de Ativações",
+            "url": "https://www.loom.com/share/9792d76e42114099b1f1f9125d6dec93"
+          },
+          {
+            "title": "Relatório de títulos em atraso",
+            "url": "https://www.loom.com/share/163c399cde3047789795df68c5e87dc6"
+          }
+        ]
+      },
+      {
+        "name": "Comunicação (SMS)",
+        "icon": "📨",
+        "items": [
+          {
+            "title": "SMS Lote",
+            "url": "https://www.loom.com/share/313794cd79a043158b96a97b5258f019?sid=2ec9e0f2-d5c0-4c16-ae6d-ff9a1cdb32c0"
+          },
+          {
+            "title": "Sms lote e manutenção - SGP",
+            "url": "https://www.loom.com/share/26d088497bcb420caa6bee5181c0362a"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "anotacoes-kleybson",
+    "name": "Anotações - Kleybson",
+    "icon": "📋",
+    "badgeClass": "origin-kleybson",
+    "tagLabel": "Grupo: Anotações - Kleybson",
+    "description": "Anotações e guias específicos gravados por Kleybson (Fiscal, NFCom, Boletos e Clientes)",
+    "categories": [
+      {
+        "name": "Fiscal & NFCom",
+        "icon": "🧾",
+        "items": [
+          {
+            "title": "Documentação Pública NFCOM",
+            "url": "https://bookstack.sgp.net.br/books/fiscal/chapter/nfcom-nota-62"
+          },
+          {
+            "title": "Como configurar emitir",
+            "url": "https://www.loom.com/share/5adb857e005c472da2dd8bc1ddde7d2f"
+          },
+          {
+            "title": "Como virar para produção",
+            "url": "https://www.loom.com/share/aa0d4114327d43049fd25f8ce24fefaa"
+          },
+          {
+            "title": "Como anexar Certificado A1 para a NFCom",
+            "url": "https://www.loom.com/share/8655302037b0479098c58222e952a656"
+          },
+          {
+            "title": "Como gerar NFCom em Lote",
+            "url": "https://www.loom.com/share/6bbfc0217ded41d7aa63f89f15a95566"
+          },
+          {
+            "title": "Como cancelar NFCom",
+            "url": "https://www.loom.com/share/52a327dde8cb48a885c506032474e9e9"
+          },
+          {
+            "title": "Como resolver erro de Destinatário Isento",
+            "url": "https://www.loom.com/share/11df8228e1d3430fbdbda8b2107e99a1"
+          },
+          {
+            "title": "Como enviar NFCom por e-mail",
+            "url": "https://www.loom.com/share/66172959c0204a40ab207e2345932630"
+          },
+          {
+            "title": "Erro xmun",
+            "url": "https://www.loom.com/share/dd50f2a0fd6e4e05b5fd2379d58d3571"
+          },
+          {
+            "title": "Erro Cmun",
+            "url": "https://www.loom.com/share/eb1ccd23aaec42b98d34ccce77426025"
+          },
+          {
+            "title": "Como colocar complemento especifico",
+            "url": "https://www.loom.com/share/36408d6798ff4a7f98c72dbb7996675a"
+          },
+          {
+            "title": "Como ajustar descrição",
+            "url": "https://www.loom.com/share/e74447a083b64a0793fa630fb15ae144"
+          },
+          {
+            "title": "Permitir edição de nfcom",
+            "url": "https://www.loom.com/share/5d48e1b4d99d4b039b41c26ee2f05eb1"
+          },
+          {
+            "title": "Grupo fiscal",
+            "url": "https://www.loom.com/share/808ff8c55484430d85623d2838236428"
+          },
+          {
+            "title": "Plano Detalhe",
+            "url": "https://www.loom.com/share/7965bfd6c32946799ffc816b3f6a413e"
+          },
+          {
+            "title": "Nota 55",
+            "url": "https://www.loom.com/share/55714f96dfdb4fa3927ddf06ebb6c6f0"
+          },
+          {
+            "title": "Informação complementar",
+            "url": "https://www.loom.com/share/36408d6798ff4a7f98c72dbb7996675a"
+          },
+          {
+            "title": "Editar nota",
+            "url": "https://www.loom.com/share/f95e995bea0948b88b59a02ac9712b25"
+          }
+        ]
+      },
+      {
+        "name": "Financeiro & Cobrança",
+        "icon": "💰",
+        "items": [
+          {
+            "title": "Migrar portador",
+            "url": "https://www.loom.com/share/bed8fdc6f59849acb600c27adadf10e6"
+          },
+          {
+            "title": "Acordo de pagamento",
+            "url": "https://www.loom.com/share/f7cdc60066964ab4ae5d8e0bbe9095f8"
+          },
+          {
+            "title": "Cobrança Unificada",
+            "url": "https://www.loom.com/share/df09c94cd33f4f8a9995b55418d5d0fd"
+          },
+          {
+            "title": "Contas a receber",
+            "url": "https://www.loom.com/share/92f0a41f27f1406895a3a631efeeedbf"
+          },
+          {
+            "title": "Titulos em lote",
+            "url": "https://www.loom.com/share/e33dcfee8fb14adcb1042d2628b6f519"
+          },
+          {
+            "title": "Geração de carnês em lote",
+            "url": "https://www.loom.com/share/60a902abb4ac47e3969cb3be45410282"
+          },
+          {
+            "title": "Relatório de títulos pagos",
+            "url": "https://www.loom.com/share/42578dc0fa6b4f0faf0034b92a0fce9a"
+          },
+          {
+            "title": "Relatório de clientes sem fatura",
+            "url": "https://www.loom.com/share/61b95e4cfa864fb984d66bcf02a82775"
+          },
+          {
+            "title": "Relatório de títulos em atraso",
+            "url": "https://www.loom.com/share/ee56fb6ef84e469c979e3378f83aae5a"
+          },
+          {
+            "title": "Relatório de novos serviços",
+            "url": "https://www.loom.com/share/8cfadf98c29344549970b754fe07e1f4"
+          }
+        ]
+      },
+      {
+        "name": "Clientes & Cadastros",
+        "icon": "👥",
+        "items": [
+          {
+            "title": "Consultar todos os clientes",
+            "url": "https://www.loom.com/share/3425c1b4337d454395aa1b1dee3f18b7"
+          },
+          {
+            "title": "Criar TAG",
+            "url": "https://www.loom.com/share/3fb4ccb1c95b40e5b3eec9962627d82b"
+          },
+          {
+            "title": "Mudança de titularidade",
+            "url": "https://www.youtube.com/watch?v=VaAOczw0plg"
+          },
+          {
+            "title": "Clientes suspensos em determinado período",
+            "url": "https://www.loom.com/share/a00ec815850849999f05da26a5b1fa4a"
+          },
+          {
+            "title": "Contrato de impressão",
+            "url": "https://www.loom.com/share/a725f67ecdd541f2ad7ecd8d748f0e8a"
+          },
+          {
+            "title": "Fidelidade",
+            "url": "https://www.loom.com/share/8f73169a85b04bccae7efc8f9c71b03f"
+          },
+          {
+            "title": "Cadastrar Feriado",
+            "url": "https://www.loom.com/share/02bf3f943b76443cb4ecadcb40f9fe03"
+          }
+        ]
+      },
+      {
+        "name": "Usuários, Acesso & Permissões",
+        "icon": "🔐",
+        "items": [
+          {
+            "title": "Trocar senha e 2 fatores",
+            "url": "https://www.loom.com/share/a8e427b175a74dc4b38d8c205de97e2c"
+          },
+          {
+            "title": "Permissões",
+            "url": "https://www.loom.com/share/a601b2505d724df4a3eeaabf48aa2ef7"
+          },
+          {
+            "title": "Criando ACL",
+            "url": "https://www.loom.com/share/30c2e81adce94debbdaaa9b395f346aa"
+          },
+          {
+            "title": "Como remover usuário",
+            "url": "https://www.loom.com/share/e76ac99279f446e2984050d8116381e1"
+          }
+        ]
+      },
+      {
+        "name": "Caixa & Pontos de Recebimento",
+        "icon": "🏦",
+        "items": [
+          {
+            "title": "Cadastrar Ponto de Recebimento/ Caixa",
+            "url": "https://www.loom.com/share/869aba70dbbb42978a8b1d8c05093b1d?sid=4f7f7ea1-1c6b-4e23-b1a8-32f9e75fe531"
+          },
+          {
+            "title": "Registro de saídas e entradas de caixa",
+            "url": "https://www.loom.com/share/1d253976a08343ca822d578b29604f61"
+          }
+        ]
+      },
+      {
+        "name": "Comunicação (SMS & E-mail)",
+        "icon": "📨",
+        "items": [
+          {
+            "title": "SMS em lote",
+            "url": "https://www.loom.com/share/5b4b94212a0a422cb0eaef16cfaa4719"
+          },
+          {
+            "title": "SMS Aviso",
+            "url": "https://www.loom.com/share/3803bec7a5ef4945b27604d81ec2768b"
+          },
+          {
+            "title": "Email em lote",
+            "url": "https://www.loom.com/share/626055f7da5d4d2881be9d21e6999bcd"
+          },
+          {
+            "title": "Email Aviso",
+            "url": "https://www.loom.com/share/e77915279b8244e9831f1a0c3439c80b"
+          }
+        ]
+      }
+    ]
+  }
+]
