@@ -16,7 +16,7 @@ Aplicação web moderna, leve e responsiva com foco em produtividade, privacidad
 
 ## 📁 Estrutura do Projeto
 - `index.html`: Aplicação web completa com layout em barra lateral, busca e player de vídeo.
-- `procedimentos_sgp.json`: Base de procedimentos catalogados organizada por grupos e categorias.
+- `vercel.json`: Configurações de rotas limpas e segurança para deploy.
 
 ---
 
@@ -32,4 +32,4 @@ start index.html
 ## 🌐 Deploy na Vercel ou GitHub Pages
 1. Importe este repositório na **Vercel** como projeto estático.
 2. Cada colaborador que acessar o link terá seu próprio espaço de trabalho privado e isolado.
-3. Para carregar a base de tutoriais, basta clicar no botão **"Importar JSON"** e selecionar o arquivo `procedimentos_sgp.json`.
+3. Para carregar ou restaurar procedimentos, basta utilizar o botão **"Importar JSON"** com seu arquivo local de backup.
