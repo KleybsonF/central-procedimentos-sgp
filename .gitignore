@@ -6,3 +6,7 @@ Desktop.ini
 # Temporary files
 *.tmp
 *.log
+
+# Data JSON files (keep local / private)
+links_data.json
+procedimentos_sgp.json
