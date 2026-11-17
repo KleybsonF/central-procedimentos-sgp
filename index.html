@@ -331,6 +331,7 @@
       border-color: var(--border-subtle);
     }
 
+    /* High-contrast active navigation state with royal blue highlight */
     .nav-item-btn.active {
       background: #eff6ff;
       color: #1d4ed8;
@@ -746,9 +747,9 @@
 
     .item-row {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
-      padding: 10px 18px;
+      padding: 12px 18px;
       border-bottom: 1px solid #f1f5f9;
       gap: 16px;
       transition: background-color 0.12s ease;
@@ -770,7 +771,7 @@
 
     .item-left {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 12px;
       flex: 1;
       min-width: 0;
@@ -785,6 +786,7 @@
       letter-spacing: 0.04em;
       flex-shrink: 0;
       line-height: 1.2;
+      margin-top: 2px;
     }
 
     .platform-tag.loom {
@@ -811,7 +813,7 @@
 
     .item-title {
       font-size: 0.88rem;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--text-main);
       white-space: nowrap;
       overflow: hidden;
@@ -828,11 +830,35 @@
       margin-top: 1px;
     }
 
+    /* Observação / Notas do Vídeo */
+    .item-notes {
+      font-size: 0.76rem;
+      color: #0369a1;
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      margin-top: 6px;
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 6px;
+      max-width: 100%;
+      line-height: 1.4;
+      white-space: normal;
+      word-break: break-word;
+    }
+
+    .item-notes svg {
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
     .item-actions {
       display: flex;
       align-items: center;
       gap: 6px;
       flex-shrink: 0;
+      margin-top: 2px;
     }
 
     /* Highlight matching search terms */
@@ -1033,13 +1059,14 @@
     }
 
     .form-textarea {
-      min-height: 70px;
+      min-height: 75px;
       resize: vertical;
+      line-height: 1.45;
     }
 
     /* Video Player Modal */
     .video-modal-card {
-      background: #000000;
+      background: #0f172a;
       border-radius: var(--radius-lg);
       width: 100%;
       max-width: 940px;
@@ -1052,7 +1079,7 @@
     .video-modal-header {
       background: #0f172a;
       color: #f8fafc;
-      padding: 12px 18px;
+      padding: 14px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -1060,7 +1087,7 @@
     }
 
     .video-modal-title {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       font-weight: 600;
       color: #f8fafc;
       white-space: nowrap;
@@ -1099,6 +1126,25 @@
       text-align: center;
       color: #94a3b8;
       background: #0f172a;
+    }
+
+    /* Video Modal Notes Banner */
+    .video-modal-notes {
+      background: #1e293b;
+      border-top: 1px solid #334155;
+      padding: 12px 20px;
+      color: #e2e8f0;
+      font-size: 0.84rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.45;
+    }
+
+    .video-modal-notes svg {
+      color: #38bdf8;
+      margin-top: 2px;
+      flex-shrink: 0;
     }
 
     /* Toast Notification */
@@ -1167,7 +1213,7 @@
           <span class="search-icon">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
           </span>
-          <input type="text" id="globalSearchInput" class="sidebar-search-input" placeholder="Buscar procedimentos..." autocomplete="off" spellcheck="false" oninput="onSearchInputChange(event)" onkeydown="onSearchInputKeyDown(event)">
+          <input type="text" id="globalSearchInput" class="sidebar-search-input" placeholder="Buscar procedimentos e notas..." autocomplete="off" spellcheck="false" oninput="onSearchInputChange(event)" onkeydown="onSearchInputKeyDown(event)">
           <button class="search-clear-btn" id="searchClearBtn" onclick="clearSearchInput()" title="Limpar busca (Esc)">✕</button>
           <span class="search-hint-pill" id="searchKbdHint">Ctrl+K</span>
         </div>
@@ -1229,6 +1275,14 @@
           </a>
         </div>
       </div>
+      <!-- Video Observations Banner -->
+      <div id="videoModalNotesBox" class="video-modal-notes" style="display:none;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        <div>
+          <strong style="color:#38bdf8;">Observação do Procedimento:</strong>
+          <span id="videoModalNotesText" style="margin-left:4px;"></span>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1282,7 +1336,7 @@
     </div>
   </div>
 
-  <!-- Modal: Novo / Editar Link -->
+  <!-- Modal: Novo / Editar Link (Com campo de Observações) -->
   <div class="modal-overlay" id="linkModalOverlay" onclick="handleFormModalOverlayClick(event, 'linkModalOverlay')">
     <div class="modal-card">
       <div class="modal-header">
@@ -1304,6 +1358,11 @@
           <div class="form-group">
             <label class="form-label" for="linkFormUrl">URL / Link do Tutorial *</label>
             <input type="url" id="linkFormUrl" class="form-input" required placeholder="https://www.loom.com/share/... ou youtube.com">
+          </div>
+          <!-- Campo Observações -->
+          <div class="form-group">
+            <label class="form-label" for="linkFormNotes">Observações / Orientações (Opcional)</label>
+            <textarea id="linkFormNotes" class="form-textarea" placeholder="Ex: Procedimento aplicável apenas com permissão de supervisor; atentar para preenchimento do campo X..."></textarea>
           </div>
         </div>
         <div class="modal-footer">
@@ -1703,7 +1762,7 @@
       main.innerHTML = html;
     }
 
-    // Render Search Results View with Token Matching and Accent Insensitivity
+    // Render Search Results View with Token Matching across Title, URL and Notes
     function renderSearchResults() {
       const main = document.getElementById('mainContainer');
       const rawQuery = currentSearchQuery.trim();
@@ -1732,7 +1791,8 @@
           rawItems.forEach((item, itemIdx) => {
             const titleNorm = normalizeStr(item.title);
             const urlNorm = normalizeStr(item.url);
-            const haystack = `${titleNorm} ${urlNorm} ${catNorm} ${groupNorm}`;
+            const notesNorm = normalizeStr(item.notes || item.observacoes || item.observacao || '');
+            const haystack = `${titleNorm} ${urlNorm} ${notesNorm} ${catNorm} ${groupNorm}`;
 
             const allMatched = tokens.every(token => haystack.includes(token));
             if (allMatched) {
@@ -1790,7 +1850,7 @@
         html += `
           <div class="empty-box">
             <h3>Nenhum procedimento encontrado</h3>
-            <p>Nenhum procedimento corresponde aos termos pesquisados no escopo selecionado.</p>
+            <p>Nenhum procedimento ou observação corresponde aos termos pesquisados no escopo selecionado.</p>
             <div style="display:flex; gap:10px; justify-content:center;">
               ${searchScope === 'current' ? `
                 <button class="btn btn-outline-blue btn-sm" onclick="setSearchScope('all')">
@@ -1832,9 +1892,10 @@
       main.innerHTML = html;
     }
 
-    // Render Single Item Row with Green Copy Button (identical to Play button)
+    // Render Single Item Row with Notes badge and action buttons
     function renderItemRow(item, groupId, catIdx, itemIdx, highlightTokens = []) {
       const url = item.url || '';
+      const notes = item.notes || item.observacoes || item.observacao || '';
       const isLoom = url.includes('loom.com');
       const isYouTube = url.includes('youtube.com') || url.includes('youtu.be');
 
@@ -1852,6 +1913,10 @@
         ? highlightTextMulti(item.title, highlightTokens) 
         : escapeHtml(item.title);
 
+      const displayNotes = (notes && highlightTokens.length > 0)
+        ? highlightTextMulti(notes, highlightTokens)
+        : escapeHtml(notes);
+
       return `
         <div class="item-row">
           <div class="item-left">
@@ -1859,12 +1924,18 @@
             <div class="item-texts">
               <span class="item-title" title="${escapeHtml(item.title)}">${displayTitle}</span>
               <span class="item-url" title="${escapeHtml(url)}">${escapeHtml(url)}</span>
+              ${notes ? `
+                <div class="item-notes" title="Observação: ${escapeHtml(notes)}">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                  <span><b>Nota:</b> ${displayNotes}</span>
+                </div>
+              ` : ''}
             </div>
           </div>
 
           <div class="item-actions">
             <!-- Blue Play Button -->
-            <button class="btn btn-play btn-sm" data-title="${escapeHtml(item.title)}" data-url="${escapeHtml(url)}" onclick="openVideoModalFromBtn(this)">
+            <button class="btn btn-play btn-sm" data-title="${escapeHtml(item.title)}" data-url="${escapeHtml(url)}" data-notes="${escapeHtml(notes)}" onclick="openVideoModalFromBtn(this)">
               <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               <span>Assistir</span>
             </button>
@@ -1881,7 +1952,7 @@
             </a>
 
             <!-- Edit Link -->
-            <button class="btn btn-edit btn-icon-only" onclick="openEditLinkModalForGroup('${groupId}', ${catIdx}, ${itemIdx})" title="Editar procedimento">
+            <button class="btn btn-edit btn-icon-only" onclick="openEditLinkModalForGroup('${groupId}', ${catIdx}, ${itemIdx})" title="Editar procedimento e notas">
               ✏️
             </button>
 
@@ -2038,15 +2109,18 @@
     function openVideoModalFromBtn(btn) {
       const title = btn.getAttribute('data-title') || 'Visualização do Procedimento';
       const url = btn.getAttribute('data-url') || '';
-      openVideoModal(title, url);
+      const notes = btn.getAttribute('data-notes') || '';
+      openVideoModal(title, url, notes);
     }
 
-    function openVideoModal(title, rawUrl) {
+    function openVideoModal(title, rawUrl, notes) {
       const modal = document.getElementById('videoModalOverlay');
       const titleEl = document.getElementById('videoModalTitle');
       const iframe = document.getElementById('videoIframe');
       const fallbackBox = document.getElementById('videoFallbackBox');
       const fallbackBtn = document.getElementById('videoFallbackBtn');
+      const notesBox = document.getElementById('videoModalNotesBox');
+      const notesText = document.getElementById('videoModalNotesText');
 
       titleEl.textContent = title;
       const embedUrl = getEmbedUrl(rawUrl);
@@ -2060,6 +2134,15 @@
         iframe.src = '';
         fallbackBox.style.display = 'flex';
         fallbackBtn.href = rawUrl;
+      }
+
+      // Display notes inside the video preview modal if present
+      if (notes && notes.trim()) {
+        notesText.textContent = notes;
+        notesBox.style.display = 'flex';
+      } else {
+        notesBox.style.display = 'none';
+        notesText.textContent = '';
       }
 
       modal.style.display = 'flex';
@@ -2235,7 +2318,7 @@
       }
     }
 
-    // LINK CRUD WITH SECURITY VALIDATION POPUP
+    // LINK CRUD WITH OBSERVATIONS & SECURITY VALIDATION POPUP
     function openNewLinkModal(preselectedCatIdx) {
       const group = GROUPS.find(g => g.id === activeGroupId);
       if (!group) return;
@@ -2250,6 +2333,7 @@
       document.getElementById('linkFormItemIndex').value = '';
       document.getElementById('linkFormTitle').value = '';
       document.getElementById('linkFormUrl').value = '';
+      document.getElementById('linkFormNotes').value = '';
 
       populateCategorySelect(group, preselectedCatIdx);
       openModal('linkModalOverlay');
@@ -2269,6 +2353,7 @@
       document.getElementById('linkFormItemIndex').value = itemIdx;
       document.getElementById('linkFormTitle').value = item.title;
       document.getElementById('linkFormUrl').value = item.url;
+      document.getElementById('linkFormNotes').value = item.notes || item.observacoes || item.observacao || '';
 
       populateCategorySelect(group, catIdx);
       openModal('linkModalOverlay');
@@ -2293,18 +2378,20 @@
       const origItemIdxStr = document.getElementById('linkFormItemIndex').value;
       const title = document.getElementById('linkFormTitle').value.trim();
       const url = document.getElementById('linkFormUrl').value.trim();
+      const notes = document.getElementById('linkFormNotes').value.trim();
 
       if (!title || !url) return;
 
       const isNew = (origCatIdxStr === '' || origItemIdxStr === '');
 
-      // Store payload
+      // Store payload including notes
       pendingLinkPayload = {
         targetCatIdx,
         origCatIdxStr,
         origItemIdxStr,
         title,
         url,
+        notes,
         isNew
       };
 
@@ -2338,7 +2425,7 @@
     function executeConfirmedLinkSave() {
       if (!pendingLinkPayload) return;
 
-      const { targetCatIdx, origCatIdxStr, origItemIdxStr, title, url } = pendingLinkPayload;
+      const { targetCatIdx, origCatIdxStr, origItemIdxStr, title, url, notes } = pendingLinkPayload;
       const group = GROUPS.find(g => g.id === activeGroupId);
       if (!group) return;
 
@@ -2346,21 +2433,23 @@
       if (!targetCat) return;
       if (!targetCat.items) targetCat.items = targetCat.links || [];
 
+      const newItemObj = { title, url, notes: notes || '' };
+
       if (origCatIdxStr !== '' && origItemIdxStr !== '') {
         const origCatIdx = parseInt(origCatIdxStr, 10);
         const origItemIdx = parseInt(origItemIdxStr, 10);
         const origCat = group.categories[origCatIdx];
 
         if (origCatIdx === targetCatIdx) {
-          origCat.items[origItemIdx] = { title, url };
+          origCat.items[origItemIdx] = newItemObj;
         } else {
           origCat.items.splice(origItemIdx, 1);
-          targetCat.items.push({ title, url });
+          targetCat.items.push(newItemObj);
         }
-        showToast('Procedimento atualizado e validado!');
+        showToast('Procedimento e observações atualizados!');
       } else {
-        targetCat.items.push({ title, url });
-        showToast('Procedimento validado e salvo com sucesso!');
+        targetCat.items.push(newItemObj);
+        showToast('Procedimento cadastrado com sucesso!');
       }
 
       saveToStorage();
@@ -2388,7 +2477,7 @@
       }
     }
 
-    // SMART MERGE JSON IMPORT: Deduplicates by normalized URL
+    // SMART MERGE JSON IMPORT: Deduplicates by normalized URL, preserves notes
     function triggerImport() {
       document.getElementById('importFileInput').click();
     }
@@ -2464,7 +2553,8 @@
             } else {
               existingC.items.push({
                 title: it.title || 'Sem título',
-                url: it.url || ''
+                url: it.url || '',
+                notes: it.notes || it.observacoes || it.observacao || ''
               });
               if (norm) existingUrls.add(norm);
               addedLinks++;
@@ -2483,7 +2573,7 @@
       showToast(`Importação concluída! +${addedLinks} links adicionados (${skippedDuplicates} duplicatas ignoradas).`);
     }
 
-    // EXPORT JSON
+    // EXPORT JSON (Preserves notes)
     function exportJSON() {
       if (GROUPS.length === 0) {
         showToast('Não há dados cadastrados para exportar.');
