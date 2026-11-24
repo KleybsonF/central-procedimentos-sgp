@@ -434,6 +434,37 @@
       border-color: #fca5a5;
     }
 
+    .template-active-badge {
+      margin-left: auto;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 10px;
+      background: #dcfce7;
+      color: #15803d;
+      border: 1px solid #86efac;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .template-tag-btn {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1d4ed8;
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.12s ease;
+      font-family: inherit;
+    }
+    .template-tag-btn:hover {
+      background: #dbeafe;
+      border-color: #93c5fd;
+      transform: translateY(-1px);
+    }
+
     /* Main Content Area */
     .main-content {
       flex: 1;
@@ -1318,7 +1349,12 @@
 
       <!-- Sidebar Footer: Database & Backup Management -->
       <div class="sidebar-footer">
-        <span class="sidebar-footer-title">Base de Dados & Backup</span>
+        <span class="sidebar-footer-title">Base de Dados & Mensagens</span>
+        <button class="sidebar-tool-btn" id="sidebarCopyTemplateBtn" onclick="openCopyTemplateModal()" title="Configurar modelo de mensagem personalizada ao copiar procedimento">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span>Mensagem de Cópia</span>
+          <span id="copyTemplateActiveIndicator" class="template-active-badge" style="display:none;">Ativo</span>
+        </button>
         <button class="sidebar-tool-btn primary" onclick="triggerImport()" title="Importar arquivo JSON com os procedimentos">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
           Importar JSON
@@ -1455,7 +1491,100 @@
     </div>
   </div>
 
-  <!-- Modal: Seleção de Grupos para Exportação JSON -->
+  <!-- Modal: Configuração de Mensagem Padrão ao Copiar -->
+  <div class="modal-overlay" id="copyTemplateModalOverlay" onclick="handleFormModalOverlayClick(event, 'copyTemplateModalOverlay')">
+    <div class="modal-card" style="max-width: 580px; width: 100%;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 9px;">
+          <span style="display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 6px; background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          </span>
+          <h3 style="font-size: 1.05rem; font-weight: 700; color: #0f172a; margin: 0;">Configurar Mensagem ao Copiar</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('copyTemplateModalOverlay')" title="Fechar (Esc)">✕</button>
+      </div>
+
+      <div class="modal-body" style="padding: 20px;">
+        <p style="font-size: 0.85rem; color: #64748b; margin: 0 0 16px 0; line-height: 1.45;">
+          Personalize a mensagem automática que será copiada ao clicar no botão <strong>Copiar</strong> de qualquer procedimento.
+        </p>
+
+        <!-- Toggle Switch / Checkbox -->
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px;">
+          <div>
+            <div style="font-size: 0.88rem; font-weight: 600; color: #1e293b;">Ativar mensagem personalizada ao copiar</div>
+            <div style="font-size: 0.74rem; color: #64748b; margin-top: 2px;">Se desativado, o botão copiará apenas o link direto.</div>
+          </div>
+          <input type="checkbox" id="copyTemplateEnabledCheckbox" onchange="onCopyTemplateConfigChange()" style="width: 18px; height: 18px; accent-color: #059669; cursor: pointer;">
+        </div>
+
+        <!-- Template Textarea Area -->
+        <div id="copyTemplateEditorContainer">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <label style="font-size: 0.8rem; font-weight: 600; color: #334155; margin: 0;">Modelo da Mensagem:</label>
+            <span style="font-size: 0.72rem; color: #64748b;">Clique para inserir variáveis:</span>
+          </div>
+
+          <!-- Variable Pills -->
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px;">
+            <button type="button" class="template-tag-btn" onclick="insertVariableIntoTemplate('{titulo}')" title="Inserir título do procedimento">
+              + {titulo}
+            </button>
+            <button type="button" class="template-tag-btn" onclick="insertVariableIntoTemplate('{link}')" title="Inserir link do vídeo/documento">
+              + {link}
+            </button>
+            <button type="button" class="template-tag-btn" onclick="insertVariableIntoTemplate('{observacoes}')" title="Inserir observações cadastradas">
+              + {observacoes}
+            </button>
+            <button type="button" class="template-tag-btn" onclick="insertVariableIntoTemplate('{categoria}')" title="Inserir nome da categoria">
+              + {categoria}
+            </button>
+            <button type="button" class="template-tag-btn" onclick="insertVariableIntoTemplate('{grupo}')" title="Inserir nome do grupo">
+              + {grupo}
+            </button>
+          </div>
+
+          <textarea id="copyTemplateTextarea" class="form-textarea" style="width: 100%; min-height: 115px; font-size: 0.88rem; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, monospace; padding: 10px 12px; line-height: 1.45;" placeholder="Ex: {titulo}&#10;Segue o vídeo com as informações:&#10;{link}&#10;{observacoes}" oninput="updateCopyTemplatePreview()"></textarea>
+
+          <!-- Quick presets -->
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; margin-bottom: 16px;">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="applyCopyPreset('whatsapp')" style="font-size: 0.74rem; padding: 4px 8px;">
+              ⚡ Padrão Atendimento
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="applyCopyPreset('detailed')" style="font-size: 0.74rem; padding: 4px 8px;">
+              📋 Padrão Detalhado
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="applyCopyPreset('raw')" style="font-size: 0.74rem; padding: 4px 8px;">
+              🔗 Apenas Link
+            </button>
+          </div>
+
+          <!-- Live Preview Box -->
+          <div>
+            <div style="font-size: 0.74rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">
+              Pré-visualização do resultado ao copiar:
+            </div>
+            <div id="copyTemplateLivePreview" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px 14px; font-size: 0.85rem; line-height: 1.5; color: #1e293b; white-space: pre-wrap; word-break: break-word; min-height: 70px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; background: #f8fafc; border-top: 1px solid #e2e8f0; border-radius: 0 0 12px 12px;">
+        <button type="button" class="btn btn-secondary btn-sm" onclick="closeModal('copyTemplateModalOverlay')">Cancelar</button>
+        <div style="display: flex; gap: 8px;">
+          <button type="button" class="btn btn-secondary btn-sm" onclick="testCopyTemplate()" style="display: flex; align-items: center; gap: 5px;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>Testar Cópia</span>
+          </button>
+          <button type="button" class="btn btn-play btn-sm" onclick="saveCopyTemplateConfig()">
+            Salvar Configuração
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Modal: Seleção de Grupos para Exportação JSON -->
   <div class="modal-overlay" id="exportModalOverlay" onclick="handleFormModalOverlayClick(event, 'exportModalOverlay')">
     <div class="modal-card" style="max-width: 520px; width: 100%;">
       <div class="modal-header">
@@ -1701,6 +1830,7 @@
       renderSidebarGroups();
       renderContent();
       setupKeyboardShortcuts();
+      updateSidebarCopyTemplateIndicator();
     }
 
     function setupKeyboardShortcuts() {
@@ -2130,7 +2260,7 @@
             </button>
 
             <!-- Green Copy Button: Exact same size and padding as btn-play -->
-            <button class="btn btn-copy btn-sm" data-url="${escapeHtml(url)}" onclick="copyUrl(this)" title="Copiar link do procedimento">
+            <button class="btn btn-copy btn-sm" data-url="${escapeHtml(url)}" data-title="${escapeHtml(item.title)}" data-notes="${escapeHtml(notes)}" data-group="${escapeHtml(groupId)}" data-cat="${catIdx}" onclick="copyUrl(this, event)" title="Copiar link ou mensagem formatada do procedimento">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
               <span>Copiar</span>
             </button>
@@ -2239,10 +2369,85 @@
       });
     }
 
-    // Copy URL with instant visual feedback on the button
-    function copyUrl(btn) {
+    // ==========================================
+    // CONFIGURAÇÃO DE MENSAGEM PADRÃO AO COPIAR
+    // ==========================================
+    const COPY_TEMPLATE_KEY = 'sgp_copy_template';
+    const COPY_ENABLED_KEY = 'sgp_copy_template_enabled';
+    const DEFAULT_COPY_TEMPLATE = "{titulo}\nSegue o vídeo com as informações:\n{link}\n{observacoes}";
+
+    function getCopyTemplateConfig() {
+      const enabledStr = localStorage.getItem(COPY_ENABLED_KEY);
+      const templateStr = localStorage.getItem(COPY_TEMPLATE_KEY);
+
+      const enabled = (enabledStr === null) ? true : (enabledStr === 'true');
+      const template = (templateStr !== null && templateStr.trim() !== '') ? templateStr : DEFAULT_COPY_TEMPLATE;
+
+      return { enabled, template };
+    }
+
+    function formatProcedureCopyText(title, url, notes, groupName, catName) {
+      const { enabled, template } = getCopyTemplateConfig();
+      if (!enabled) {
+        return url;
+      }
+
+      let text = template;
+      text = text.replace(/\{(?:titulo|título|title)\}/gi, title || '');
+      text = text.replace(/\{(?:link|url)\}/gi, url || '');
+      text = text.replace(/\{(?:grupo|group)\}/gi, groupName || '');
+      text = text.replace(/\{(?:categoria|category)\}/gi, catName || '');
+
+      // Smart handling of {observacoes}
+      if (notes && notes.trim()) {
+        text = text.replace(/\{(?:observacoes|observações|observacao|observação|notas|notes)\}/gi, notes.trim());
+      } else {
+        // If notes is empty, remove lines that just mention {observacoes}
+        const lines = text.split('\n');
+        const filteredLines = [];
+        for (let l of lines) {
+          if (/\{(?:observacoes|observações|observacao|observação|notas|notes)\}/i.test(l)) {
+            const cleaned = l.replace(/\{(?:observacoes|observações|observacao|observação|notas|notes)\}/gi, '').trim();
+            if (/^(?:obs(?:ervação|ervacoes|ervações)?:?|nota(?:s)?:?|informação?:?)$/i.test(cleaned) || cleaned === '') {
+              continue;
+            } else {
+              filteredLines.push(cleaned);
+            }
+          } else {
+            filteredLines.push(l);
+          }
+        }
+        text = filteredLines.join('\n');
+      }
+
+      return text.replace(/\n{3,}/g, '\n\n').trim();
+    }
+
+    function copyUrl(btn, evt) {
       const url = btn.getAttribute('data-url');
       if (!url) return;
+
+      const title = btn.getAttribute('data-title') || '';
+      const notes = btn.getAttribute('data-notes') || '';
+      const groupId = btn.getAttribute('data-group') || '';
+      const catIdxStr = btn.getAttribute('data-cat');
+
+      let groupName = '';
+      let catName = '';
+      if (groupId) {
+        const group = GROUPS.find(g => g.id === groupId);
+        if (group) {
+          groupName = group.name || '';
+          if (catIdxStr !== null && catIdxStr !== undefined && group.categories) {
+            const cat = group.categories[parseInt(catIdxStr, 10)];
+            if (cat) catName = cat.name || '';
+          }
+        }
+      }
+
+      // If Shift or Alt is held, copy raw link
+      const bypassTemplate = evt && (evt.shiftKey || evt.altKey);
+      const textToCopy = bypassTemplate ? url : formatProcedureCopyText(title, url, notes, groupName, catName);
 
       const originalHtml = btn.innerHTML;
       btn.classList.add('copied');
@@ -2251,12 +2456,17 @@
         <span>Copiado!</span>
       `;
 
+      const { enabled } = getCopyTemplateConfig();
+      const msgToast = (!bypassTemplate && enabled) 
+        ? 'Mensagem formatada copiada com sucesso!' 
+        : 'Link copiado com sucesso!';
+
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(() => {
-          showToast('Link copiado com sucesso!');
-        }).catch(() => fallbackCopy(url));
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          showToast(msgToast);
+        }).catch(() => fallbackCopy(textToCopy, msgToast));
       } else {
-        fallbackCopy(url);
+        fallbackCopy(textToCopy, msgToast);
       }
 
       setTimeout(() => {
@@ -2265,16 +2475,133 @@
       }, 1500);
     }
 
-    function fallbackCopy(url) {
+    function fallbackCopy(text, msg = 'Copiado com sucesso!') {
       const ta = document.createElement('textarea');
-      ta.value = url;
+      ta.value = text;
       ta.style.position = 'fixed';
       ta.style.opacity = '0';
       document.body.appendChild(ta);
       ta.select();
       document.execCommand('copy');
       document.body.removeChild(ta);
-      showToast('Link copiado com sucesso!');
+      showToast(msg);
+    }
+
+    function openCopyTemplateModal() {
+      const { enabled, template } = getCopyTemplateConfig();
+      const cb = document.getElementById('copyTemplateEnabledCheckbox');
+      const ta = document.getElementById('copyTemplateTextarea');
+
+      if (cb) cb.checked = enabled;
+      if (ta) ta.value = template;
+
+      onCopyTemplateConfigChange();
+      openModal('copyTemplateModalOverlay');
+    }
+
+    function onCopyTemplateConfigChange() {
+      const cb = document.getElementById('copyTemplateEnabledCheckbox');
+      const editor = document.getElementById('copyTemplateEditorContainer');
+      const enabled = cb ? cb.checked : true;
+
+      if (editor) {
+        editor.style.opacity = enabled ? '1' : '0.6';
+      }
+      updateCopyTemplatePreview();
+    }
+
+    function insertVariableIntoTemplate(varTag) {
+      const ta = document.getElementById('copyTemplateTextarea');
+      if (!ta) return;
+
+      const start = ta.selectionStart || 0;
+      const end = ta.selectionEnd || 0;
+      const val = ta.value;
+
+      ta.value = val.substring(0, start) + varTag + val.substring(end);
+      ta.selectionStart = ta.selectionEnd = start + varTag.length;
+      ta.focus();
+      updateCopyTemplatePreview();
+    }
+
+    function applyCopyPreset(type) {
+      const ta = document.getElementById('copyTemplateTextarea');
+      if (!ta) return;
+
+      if (type === 'whatsapp') {
+        ta.value = "{titulo}\nSegue o vídeo com as informações:\n{link}\n{observacoes}";
+      } else if (type === 'detailed') {
+        ta.value = "📌 {titulo}\n📂 {categoria} ({grupo})\n🔗 Link: {link}\n📝 Observação: {observacoes}";
+      } else if (type === 'raw') {
+        ta.value = "{link}";
+      }
+      updateCopyTemplatePreview();
+    }
+
+    function updateCopyTemplatePreview() {
+      const cb = document.getElementById('copyTemplateEnabledCheckbox');
+      const ta = document.getElementById('copyTemplateTextarea');
+      const preview = document.getElementById('copyTemplateLivePreview');
+      if (!preview) return;
+
+      const enabled = cb ? cb.checked : true;
+      const template = ta ? ta.value : DEFAULT_COPY_TEMPLATE;
+
+      if (!enabled) {
+        preview.textContent = "https://www.loom.com/share/539975593b6c441aacbd2536110b2c35";
+        return;
+      }
+
+      // Render with sample data
+      const sampleTitle = "Como realizar baixa manual em títulos";
+      const sampleUrl = "https://www.loom.com/share/539975593b6c441aacbd2536110b2c35";
+      const sampleNotes = "Apenas usuários com perfil financeiro têm acesso a esta rotina.";
+      const sampleGroup = "Procedimentos SGP";
+      const sampleCat = "Cobranças, Títulos & Boletos";
+
+      let text = template;
+      text = text.replace(/\{(?:titulo|título|title)\}/gi, sampleTitle);
+      text = text.replace(/\{(?:link|url)\}/gi, sampleUrl);
+      text = text.replace(/\{(?:grupo|group)\}/gi, sampleGroup);
+      text = text.replace(/\{(?:categoria|category)\}/gi, sampleCat);
+      text = text.replace(/\{(?:observacoes|observações|observacao|observação|notas|notes)\}/gi, sampleNotes);
+
+      preview.textContent = text.trim();
+    }
+
+    function testCopyTemplate() {
+      const preview = document.getElementById('copyTemplateLivePreview');
+      const text = preview ? preview.textContent : '';
+      if (!text) return;
+
+      fallbackCopy(text, 'Exemplo copiado para teste! Cole onde desejar (ex: WhatsApp).');
+    }
+
+    function saveCopyTemplateConfig() {
+      const cb = document.getElementById('copyTemplateEnabledCheckbox');
+      const ta = document.getElementById('copyTemplateTextarea');
+
+      const enabled = cb ? cb.checked : true;
+      const template = ta ? ta.value.trim() : DEFAULT_COPY_TEMPLATE;
+
+      localStorage.setItem(COPY_ENABLED_KEY, enabled.toString());
+      localStorage.setItem(COPY_TEMPLATE_KEY, template || DEFAULT_COPY_TEMPLATE);
+
+      updateSidebarCopyTemplateIndicator();
+      closeModal('copyTemplateModalOverlay');
+      showToast('Configuração de mensagem de cópia salva com sucesso!');
+    }
+
+    function updateSidebarCopyTemplateIndicator() {
+      const badge = document.getElementById('copyTemplateActiveIndicator');
+      if (!badge) return;
+      const { enabled } = getCopyTemplateConfig();
+      if (enabled) {
+        badge.style.display = 'inline-block';
+        badge.textContent = 'Ativo';
+      } else {
+        badge.style.display = 'none';
+      }
     }
 
     // Video Player Modal Logic
