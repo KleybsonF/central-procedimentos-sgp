@@ -2380,7 +2380,8 @@
       const enabledStr = localStorage.getItem(COPY_ENABLED_KEY);
       const templateStr = localStorage.getItem(COPY_TEMPLATE_KEY);
 
-      const enabled = (enabledStr === null) ? true : (enabledStr === 'true');
+      // Desmarcado por padrão conforme solicitado
+      const enabled = (enabledStr === null) ? false : (enabledStr === 'true');
       const template = (templateStr !== null && templateStr.trim() !== '') ? templateStr : DEFAULT_COPY_TEMPLATE;
 
       return { enabled, template };
@@ -2502,7 +2503,7 @@
     function onCopyTemplateConfigChange() {
       const cb = document.getElementById('copyTemplateEnabledCheckbox');
       const editor = document.getElementById('copyTemplateEditorContainer');
-      const enabled = cb ? cb.checked : true;
+      const enabled = cb ? cb.checked : false;
 
       if (editor) {
         editor.style.opacity = enabled ? '1' : '0.6';
@@ -2544,7 +2545,7 @@
       const preview = document.getElementById('copyTemplateLivePreview');
       if (!preview) return;
 
-      const enabled = cb ? cb.checked : true;
+      const enabled = cb ? cb.checked : false;
       const template = ta ? ta.value : DEFAULT_COPY_TEMPLATE;
 
       if (!enabled) {
@@ -2581,7 +2582,7 @@
       const cb = document.getElementById('copyTemplateEnabledCheckbox');
       const ta = document.getElementById('copyTemplateTextarea');
 
-      const enabled = cb ? cb.checked : true;
+      const enabled = cb ? cb.checked : false;
       const template = ta ? ta.value.trim() : DEFAULT_COPY_TEMPLATE;
 
       localStorage.setItem(COPY_ENABLED_KEY, enabled.toString());
